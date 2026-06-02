@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urun Aciklama & Gorsel Yazici</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg-primary:#0a0a0a;--bg-secondary:#141414;--bg-card:#1a1a1a;
+--border:#2a2a2a;--text-primary:#f5f5f5;--text-secondary:#a0a0a0;
+--accent:#7c3aed;--accent-hover:#6d28d9;--success:#22c55e;--error:#ef4444;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+/* Header */
+.header{background:var(--bg-secondary);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;gap:12px}
+.header svg{width:32px;height:32px;color:var(--accent)}
+.header h1{font-size:20px;font-weight:700}
+.header span{color:var(--text-secondary);font-size:13px;margin-left:auto}
+
+/* Main */
+.main{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:24px 32px;max-width:1440px;margin:0 auto}
+
+/* Cards */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;animation:fadeUp .5s ease both}
+.card h2{font-size:18px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card h3{font-size:15px;font-weight:600;margin:16px 0 8px;color:var(--text-secondary)}
+
+/* Form */
+label{display:block;font-size:13px;font-weight:500;color:var(--text-secondary);margin-bottom:4px;margin-top:12px}
+label:first-child{margin-top:0}
+input[type="text"],textarea,select{width:100%;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text-primary);font-family:inherit;font-size:14px;transition:border .2s}
+input[type="text"]:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical;min-height:70px}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a0a0a0' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+select option{background:var(--bg-secondary);color:var(--text-primary)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border:none;border-radius:8px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:scale(1.02);box-shadow:0 4px 20px rgba(124,58,237,.3)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#fff;width:100%;margin-top:20px}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-sm{padding:8px 14px;font-size:13px;width:auto;margin-top:0}
+.btn-green{background:var(--success);color:#fff}
+.btn-green:hover{background:#16a34a;box-shadow:0 4px 20px rgba(34,197,94,.3)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text-primary)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);box-shadow:none}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+
+/* Divider */
+.divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+
+/* Tabs */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:16px}
+.tab{padding:8px 16px;font-size:13px;font-weight:500;color:var(--text-secondary);cursor:pointer;border-bottom:2px solid transparent;transition:color .2s,border .2s;user-select:none}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--text-primary)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* Image grid */
+.img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.img-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:border .2s}
+.img-grid img:hover{border-color:var(--accent)}
+.img-grid img.selected{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+
+/* Drop zone */
+.dropzone{border:2px dashed var(--border);border-radius:8px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:border .2s,background .2s;color:var(--text-secondary);font-size:13px}
+.dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:rgba(124,58,237,.05)}
+.dropzone svg{width:32px;height:32px;margin-bottom:8px;opacity:.5}
+
+/* Preview */
+.preview-img{max-width:200px;max-height:200px;border-radius:8px;margin-top:8px;object-fit:contain}
+.preview-small{width:60px;height:60px;object-fit:cover;border-radius:6px;margin-left:8px;vertical-align:middle}
+
+/* Generation buttons */
+.gen-buttons{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.gen-buttons .btn{flex:1;min-width:140px}
+
+/* Scene / Style cards */
+.style-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin:12px 0}
+.style-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;cursor:pointer;font-size:12px;font-weight:500;transition:border .2s,background .2s}
+.style-card:hover{border-color:var(--accent)}
+.style-card.selected{border-color:var(--accent);background:rgba(124,58,237,.1)}
+
+/* Output tabs */
+.output-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:16px}
+.output-tab{padding:8px 16px;font-size:13px;font-weight:500;color:var(--text-secondary);cursor:pointer;border-bottom:2px solid transparent;transition:color .2s,border .2s;user-select:none}
+.output-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.output-tab:hover{color:var(--text-primary)}
+.output-content{display:none}
+.output-content.active{display:block}
+
+/* Output blocks */
+.output-block{background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;position:relative}
+.output-block h4{font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.output-block p,.output-block ul{font-size:14px;line-height:1.7}
+.output-block ul{padding-left:20px}
+.output-block ul li{margin-bottom:4px}
+.copy-btn{position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:4px;border-radius:4px;transition:color .2s}
+.copy-btn:hover{color:var(--text-primary)}
+.copy-btn.copied{color:var(--success)}
+.placeholder-text{color:var(--text-secondary);font-size:14px;text-align:center;padding:40px 20px}
+
+/* Image comparison */
+.img-compare{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.img-compare-box{text-align:center}
+.img-compare-box img{width:250px;height:250px;object-fit:contain;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);transition:transform .2s}
+.img-compare-box img:hover{transform:scale(1.05)}
+.img-compare-box .lbl{font-size:12px;color:var(--text-secondary);margin-bottom:6px}
+.arrow-icon{font-size:24px;color:var(--text-secondary)}
+.img-info{text-align:center;margin-top:12px}
+.img-info .mode-tag{display:inline-block;background:var(--accent);color:#fff;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;margin-bottom:4px}
+.img-info .sub{font-size:11px;color:var(--text-secondary)}
+.img-actions{display:flex;gap:8px;justify-content:center;margin-top:12px}
+
+/* Shimmer */
+.shimmer{background:linear-gradient(90deg,var(--bg-secondary) 25%,#252525 50%,var(--bg-secondary) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:8px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* History */
+.history{padding:24px 32px;max-width:1440px;margin:0 auto}
+.history h2{font-size:18px;font-weight:600;margin-bottom:16px}
+.history-scroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+.history-scroll::-webkit-scrollbar{height:6px}
+.history-scroll::-webkit-scrollbar-track{background:var(--bg-secondary);border-radius:3px}
+.history-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.history-card{flex-shrink:0;width:220px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;scroll-snap-align:start;transition:border .2s}
+.history-card:hover{border-color:var(--accent)}
+.history-card .hc-name{font-size:14px;font-weight:600;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.history-card .hc-cat{font-size:12px;color:var(--text-secondary)}
+.history-card .hc-date{font-size:11px;color:var(--text-secondary);margin-top:6px}
+
+/* Spinner */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.stagger-1{animation-delay:.1s}
+.stagger-2{animation-delay:.2s}
+.stagger-3{animation-delay:.3s}
+
+/* Alert */
+.alert{padding:10px 14px;border-radius:8px;font-size:13px;margin-top:10px;display:none}
+.alert-error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:var(--error)}
+.alert-success{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--success)}
+
+/* Responsive */
+@media(max-width:768px){
+.main{grid-template-columns:1fr;padding:16px}
+.header{padding:12px 16px}
+.history{padding:16px}
+.img-compare{flex-direction:column}
+.img-compare-box img{width:180px;height:180px}
+.gen-buttons{flex-direction:column}
+}
+
+/* URL input row */
+.input-row{display:flex;gap:8px}
+.input-row input{flex:1}
+.url-preview-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+<h1>Urun Aciklama & Gorsel Yazici</h1>
+<span>AI Destekli E-Ticaret Araci</span>
+</header>
+
+<!-- Main Grid -->
+<div class="main">
+<!-- Left Panel -->
+<div class="card stagger-1">
+<h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Urun Bilgileri</h2>
+
+<label for="productName">Urun Adi *</label>
+<input type="text" id="productName" placeholder="ornek: Bambu Termos">
+
+<label for="category">Kategori</label>
+<select id="category">
+<option value="Elektronik">Elektronik</option>
+<option value="Giyim & Moda">Giyim & Moda</option>
+<option value="Ev & Yasam" selected>Ev & Yasam</option>
+<option value="Mutfak">Mutfak</option>
+<option value="Spor & Outdoor">Spor & Outdoor</option>
+<option value="Kozmetik & Bakim">Kozmetik & Bakim</option>
+<option value="Bebek & Cocuk">Bebek & Cocuk</option>
+<option value="Ofis & Kirtasiye">Ofis & Kirtasiye</option>
+</select>
+
+<label for="features">Ozellikler * <span style="font-weight:400;color:var(--text-secondary)">(virgul ile ayirin)</span></label>
+<textarea id="features" rows="3" placeholder="paslanmaz celik, 500ml, cift cidarli, BPA free"></textarea>
+
+<label for="tone">Ton</label>
+<select id="tone">
+<option value="profesyonel">Profesyonel & Kurumsal</option>
+<option value="samimi">Samimi & Sicak</option>
+<option value="premium">Premium & Luks</option>
+<option value="enerjik">Enerjik & Genc</option>
+<option value="minimal">Minimal & Sade</option>
+</select>
+
+<label for="platform">Hedef Platform</label>
+<select id="platform">
+<option value="trendyol">Trendyol</option>
+<option value="hepsiburada">Hepsiburada</option>
+<option value="n11">N11</option>
+<option value="amazon">Amazon TR</option>
+<option value="etsy">Etsy</option>
+<option value="instagram">Instagram Shop</option>
+</select>
+
+<button class="btn btn-primary" id="generateBtn" onclick="generateDescription()">Aciklama Olustur</button>
+
+<hr class="divider">
+
+<!-- Image Source -->
+<h3>Urun Gorseli</h3>
+<p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Gorsel kaynagi secin</p>
+
+<div class="tabs" id="imgTabs">
+<div class="tab active" data-tab="tab-url">&#128279; URL ile Tara</div>
+<div class="tab" data-tab="tab-upload">&#128193; Dosya Yukle</div>
+<div class="tab" data-tab="tab-imgurl">&#128279; Gorsel URL</div>
+</div>
+
+<!-- Tab 1: URL Scrape -->
+<div class="tab-content active" id="tab-url">
+<div class="input-row">
+<input type="text" id="scrapeUrl" placeholder="https://www.trendyol.com/urun-adi-p-12345">
+<button class="btn btn-sm" style="background:var(--accent);color:#fff" onclick="scrapeImages()">Gorselleri Cek</button>
+</div>
+<div id="scrapeAlert" class="alert alert-error"></div>
+<div id="scrapeLoading" style="display:none;margin-top:12px;font-size:13px;color:var(--text-secondary)"><span class="spinner"></span> Sayfa taraniyor...</div>
+<div class="img-grid" id="scrapeGrid"></div>
+<div id="scrapePreview" style="display:none;margin-top:12px;text-align:center"></div>
+</div>
+
+<!-- Tab 2: File Upload -->
+<div class="tab-content" id="tab-upload">
+<div class="dropzone" id="dropzone">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+Surukle-birak veya tiklayarak yukle
+<span style="font-size:11px;margin-top:4px">JPG, PNG, WebP - Maks 10MB</span>
+</div>
+<input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" style="display:none">
+<div id="uploadPreview" style="display:none;margin-top:12px;text-align:center;position:relative"></div>
+</div>
+
+<!-- Tab 3: Image URL -->
+<div class="tab-content" id="tab-imgurl">
+<div class="url-preview-row">
+<input type="text" id="imgUrlInput" placeholder="https://ornek.com/urun-foto.jpg" oninput="previewImgUrl()">
+<img id="imgUrlPreview" class="preview-small" style="display:none">
+</div>
+</div>
+
+<!-- Selected Image + Generation Buttons -->
+<div id="selectedImageSection" style="display:none;margin-top:16px">
+<p style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">Secili gorsel:</p>
+<img id="selectedImagePreview" class="preview-img">
+<div class="gen-buttons">
+<button class="btn btn-sm btn-green" onclick="openGenerator('lifestyle')">&#127968; Lifestyle Gorsel</button>
+<button class="btn btn-sm" style="background:var(--accent);color:#fff" onclick="openGenerator('ad')">&#128226; Reklam Gorseli</button>
+</div>
+
+<!-- Lifestyle scene selector -->
+<div id="lifestyleSelector" style="display:none;margin-top:12px">
+<p style="font-size:13px;font-weight:600;margin-bottom:8px">Sahne Secin:</p>
+<div class="style-cards" id="lifestyleCards"></div>
+<button class="btn btn-sm btn-green" id="lifestyleGenBtn" disabled onclick="generateImage('lifestyle')">Olustur</button>
+</div>
+
+<!-- Ad style selector -->
+<div id="adSelector" style="display:none;margin-top:12px">
+<p style="font-size:13px;font-weight:600;margin-bottom:8px">Reklam Stili Secin:</p>
+<div class="style-cards" id="adCards"></div>
+<button class="btn btn-sm" id="adGenBtn" style="background:var(--accent);color:#fff" disabled onclick="generateImage('ad')">Olustur</button>
+</div>
+</div>
+</div>
+
+<!-- Right Panel -->
+<div class="card stagger-2">
+<div class="output-tabs">
+<div class="output-tab active" data-otab="otab-text">Aciklamalar</div>
+<div class="output-tab" data-otab="otab-image">Gorsel Uretici</div>
+</div>
+
+<!-- Output Tab 1: Text -->
+<div class="output-content active" id="otab-text">
+<div id="outputPlaceholder" class="placeholder-text">Sol taraftan urun bilgilerini girin ve 'Olustur' butonuna basin</div>
+<div id="outputContent" style="display:none">
+<div class="output-block">
+<h4>Baslik</h4>
+<p id="outTitle"></p>
+<button class="copy-btn" onclick="copyText('outTitle',this)" title="Kopyala"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+</div>
+<div class="output-block">
+<h4>SEO Aciklama</h4>
+<p id="outSeo"></p>
+<button class="copy-btn" onclick="copyText('outSeo',this)" title="Kopyala"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+</div>
+<div class="output-block">
+<h4>Madde Isaretleri</h4>
+<ul id="outBullets"></ul>
+<button class="copy-btn" onclick="copyBullets(this)" title="Kopyala"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+</div>
+<div class="output-block">
+<h4>Instagram Basligi</h4>
+<p id="outInsta"></p>
+<button class="copy-btn" onclick="copyText('outInsta',this)" title="Kopyala"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+</div>
+</div>
+</div>
+
+<!-- Output Tab 2: Image -->
+<div class="output-content" id="otab-image">
+<div id="imgPlaceholder" class="placeholder-text">Sol panelden gorsel secin ve uretim modunu belirleyin</div>
+<div id="imgResult" style="display:none">
+<div class="img-compare">
+<div class="img-compare-box">
+<div class="lbl">Orijinal</div>
+<img id="imgOriginal" src="">
+</div>
+<div class="arrow-icon">&#10132;</div>
+<div class="img-compare-box">
+<div class="lbl">AI Sonucu</div>
+<div id="imgAiLoading" class="shimmer" style="width:250px;height:250px;display:none"></div>
+<img id="imgAiResult" src="" style="display:none">
+</div>
+</div>
+<div class="img-info">
+<div class="mode-tag" id="imgModeTag"></div>
+<div class="sub">Fal AI ile olusturuldu</div>
+</div>
+<div class="img-actions">
+<button class="btn btn-sm btn-outline" onclick="downloadImage()">Indir</button>
+<button class="btn btn-sm btn-outline" onclick="retryImage()">Tekrar Olustur</button>
+<button class="btn btn-sm btn-outline" onclick="changeStyle()">Farkli Stil</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- History -->
+<div class="history stagger-3" style="animation:fadeUp .5s ease both">
+<h2>Son Uretimler</h2>
+<div class="history-scroll" id="historyScroll">
+<div id="historyEmpty" style="color:var(--text-secondary);font-size:13px;padding:20px">Henuz uretim yapilmadi</div>
+</div>
+</div>
+
+<script>
+// === API Keys ===
+const FAL_KEY = '';
+const APIFY_TOKEN = '';
+
+// === Data ===
+const LIFESTYLE_SCENES = [
+  { value: "modern-home", label: "Modern Ev", prompt: "modern minimalist home interior, wooden table, soft daylight" },
+  { value: "cafe", label: "Kafe Ortami", prompt: "cozy cafe table, warm ambient lighting, coffee shop" },
+  { value: "outdoor", label: "Dis Mekan", prompt: "outdoor garden table, natural sunlight, green plants background" },
+  { value: "office", label: "Ofis", prompt: "clean modern office desk, professional setting, bright" },
+  { value: "studio", label: "Studyo", prompt: "professional photo studio, clean white background, studio lighting" },
+  { value: "kitchen", label: "Mutfak", prompt: "modern kitchen countertop, bright natural light, marble surface" },
+  { value: "gym", label: "Spor Salonu", prompt: "gym setting, fitness environment, dynamic lighting" },
+  { value: "beach", label: "Sahil", prompt: "beach setting, sandy surface, ocean background, golden hour" }
+];
+
+const AD_STYLES = [
+  { value: "minimal", label: "Minimal & Temiz", prompt: "minimalist clean design, solid color background, centered product, modern" },
+  { value: "bold", label: "Cesur & Enerjik", prompt: "bold dynamic composition, vibrant gradient background, energetic, neon accents" },
+  { value: "luxury", label: "Premium & Luks", prompt: "luxury premium feel, dark background, gold accents, elegant, high-end" },
+  { value: "seasonal", label: "Sezonsal & Taze", prompt: "fresh seasonal feel, bright colors, confetti, festive, sale campaign" },
+  { value: "tech", label: "Teknolojik", prompt: "futuristic tech style, dark blue background, holographic effects, digital" },
+  { value: "natural", label: "Dogal & Organik", prompt: "natural organic style, earth tones, wooden texture, green leaves, eco" }
+];
+
+const TITLE_TEMPLATES = {
+  profesyonel: [
+    "{productName} - {category} | Premium Kalite",
+    "{productName} | Profesyonel {category} Cozumu",
+    "{productName} - Ust Duzey {category} Urunu"
+  ],
+  samimi: [
+    "{productName} - Tam Sana Gore!",
+    "Favori {category} Urunun: {productName}",
+    "{productName} ile Hayatini Kolaylastir"
+  ],
+  premium: [
+    "{productName} | Ozel Koleksiyon",
+    "{productName} - Luks {category} Deneyimi",
+    "Seckin Tasarim: {productName}"
+  ],
+  enerjik: [
+    "{productName} - Enerjini Yukselt!",
+    "Yeni Nesil {productName} Burada!",
+    "{productName} ile Fark Yarat!"
+  ],
+  minimal: [
+    "{productName}",
+    "{productName} | {category}",
+    "{productName}. Sade. Etkili."
+  ]
+};
+
+const SEO_TEMPLATES = {
+  profesyonel: "{productName} - {features_short}. {category} kategorisinde profesyonel cozum. Hemen inceleyin.",
+  samimi: "{productName} ile tanisin! {features_short}. {category} icin en ideal secim. Hemen kesfet!",
+  premium: "Ozel tasarim {productName}. {features_short}. Premium {category} deneyimi icin hemen satin alin.",
+  enerjik: "{productName} ile tanimayan kalmasin! {features_short}. {category} dunyasinda yeni trend!",
+  minimal: "{productName}. {features_short}. {category}."
+};
+
+const BULLET_WRAPPERS = [
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} ile uzun omurlu kullanim`,
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} sayesinde ustun performans`,
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} ozelligi ile konforlu deneyim`,
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} - kaliteden odun vermeyin`,
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} icin ozel olarak tasarlandi`,
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} teknolojisi ile donatilmis`,
+  (f) => `${f.charAt(0).toUpperCase() + f.slice(1)} ile gun boyu kullanim kolayligi`
+];
+
+const HASHTAGS = {
+  "Elektronik": ["#teknoloji", "#elektronik", "#gadget", "#tech", "#akilli"],
+  "Giyim & Moda": ["#moda", "#giyim", "#stil", "#trend", "#fashion", "#ootd"],
+  "Ev & Yasam": ["#evdekor", "#yasam", "#ev", "#dekorasyon", "#home"],
+  "Mutfak": ["#mutfak", "#yemek", "#gurme", "#kitchen", "#tasarim"],
+  "Spor & Outdoor": ["#spor", "#fitness", "#outdoor", "#saglik", "#aktif"],
+  "Kozmetik & Bakim": ["#guzellik", "#bakim", "#kozmetik", "#skincare", "#beauty"],
+  "Bebek & Cocuk": ["#bebek", "#anne", "#cocuk", "#baby", "#annecocuk"],
+  "Ofis & Kirtasiye": ["#ofis", "#kirtasiye", "#verimlilik", "#calisma", "#tasarim"]
+};
+
+const PLATFORM_TAGS = {
+  trendyol: "#trendyol #trendyoldan",
+  hepsiburada: "#hepsiburada #hepsiburdanindirim",
+  n11: "#n11 #n11com",
+  amazon: "#amazontr #amazon",
+  etsy: "#etsy #etsyshop #handmade",
+  instagram: "#instashop #satilikinsta #onlinesatis"
+};
+
+// === State ===
+let selectedImageUrl = null;
+let currentGenMode = null;
+let selectedScene = null;
+let selectedAdStyle = null;
+let lastGenSettings = null;
+let lastAiImageUrl = null;
+
+// === Tab Logic ===
+document.querySelectorAll('.tabs .tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const parent = tab.parentElement;
+    parent.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const container = parent.parentElement;
+    container.querySelectorAll(':scope > .tab-content').forEach(c => c.classList.remove('active'));
+    container.querySelector('#' + tab.dataset.tab).classList.add('active');
+  });
+});
+document.querySelectorAll('.output-tabs .output-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.output-content').forEach(c => c.classList.remove('active'));
+    document.querySelector('#' + tab.dataset.otab).classList.add('active');
+  });
+});
+
+// === Render style cards ===
+function renderStyleCards() {
+  const lc = document.getElementById('lifestyleCards');
+  LIFESTYLE_SCENES.forEach(s => {
+    const d = document.createElement('div');
+    d.className = 'style-card';
+    d.textContent = s.label;
+    d.dataset.value = s.value;
+    d.addEventListener('click', () => {
+      lc.querySelectorAll('.style-card').forEach(c => c.classList.remove('selected'));
+      d.classList.add('selected');
+      selectedScene = s;
+      document.getElementById('lifestyleGenBtn').disabled = false;
+    });
+    lc.appendChild(d);
+  });
+  const ac = document.getElementById('adCards');
+  AD_STYLES.forEach(s => {
+    const d = document.createElement('div');
+    d.className = 'style-card';
+    d.textContent = s.label;
+    d.dataset.value = s.value;
+    d.addEventListener('click', () => {
+      ac.querySelectorAll('.style-card').forEach(c => c.classList.remove('selected'));
+      d.classList.add('selected');
+      selectedAdStyle = s;
+      document.getElementById('adGenBtn').disabled = false;
+    });
+    ac.appendChild(d);
+  });
+}
+renderStyleCards();
+
+// === Image Selection ===
+function setSelectedImage(url) {
+  selectedImageUrl = url;
+  const section = document.getElementById('selectedImageSection');
+  section.style.display = 'block';
+  document.getElementById('selectedImagePreview').src = url;
+}
+
+// === Apify Scraping ===
+async function scrapeImages() {
+  const url = document.getElementById('scrapeUrl').value.trim();
+  if (!url) return;
+  const loading = document.getElementById('scrapeLoading');
+  const grid = document.getElementById('scrapeGrid');
+  const alert = document.getElementById('scrapeAlert');
+  const preview = document.getElementById('scrapePreview');
+  loading.style.display = 'block';
+  grid.innerHTML = '';
+  alert.style.display = 'none';
+  preview.style.display = 'none';
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 30000);
+    const resp = await fetch(`https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=${APIFY_TOKEN}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ startUrls: [{ url }], maxCrawlPages: 1, crawlerType: 'cheerio' }),
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+    const data = await resp.json();
+    if (!data || !data.length) throw new Error('empty');
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data[0].html || '', 'text/html');
+    const images = [...doc.querySelectorAll('img')]
+      .map(img => img.src || img.dataset.src || img.getAttribute('data-original'))
+      .filter(src => src && src.startsWith('http') && !src.includes('icon') && !src.includes('logo') && !src.includes('svg'))
+      .filter(src => !src.includes('1x1') && !src.includes('pixel'));
+
+    if (!images.length) throw new Error('no-images');
+
+    const unique = [...new Set(images)].slice(0, 12);
+    unique.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.loading = 'lazy';
+      img.addEventListener('click', () => {
+        grid.querySelectorAll('img').forEach(i => i.classList.remove('selected'));
+        img.classList.add('selected');
+        setSelectedImage(src);
+        preview.innerHTML = `<img src="${src}" class="preview-img">`;
+        preview.style.display = 'block';
+      });
+      img.onerror = () => img.remove();
+      grid.appendChild(img);
+    });
+  } catch (e) {
+    if (e.name === 'AbortError') {
+      alert.textContent = 'Sayfa cok buyuk, manuel olarak yukleyebilirsiniz.';
+    } else {
+      alert.textContent = 'Gorseller cekilemedi. Manuel olarak yukleyebilirsiniz.';
+    }
+    alert.style.display = 'block';
+  } finally {
+    loading.style.display = 'none';
+  }
+}
+
+// === File Upload ===
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('dragover'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropzone.classList.remove('dragover');
+  const file = e.dataTransfer.files[0];
+  if (file) handleFile(file);
+});
+fileInput.addEventListener('change', () => { if (fileInput.files[0]) handleFile(fileInput.files[0]); });
+
+function handleFile(file) {
+  if (file.size > 10 * 1024 * 1024) { alert('Dosya 10MB sinirini asiyor'); return; }
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const url = e.target.result;
+    setSelectedImage(url);
+    const prev = document.getElementById('uploadPreview');
+    prev.innerHTML = `<img src="${url}" class="preview-img"><button class="btn btn-sm btn-outline" style="position:absolute;top:4px;right:4px;padding:4px 8px" onclick="clearUpload()">&#10005;</button>`;
+    prev.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+function clearUpload() {
+  document.getElementById('uploadPreview').style.display = 'none';
+  document.getElementById('uploadPreview').innerHTML = '';
+  fileInput.value = '';
+  selectedImageUrl = null;
+  document.getElementById('selectedImageSection').style.display = 'none';
+}
+
+// === Image URL Preview ===
+function previewImgUrl() {
+  const url = document.getElementById('imgUrlInput').value.trim();
+  const prev = document.getElementById('imgUrlPreview');
+  if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+    prev.src = url;
+    prev.style.display = 'inline';
+    prev.onerror = () => { prev.style.display = 'none'; };
+    setSelectedImage(url);
+  } else {
+    prev.style.display = 'none';
+  }
+}
+
+// === Generator UI ===
+function openGenerator(mode) {
+  currentGenMode = mode;
+  document.getElementById('lifestyleSelector').style.display = mode === 'lifestyle' ? 'block' : 'none';
+  document.getElementById('adSelector').style.display = mode === 'ad' ? 'block' : 'none';
+}
+
+// === Fal AI Image Generation ===
+async function generateImage(mode) {
+  if (!selectedImageUrl) return;
+  const productName = document.getElementById('productName').value.trim() || 'urun';
+  const category = document.getElementById('category').value;
+
+  let prompt, strength, image_size, modeLabel;
+
+  if (mode === 'lifestyle') {
+    if (!selectedScene) return;
+    prompt = `lifestyle product photography of ${productName}, ${selectedScene.prompt} setting, natural lighting, editorial style, magazine quality, bokeh background, 4k`;
+    strength = 0.6;
+    image_size = 'landscape_16_9';
+    modeLabel = `Lifestyle — ${selectedScene.label}`;
+  } else {
+    if (!selectedAdStyle) return;
+    prompt = `${selectedAdStyle.prompt} advertisement creative for ${productName}, ${category}, bold vibrant colors, eye-catching, social media ad, professional marketing photo, 4k`;
+    strength = 0.55;
+    image_size = 'square_hd';
+    modeLabel = `Reklam — ${selectedAdStyle.label}`;
+  }
+
+  lastGenSettings = { mode, prompt, strength, image_size, modeLabel };
+
+  // Switch to image tab
+  document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.output-content').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-otab="otab-image"]').classList.add('active');
+  document.getElementById('otab-image').classList.add('active');
+
+  // Show loading
+  document.getElementById('imgPlaceholder').style.display = 'none';
+  document.getElementById('imgResult').style.display = 'block';
+  document.getElementById('imgOriginal').src = selectedImageUrl;
+  document.getElementById('imgAiLoading').style.display = 'block';
+  document.getElementById('imgAiResult').style.display = 'none';
+  document.getElementById('imgModeTag').textContent = modeLabel;
+
+  try {
+    const resp = await fetch('https://fal.run/fal-ai/nano-banana-2', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Key ${FAL_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ prompt, image_url: selectedImageUrl, strength, image_size })
+    });
+    const data = await resp.json();
+    if (data.images && data.images[0]) {
+      lastAiImageUrl = data.images[0].url;
+      document.getElementById('imgAiResult').src = lastAiImageUrl;
+      document.getElementById('imgAiResult').style.display = 'block';
+    } else {
+      throw new Error('no-image');
+    }
+  } catch (e) {
+    document.getElementById('imgAiResult').alt = 'Gorsel olusturulamadi';
+    document.getElementById('imgAiResult').style.display = 'block';
+    document.getElementById('imgAiResult').src = '';
+    const info = document.querySelector('.img-info .sub');
+    info.textContent = 'Gorsel olusturulamadi, tekrar deneyin';
+    info.style.color = 'var(--error)';
+  } finally {
+    document.getElementById('imgAiLoading').style.display = 'none';
+  }
+}
+
+function downloadImage() {
+  if (lastAiImageUrl) window.open(lastAiImageUrl, '_blank');
+}
+function retryImage() {
+  if (lastGenSettings) generateImage(lastGenSettings.mode);
+}
+function changeStyle() {
+  if (lastGenSettings) openGenerator(lastGenSettings.mode);
+  // scroll to left panel
+  document.querySelector('.card.stagger-1').scrollIntoView({ behavior: 'smooth' });
+}
+
+// === Text Generation ===
+function generateDescription() {
+  const productName = document.getElementById('productName').value.trim();
+  const features = document.getElementById('features').value.trim();
+  if (!productName) { shakeEl(document.getElementById('productName')); return; }
+  if (!features) { shakeEl(document.getElementById('features')); return; }
+
+  const category = document.getElementById('category').value;
+  const tone = document.getElementById('tone').value;
+  const platform = document.getElementById('platform').value;
+  const featureList = features.split(',').map(f => f.trim()).filter(Boolean);
+
+  // Title
+  const templates = TITLE_TEMPLATES[tone];
+  const titleTemplate = templates[Math.floor(Math.random() * templates.length)];
+  const title = titleTemplate.replace(/{productName}/g, productName).replace(/{category}/g, category);
+
+  // SEO Description
+  const featShort = featureList.slice(0, 3).join(', ');
+  let seo = SEO_TEMPLATES[tone]
+    .replace(/{productName}/g, productName)
+    .replace(/{features_short}/g, featShort)
+    .replace(/{category}/g, category);
+  if (seo.length > 160) seo = seo.substring(0, 157) + '...';
+
+  // Bullet Points
+  const bullets = featureList.slice(0, 5).map((f, i) => {
+    const wrapper = BULLET_WRAPPERS[i % BULLET_WRAPPERS.length];
+    return wrapper(f);
+  });
+
+  // Instagram Caption
+  const catTags = HASHTAGS[category] || ['#urun'];
+  const platTags = PLATFORM_TAGS[platform] || '';
+  const allTags = [...catTags.slice(0, 6), ...platTags.split(' ')].slice(0, 10).join(' ');
+  const insta = `${productName} - ${featShort} ile harika bir deneyim! ${allTags}`;
+
+  // Switch to text tab
+  document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.output-content').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-otab="otab-text"]').classList.add('active');
+  document.getElementById('otab-text').classList.add('active');
+
+  // Show output
+  document.getElementById('outputPlaceholder').style.display = 'none';
+  document.getElementById('outputContent').style.display = 'block';
+
+  typeText('outTitle', title);
+  typeText('outSeo', seo);
+  typeBullets('outBullets', bullets);
+  typeText('outInsta', insta);
+
+  // Save to history
+  saveToHistory({
+    input: { productName, category, features, tone, targetPlatform: platform },
+    output: { title, seoDescription: seo, bulletPoints: bullets, instagramCaption: insta, imageUrl: lastAiImageUrl }
+  });
+}
+
+// === Typing Effect ===
+function typeText(elId, text) {
+  const el = document.getElementById(elId);
+  el.textContent = '';
+  let i = 0;
+  const interval = setInterval(() => {
+    el.textContent += text[i];
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, 15);
+}
+
+function typeBullets(elId, bullets) {
+  const el = document.getElementById(elId);
+  el.innerHTML = '';
+  bullets.forEach((b, idx) => {
+    setTimeout(() => {
+      const li = document.createElement('li');
+      el.appendChild(li);
+      let i = 0;
+      const interval = setInterval(() => {
+        li.textContent += b[i];
+        i++;
+        if (i >= b.length) clearInterval(interval);
+      }, 15);
+    }, idx * 300);
+  });
+}
+
+// === Copy ===
+function copyText(elId, btn) {
+  const text = document.getElementById(elId).textContent;
+  navigator.clipboard.writeText(text);
+  btn.classList.add('copied');
+  setTimeout(() => btn.classList.remove('copied'), 2000);
+}
+function copyBullets(btn) {
+  const items = document.querySelectorAll('#outBullets li');
+  const text = [...items].map(li => '- ' + li.textContent).join('\n');
+  navigator.clipboard.writeText(text);
+  btn.classList.add('copied');
+  setTimeout(() => btn.classList.remove('copied'), 2000);
+}
+
+// === Shake validation ===
+function shakeEl(el) {
+  el.style.borderColor = 'var(--error)';
+  el.style.animation = 'shake .3s';
+  setTimeout(() => { el.style.borderColor = ''; el.style.animation = ''; }, 500);
+}
+
+// === localStorage History ===
+const HISTORY_KEY = 'urun-aciklama-gecmis';
+
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
+}
+
+function saveToHistory(entry) {
+  const history = getHistory();
+  history.unshift({
+    id: 'ua_' + Date.now(),
+    ...entry,
+    createdAt: Date.now()
+  });
+  if (history.length > 10) history.pop();
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const container = document.getElementById('historyScroll');
+  const history = getHistory();
+  if (!history.length) {
+    container.innerHTML = '<div id="historyEmpty" style="color:var(--text-secondary);font-size:13px;padding:20px">Henuz uretim yapilmadi</div>';
+    return;
+  }
+  container.innerHTML = '';
+  history.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'history-card';
+    const date = new Date(item.createdAt);
+    const dateStr = date.toLocaleDateString('tr-TR') + ' ' + date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    card.innerHTML = `
+      <div class="hc-name">${item.input.productName}</div>
+      <div class="hc-cat">${item.input.category}</div>
+      <div class="hc-date">${dateStr}</div>
+    `;
+    card.addEventListener('click', () => loadHistoryItem(item));
+    container.appendChild(card);
+  });
+}
+
+function loadHistoryItem(item) {
+  document.getElementById('productName').value = item.input.productName;
+  document.getElementById('category').value = item.input.category;
+  document.getElementById('features').value = item.input.features;
+  document.getElementById('tone').value = item.input.tone;
+  document.getElementById('platform').value = item.input.targetPlatform;
+
+  document.getElementById('outputPlaceholder').style.display = 'none';
+  document.getElementById('outputContent').style.display = 'block';
+
+  document.getElementById('outTitle').textContent = item.output.title;
+  document.getElementById('outSeo').textContent = item.output.seoDescription;
+  const ul = document.getElementById('outBullets');
+  ul.innerHTML = '';
+  item.output.bulletPoints.forEach(b => {
+    const li = document.createElement('li');
+    li.textContent = b;
+    ul.appendChild(li);
+  });
+  document.getElementById('outInsta').textContent = item.output.instagramCaption;
+
+  // Switch to text tab
+  document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.output-content').forEach(c => c.classList.remove('active'));
+  document.querySelector('[data-otab="otab-text"]').classList.add('active');
+  document.getElementById('otab-text').classList.add('active');
+}
+
+// === Drag & Drop Global (for file drop on the whole body too) ===
+document.body.addEventListener('dragover', e => e.preventDefault());
+document.body.addEventListener('drop', e => {
+  e.preventDefault();
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) {
+    // Switch to upload tab
+    document.querySelectorAll('#imgTabs .tab').forEach(t => t.classList.remove('active'));
+    document.querySelector('[data-tab="tab-upload"]').classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-upload').classList.add('active');
+    handleFile(file);
+  }
+});
+
+// === Shake keyframe ===
+const style = document.createElement('style');
+style.textContent = '@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}';
+document.head.appendChild(style);
+
+// Init
+renderHistory();
+</script>
+</body>
+</html>
