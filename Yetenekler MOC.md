@@ -5,7 +5,7 @@ guncelleme: 2026-06-02
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **145 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **146 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -150,7 +150,7 @@ guncelleme: 2026-06-02
 | **pdf-uretim** | HTML → PDF — fatura, rapor, sertifika. | [[skill-kutuphanesi/veri-analitik/pdf-uretim\|⚙️ skill]] · [[project mdleri/veri-analitik/pdf-uretim\|▶️ command]] |
 | **raporlamali-tablo** | Excel-vari interaktif tablo — pivot, formula, export. | [[skill-kutuphanesi/veri-analitik/raporlamali-tablo\|⚙️ skill]] · [[project mdleri/veri-analitik/raporlamali-tablo\|▶️ command]] |
 
-## ✍️ İçerik / Pazarlama  ·  8 adet
+## ✍️ İçerik / Pazarlama  ·  9 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -160,6 +160,7 @@ guncelleme: 2026-06-02
 | **newsletter** | Newsletter platformu (Substack alternatifi) — yazar dashboard, abone. | [[skill-kutuphanesi/icerik-pazarlama/newsletter\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/newsletter\|▶️ command]] |
 | **og-image-generator** | Dinamik Open Graph image generator — sosyal paylaşım için. | [[skill-kutuphanesi/icerik-pazarlama/og-image-generator\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/og-image-generator\|▶️ command]] |
 | **podcast-transcript** | Podcast → transcript → blog post → social clips otomasyonu. | [[skill-kutuphanesi/icerik-pazarlama/podcast-transcript\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/podcast-transcript\|▶️ command]] |
+| **rusca-cocuk-ebook** | Yaşa ve burç arketiplerine göre Rusça çocuk e-kitapları üretir — hikaye + özgün görseller, psikolog onay döngüsü, ardından KDP/ЛитРес'te satışa hazırlar. | [[skill-kutuphanesi/icerik-pazarlama/rusca-cocuk-ebook\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/rusca-cocuk-ebook\|▶️ command]] |
 | **seo-optimizasyon** | Site SEO audit + iyileştirme — meta, schema, performance. | [[skill-kutuphanesi/icerik-pazarlama/seo-optimizasyon\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/seo-optimizasyon\|▶️ command]] |
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
 
