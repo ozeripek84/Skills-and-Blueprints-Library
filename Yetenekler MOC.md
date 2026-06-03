@@ -1,11 +1,11 @@
 ---
 tags: [moc, yetenekler]
-guncelleme: 2026-06-02
+guncelleme: 2026-06-03
 ---
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **146 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **149 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -150,21 +150,23 @@ guncelleme: 2026-06-02
 | **pdf-uretim** | HTML → PDF — fatura, rapor, sertifika. | [[skill-kutuphanesi/veri-analitik/pdf-uretim\|⚙️ skill]] · [[project mdleri/veri-analitik/pdf-uretim\|▶️ command]] |
 | **raporlamali-tablo** | Excel-vari interaktif tablo — pivot, formula, export. | [[skill-kutuphanesi/veri-analitik/raporlamali-tablo\|⚙️ skill]] · [[project mdleri/veri-analitik/raporlamali-tablo\|▶️ command]] |
 
-## ✍️ İçerik / Pazarlama  ·  9 adet
+## ✍️ İçerik / Pazarlama  ·  11 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
 | **blog-sistemi** | Blog platformu — MDX, kategoriler, SEO, RSS. | [[skill-kutuphanesi/icerik-pazarlama/blog-sistemi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/blog-sistemi\|▶️ command]] |
 | **icerik-takvimi** | Content calendar + planning — Notion ya da custom dashboard. | [[skill-kutuphanesi/icerik-pazarlama/icerik-takvimi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/icerik-takvimi\|▶️ command]] |
 | **landing-ab-test** | Landing page A/B test — variant assignment, statistical analysis. | [[skill-kutuphanesi/icerik-pazarlama/landing-ab-test\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/landing-ab-test\|▶️ command]] |
+| **linkedin-profil-optimizasyon** | LinkedIn profilini işe alımcı mıknatısına çevirir — audit, başlık, About, deneyim, başarı cümleleri, keyword/SEO, kariyer değişimi, Featured ve tam makeover; 10 promptluk hat. | [[skill-kutuphanesi/icerik-pazarlama/linkedin-profil-optimizasyon\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/linkedin-profil-optimizasyon\|▶️ command]] |
 | **newsletter** | Newsletter platformu (Substack alternatifi) — yazar dashboard, abone. | [[skill-kutuphanesi/icerik-pazarlama/newsletter\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/newsletter\|▶️ command]] |
 | **og-image-generator** | Dinamik Open Graph image generator — sosyal paylaşım için. | [[skill-kutuphanesi/icerik-pazarlama/og-image-generator\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/og-image-generator\|▶️ command]] |
 | **podcast-transcript** | Podcast → transcript → blog post → social clips otomasyonu. | [[skill-kutuphanesi/icerik-pazarlama/podcast-transcript\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/podcast-transcript\|▶️ command]] |
 | **rusca-cocuk-ebook** | Yaşa ve burç arketiplerine göre Rusça çocuk e-kitapları üretir — hikaye + özgün görseller, psikolog onay döngüsü, ardından KDP/ЛитРес'te satışa hazırlar. | [[skill-kutuphanesi/icerik-pazarlama/rusca-cocuk-ebook\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/rusca-cocuk-ebook\|▶️ command]] |
 | **seo-optimizasyon** | Site SEO audit + iyileştirme — meta, schema, performance. | [[skill-kutuphanesi/icerik-pazarlama/seo-optimizasyon\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/seo-optimizasyon\|▶️ command]] |
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
+| **youtube-kanal-kurucu** | Sıfırdan monetize YouTube kanalı kurar — niş & konumlandırma, kanal kimliği, 90-günlük içerik planı, script, SEO+thumbnail, gelir modeli ve içerik çoğaltma; 7 adımlık zincir. | [[skill-kutuphanesi/icerik-pazarlama/youtube-kanal-kurucu\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/youtube-kanal-kurucu\|▶️ command]] |
 
-## 💼 İş / Satış  ·  10 adet
+## 💼 İş / Satış  ·  11 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -172,6 +174,7 @@ guncelleme: 2026-06-02
 | **affiliate-system** | Affiliate/referral program — link, tracking, commission. | [[skill-kutuphanesi/is-satis/affiliate-system\|⚙️ skill]] · [[project mdleri/is-satis/affiliate-system\|▶️ command]] |
 | **crm-mini** | Mini CRM — kontaklar, deal'ler, pipeline. | [[skill-kutuphanesi/is-satis/crm-mini\|⚙️ skill]] · [[project mdleri/is-satis/crm-mini\|▶️ command]] |
 | **fatura-jenerator** | Fatura jeneratörü — TR e-Arşiv uyumlu, KDV. | [[skill-kutuphanesi/is-satis/fatura-jenerator\|⚙️ skill]] · [[project mdleri/is-satis/fatura-jenerator\|▶️ command]] |
+| **lead-gen-ajansi** | AI destekli, ETİK lead generation / büyüme ajansı kurar — niş seçimi, üretimleştirilmiş teklif, birim ekonomisi, ToS-uyumlu hedefli outreach, kanıtlanmış içerikle teslimat ve retention. | [[skill-kutuphanesi/is-satis/lead-gen-ajansi\|⚙️ skill]] · [[project mdleri/is-satis/lead-gen-ajansi\|▶️ command]] |
 | **lead-magnet** | Lead magnet — ücretsiz indirilebilir karşılığı email yakalama. | [[skill-kutuphanesi/is-satis/lead-magnet\|⚙️ skill]] · [[project mdleri/is-satis/lead-magnet\|▶️ command]] |
 | **musteri-portal** | Müşteri portal — fatura, dosya, support, billing. | [[skill-kutuphanesi/is-satis/musteri-portal\|⚙️ skill]] · [[project mdleri/is-satis/musteri-portal\|▶️ command]] |
 | **pricing-calculator** | Custom pricing calculator — usage-based, tiered. | [[skill-kutuphanesi/is-satis/pricing-calculator\|⚙️ skill]] · [[project mdleri/is-satis/pricing-calculator\|▶️ command]] |

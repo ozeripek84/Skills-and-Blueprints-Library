@@ -98,9 +98,10 @@ guncelleme: {DATE}
 
 | Blueprint | Amaç | Dosyalar |
 |---|---|---|"""]
+SYSTEM_BP = {"icerik-fabrikasi"}  # tek-dosya değil; aşağıda Sistem Blueprint'leri bölümünde
 for name in sorted(os.listdir(BP_DIR)):
     d = os.path.join(BP_DIR, name)
-    if not os.path.isdir(d): continue
+    if not os.path.isdir(d) or name in SYSTEM_BP: continue
     claude = os.path.join(d, "CLAUDE.md")
     amac = ""
     if os.path.exists(claude):
@@ -113,5 +114,19 @@ for name in sorted(os.listdir(BP_DIR)):
     if os.path.exists(os.path.join(d, "kur.md")):
         links += f" · [[blueprints/{name}/kur\\|/kur]]"
     bp.append(f"| **{esc(name)}** | {esc(amac[:160]) or '—'} | {links} |")
+
+# Sistem blueprint'leri (dış konumda yaşayan, klonlanabilir tam sistemler — işaretçi)
+bp.append("""
+---
+
+## 🏭 Sistem Blueprint'leri (klonlanabilir tam sistemler)
+Tek-dosya değil; klonlayıp markaya bağladığın tam Claude Code sistemleri.
+
+| Sistem | Ne | Klonla & detay |
+|---|---|---|
+| **İçerik Fabrikası** | Marka bazlı uçtan uca içerik üretim + otomatik yayın hattı (boş şablon — her marka için klonla) | `cp -R "blueprints/icerik-fabrikasi" <hedef>` · [[blueprints/icerik-fabrikasi/README\\|README]] · [[İçerik Fabrikası — Referans Sistem\\|detay]] |
+
+> Yerel kopya `blueprints/icerik-fabrikasi/` (API key'siz, [FILL:] placeholder'lı şablon). Çalışan/güncel sürüm: `~/Desktop/SaaS Projects/İçerik Fabrikası`.""")
+
 write(os.path.join(ROOT, "Blueprints MOC.md"), "\n".join(bp) + "\n")
 print("DONE", total, "skills")

@@ -14,11 +14,17 @@ guncelleme: 2026-06-02
 |---|---|---|
 | [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **145** |
 | [[Blueprints MOC]] | Tek-dosya hazır uygulama iskeletleri (`/kur` ile derlenir) | **17** |
-| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları (referans: 250+ skill, agent'lar) | **2 repo** |
+| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — ⭐ **gstack** (Garry Tan/YC) + 250+ skill, agent'lar | **3 repo** |
 
 ## 📚 Rehberler
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
 - [[AI Uygulaması — Teknoloji Seçimi Handbook]] — bir AI uygulamasının her katmanı (frontend, DB, auth, sunucu, VPS, LLM…), farkları, ne zaman hangisi, ve maliyetleri. Şemalı.
+
+## 🔌 Bağlı Sistemler (dış projeler — referans)
+- 🏭 [[İçerik Fabrikası — Referans Sistem]] — uçtan uca içerik üretim & otomatik yayın hattı (Claude Code + Higgsfield + Upload-Post). Marka bazlı sürekli içerik için. *Konum: `~/Desktop/SaaS Projects/İçerik Fabrikası`*
+
+## 🧰 Araçlar & Entegrasyonlar (referans)
+- 🌐 [[BrowserAct — Gerçek Tarayıcı Aracı (referans)]] — Claude'a gerçek tarayıcı verir: tıkla, form doldur, bot/captcha'lı scrape, kendi uygulamanı test et. Akışı kalıcı skill'e çevir + `/schedule`. Lokal + ücretsiz başlar.
 
 ## 🧭 Hızlı karar
 - **"Sıfırdan çalışan bir mini-uygulama lazım"** (QR menü, fatura, dashboard…) → [[Blueprints MOC]]

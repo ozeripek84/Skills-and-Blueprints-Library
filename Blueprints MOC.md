@@ -1,6 +1,6 @@
 ---
 tags: [moc, blueprints]
-guncelleme: 2026-06-02
+guncelleme: 2026-06-03
 ---
 
 # 🧱 Blueprint'ler — Hazır Uygulama İskeletleri
@@ -21,6 +21,7 @@ guncelleme: 2026-06-02
 | **qr-menu** | Restoran ve kafelerin dijital menusunu olusturup QR kod ile paylasabildigi tek sayfalik uygulama. Sol tarafta menu duzenleyici, sag tarafta canli onizleme. Her | [[blueprints/qr-menu/CLAUDE\|spec]] · [[blueprints/qr-menu/kur\|/kur]] |
 | **randevu-sistemi** | Kucuk isletmeler icin haftalik takvim gorunumlu randevu sistemi. Slota tiklayarak randevu olusturma, hizmet secimi, durum yonetimi ve localStorage ile kalicilik | [[blueprints/randevu-sistemi/CLAUDE\|spec]] · [[blueprints/randevu-sistemi/kur\|/kur]] |
 | **restoran-siparis-sistemi** | Sistem 3 görünümden oluşuyor, URL hash ile yönetiliyor: - `#menu` — Müşteri menü & sipariş sayfası (varsayılan) - `#mutfak` — Mutfak ekranı (gelen siparişler) - | [[blueprints/restoran-siparis-sistemi/CLAUDE\|spec]] · [[blueprints/restoran-siparis-sistemi/kur\|/kur]] |
+| **scroll-narrative-site** | Premium bir marka için (çay, kozmetik, parfüm, takı, kahve vb.) **scroll ile ilerleyen sinematik anlatı** tek-sayfa site. Arka planda kullanıcı kaydırdıkça oyna | [[blueprints/scroll-narrative-site/CLAUDE\|spec]] · [[blueprints/scroll-narrative-site/kur\|/kur]] |
 | **site-builder-v2** | — | [[blueprints/site-builder-v2/CLAUDE\|spec]] |
 | **stok-dashboard** | E-ticaret isletmeleri icin gorsel acidan etkileyici, tam islevli envanter yonetim paneli. Urunleri listeleme, ekleme, duzenleme, silme, arama/filtreleme, SVG gr | [[blueprints/stok-dashboard/CLAUDE\|spec]] · [[blueprints/stok-dashboard/kur\|/kur]] |
 | **thumbnail-olusturucu** | Kullanıcı 1280x720 canvas üzerinde YouTube thumbnail tasarlayabilir: - 5 hazır şablon - Arka plan seçenekleri (renk, gradient, **Fal AI ile oluşturulmuş görsel* | [[blueprints/thumbnail-olusturucu/CLAUDE\|spec]] · [[blueprints/thumbnail-olusturucu/kur\|/kur]] |
@@ -28,3 +29,14 @@ guncelleme: 2026-06-02
 | **urun-yazici** | E-ticaret urunleri icin profesyonel aciklama metinleri ve AI-destekli urun gorseli ureten tek sayfalik uygulama. Kullanici urun bilgilerini girer, uygulama basl | [[blueprints/urun-yazici/CLAUDE\|spec]] |
 | **video-icerik-uretici** | Kullanıcı video konusu, hedef kitle, video uzunluğu ve içerik tipi girer. Sistem şunları üretir: - 5 başlık önerisi - SEO uyumlu açıklama (zaman damgalı) - 30 e | [[blueprints/video-icerik-uretici/CLAUDE\|spec]] · [[blueprints/video-icerik-uretici/kur\|/kur]] |
 | **workflow-builder** | n8n tarzi gorsel bir workflow olusturucu. Kullanici surukle-birak ile node'lar ekler, birbirine baglar ve ornek bir otomasyon akisini canli olarak calistirir. T | [[blueprints/workflow-builder/CLAUDE\|spec]] · [[blueprints/workflow-builder/kur\|/kur]] |
+
+---
+
+## 🏭 Sistem Blueprint'leri (klonlanabilir tam sistemler)
+Tek-dosya değil; klonlayıp markaya bağladığın tam Claude Code sistemleri.
+
+| Sistem | Ne | Klonla & detay |
+|---|---|---|
+| **İçerik Fabrikası** | Marka bazlı uçtan uca içerik üretim + otomatik yayın hattı (boş şablon — her marka için klonla) | `cp -R "blueprints/icerik-fabrikasi" <hedef>` · [[blueprints/icerik-fabrikasi/README\|README]] · [[İçerik Fabrikası — Referans Sistem\|detay]] |
+
+> Yerel kopya `blueprints/icerik-fabrikasi/` (API key'siz, [FILL:] placeholder'lı şablon). Çalışan/güncel sürüm: `~/Desktop/SaaS Projects/İçerik Fabrikası`.
