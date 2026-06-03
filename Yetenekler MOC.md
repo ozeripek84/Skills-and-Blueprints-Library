@@ -1,11 +1,11 @@
 ---
 tags: [moc, yetenekler]
-guncelleme: 2026-06-03
+guncelleme: 2026-06-04
 ---
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **150 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **151 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -166,12 +166,13 @@ guncelleme: 2026-06-03
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
 | **youtube-kanal-kurucu** | Sıfırdan monetize YouTube kanalı kurar — niş & konumlandırma, kanal kimliği, 90-günlük içerik planı, script, SEO+thumbnail, gelir modeli ve içerik çoğaltma; 7 adımlık zincir. | [[skill-kutuphanesi/icerik-pazarlama/youtube-kanal-kurucu\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/youtube-kanal-kurucu\|▶️ command]] |
 
-## 💼 İş / Satış  ·  12 adet
+## 💼 İş / Satış  ·  13 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
 | **abone-yonetimi** | Subscription management portal — upgrade, cancel, billing history. | [[skill-kutuphanesi/is-satis/abone-yonetimi\|⚙️ skill]] · [[project mdleri/is-satis/abone-yonetimi\|▶️ command]] |
 | **affiliate-system** | Affiliate/referral program — link, tracking, commission. | [[skill-kutuphanesi/is-satis/affiliate-system\|⚙️ skill]] · [[project mdleri/is-satis/affiliate-system\|▶️ command]] |
+| **ai-ajans-modeli** | AI destekli niş hizmet ajansı (ör. sosyal medya yönetimi) için 5 adımlı operasyon modeli — ICP, paket+fiyat, müşteri yakalama, operasyon/teslimat, retention/scale. | [[skill-kutuphanesi/is-satis/ai-ajans-modeli\|⚙️ skill]] · [[project mdleri/is-satis/ai-ajans-modeli\|▶️ command]] |
 | **crm-mini** | Mini CRM — kontaklar, deal'ler, pipeline. | [[skill-kutuphanesi/is-satis/crm-mini\|⚙️ skill]] · [[project mdleri/is-satis/crm-mini\|▶️ command]] |
 | **fatura-jenerator** | Fatura jeneratörü — TR e-Arşiv uyumlu, KDV. | [[skill-kutuphanesi/is-satis/fatura-jenerator\|⚙️ skill]] · [[project mdleri/is-satis/fatura-jenerator\|▶️ command]] |
 | **lead-gen-ajansi** | AI destekli, ETİK lead generation / büyüme ajansı kurar — niş seçimi, üretimleştirilmiş teklif, birim ekonomisi, ToS-uyumlu hedefli outreach, kanıtlanmış içerikle teslimat ve retention. | [[skill-kutuphanesi/is-satis/lead-gen-ajansi\|⚙️ skill]] · [[project mdleri/is-satis/lead-gen-ajansi\|▶️ command]] |
