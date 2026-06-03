@@ -5,7 +5,7 @@ guncelleme: 2026-06-04
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **151 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **152 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -150,11 +150,12 @@ guncelleme: 2026-06-04
 | **pdf-uretim** | HTML → PDF — fatura, rapor, sertifika. | [[skill-kutuphanesi/veri-analitik/pdf-uretim\|⚙️ skill]] · [[project mdleri/veri-analitik/pdf-uretim\|▶️ command]] |
 | **raporlamali-tablo** | Excel-vari interaktif tablo — pivot, formula, export. | [[skill-kutuphanesi/veri-analitik/raporlamali-tablo\|⚙️ skill]] · [[project mdleri/veri-analitik/raporlamali-tablo\|▶️ command]] |
 
-## ✍️ İçerik / Pazarlama  ·  11 adet
+## ✍️ İçerik / Pazarlama  ·  12 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
 | **blog-sistemi** | Blog platformu — MDX, kategoriler, SEO, RSS. | [[skill-kutuphanesi/icerik-pazarlama/blog-sistemi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/blog-sistemi\|▶️ command]] |
+| **donusum-landing** | Güzel" değil DÖNÜŞTÜREN landing page kurar — 5 conversion ilkesi, hero/VSL/çok-adımlı form anatomisi, form→DB→takip funnel'ı, Cloudflare Workers deploy. | [[skill-kutuphanesi/icerik-pazarlama/donusum-landing\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/donusum-landing\|▶️ command]] |
 | **icerik-takvimi** | Content calendar + planning — Notion ya da custom dashboard. | [[skill-kutuphanesi/icerik-pazarlama/icerik-takvimi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/icerik-takvimi\|▶️ command]] |
 | **landing-ab-test** | Landing page A/B test — variant assignment, statistical analysis. | [[skill-kutuphanesi/icerik-pazarlama/landing-ab-test\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/landing-ab-test\|▶️ command]] |
 | **linkedin-profil-optimizasyon** | LinkedIn profilini işe alımcı mıknatısına çevirir — audit, başlık, About, deneyim, başarı cümleleri, keyword/SEO, kariyer değişimi, Featured ve tam makeover; 10 promptluk hat. | [[skill-kutuphanesi/icerik-pazarlama/linkedin-profil-optimizasyon\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/linkedin-profil-optimizasyon\|▶️ command]] |
