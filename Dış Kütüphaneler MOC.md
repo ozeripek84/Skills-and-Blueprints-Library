@@ -31,6 +31,12 @@ git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.cl
 
 ---
 
+## 🎨 `ui-ux-pro-max-skill` — tasarım zekası skill'i (MIT, v2.5)
+Büyük tasarım müdahalesinde `/ui-ux-pro-max` ile çağrılan skill: **67 UI stili, 161 renk paleti, 57 font çifti, 99 UX kuralı, 25 grafik tipi, 15+ stack.** Jenerik AI tasarımından kurtarır. ([[$10K Web Sitesi — Claude Code Tasarım İş Akışı]] bunu kullanıyor.)
+- Kur: `/plugin install ui-ux-pro-max@ui-ux-pro-max-skill` · ya da `npm i -g uipro-cli && uipro init --ai claude`
+- → [[ui-ux-pro-max-skill/README|repo]] · [[ui-ux-pro-max-skill/CLAUDE|CLAUDE.md]]
+- İkizi: **frontend-design** (Anthropic) — bende built-in skill olarak zaten var; arka planda çalışır.
+
 ## 1. `claude-skills-main` — 250+ skill · agent · command (MIT)
 En kapsamlı kaynak. 11 farklı coding agent ile çalışır (Claude Code, Codex, Gemini CLI, Cursor…). Her skill `SKILL.md` + bazen Python araçları içerir.
 → Genel bakış: [[claude-skills-main/README|repo README]] · Standart: [[claude-skills-main/SKILL-AUTHORING-STANDARD|skill yazım standardı]]

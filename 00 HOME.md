@@ -14,13 +14,17 @@ guncelleme: 2026-06-02
 |---|---|---|
 | [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **145** |
 | [[Blueprints MOC]] | Tek-dosya hazır uygulama iskeletleri (`/kur` ile derlenir) | **17** |
-| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — ⭐ **gstack** (Garry Tan/YC) + 250+ skill, agent'lar | **3 repo** |
+| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — ⭐ **gstack** (Garry Tan/YC) + **ui-ux-pro-max** + 250+ skill | **4 repo** |
 
 ## 📚 Rehberler
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
 - [[AI Uygulaması — Teknoloji Seçimi Handbook]] — bir AI uygulamasının her katmanı (frontend, DB, auth, sunucu, VPS, LLM…), farkları, ne zaman hangisi, ve maliyetleri. Şemalı.
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
 - 📐 [[Yıldız Dikme — Web Tasarım Prompt Yöntemi]] — ödül seviyesinde dinamik site prompt'lama: önce tech seç, İngilizce detay, ilham al, 3D'de manuel pozisyon, kısa promptlar. (blueprint'lerine bağlı)
+- 💎 [[$10K Web Sitesi — Claude Code Tasarım İş Akışı]] — frontend-design + ui-ux-pro-max skill'leri, 8 maddelik "$10K çıta" checklist'i, 21st.dev, görsel hattı, "pahalı hissettir" cilası, deploy.
+
+## 📦 Örnekler
+- [[ornekler/rusca-cocuk-ebook — Vmeste-veseleye (2-4 yas)|Örnek e-book: «Вместе — веселее!»]] — 2-4 yaş, RU + UA + kafiyeli, sayfa sayfa + görsel promptları.
 
 ## 🔌 Bağlı Sistemler (dış projeler — referans)
 - 🏭 [[İçerik Fabrikası — Referans Sistem]] — uçtan uca içerik üretim & otomatik yayın hattı (Claude Code + Higgsfield + Upload-Post). Marka bazlı sürekli içerik için. *Konum: `~/Desktop/SaaS Projects/İçerik Fabrikası`*
