@@ -6,11 +6,12 @@ guncelleme: 2026-06-03
 # 🧱 Blueprint'ler — Hazır Uygulama İskeletleri
 
 > [[00 HOME|🏠 Ana sayfaya dön]]
-> Her blueprint tek-dosya (`index.html`) çalışan bir uygulamaya derlenir. Klasörde **`CLAUDE.md`** (detaylı spec) + **`kur.md`** (`/kur` komutu) bulunur.
+> Çoğu blueprint tek-dosya (`index.html`) çalışan bir uygulamaya derlenir; bazıları küçük çok-dosyalı projeler (Vite/Three.js vb. — hazır kod, klonla & uyarla). Klasörde **`CLAUDE.md`** (spec) + **`kur.md`** (`/kur` komutu) bulunur.
 > Kullanım: blueprint klasörünü yeni projeye kopyala → `kur.md`'yi `.claude/commands/`'a koy → Claude'da `/kur` yaz. Detay: [[Claude için kullanım]].
 
 | Blueprint | Amaç | Dosyalar |
 |---|---|---|
+| **3d-camera-landing-page** | Scroll ile **3D model dönen** sinematik landing page. Sayfa açılışında loading animasyonu (bitene kadar scroll kilitli), sonra kaydırdıkça kamera/model dönerek | [[blueprints/3d-camera-landing-page/CLAUDE\|spec]] · [[blueprints/3d-camera-landing-page/kur\|/kur]] |
 | **ai-chatbot-widget** | Isletmeler icin ozel chatbot widget'i olusturucu. Kullanici sol panelde botun adini, gorunumunu, soru-cevap ciftlerini ve tonunu ayarlar; sag panelde canli on i | [[blueprints/ai-chatbot-widget/CLAUDE\|spec]] · [[blueprints/ai-chatbot-widget/kur\|/kur]] |
 | **analytics-dashboard** | Kullanıcı bir YouTube kanal URL'si girer, **Apify** ile gerçek kanal verileri çekilir ve dashboard'da gösterilir: - Abone sayısı, toplam görüntülenme, video say | [[blueprints/analytics-dashboard/CLAUDE\|spec]] · [[blueprints/analytics-dashboard/kur\|/kur]] |
 | **email-kampanya-yoneticisi** | B2B cold email kampanyalarini yoneten bir kontrol paneli. Onceden doldurulmus 3 kampanya, email dizisi editoru, kisi birlestirme alanlari ve gorsel donusum huni | [[blueprints/email-kampanya-yoneticisi/CLAUDE\|spec]] · [[blueprints/email-kampanya-yoneticisi/kur\|/kur]] |
@@ -24,6 +25,7 @@ guncelleme: 2026-06-03
 | **scroll-narrative-site** | Premium bir marka için (çay, kozmetik, parfüm, takı, kahve vb.) **scroll ile ilerleyen sinematik anlatı** tek-sayfa site. Arka planda kullanıcı kaydırdıkça oyna | [[blueprints/scroll-narrative-site/CLAUDE\|spec]] · [[blueprints/scroll-narrative-site/kur\|/kur]] |
 | **site-builder-v2** | — | [[blueprints/site-builder-v2/CLAUDE\|spec]] |
 | **stok-dashboard** | E-ticaret isletmeleri icin gorsel acidan etkileyici, tam islevli envanter yonetim paneli. Urunleri listeleme, ekleme, duzenleme, silme, arama/filtreleme, SVG gr | [[blueprints/stok-dashboard/CLAUDE\|spec]] · [[blueprints/stok-dashboard/kur\|/kur]] |
+| **threejs-fluid-portfolio** | Koyu, editoryal bir kişisel/ajans portfolyo sitesi. Ana sayfada **Three.js cursor-trail "fluid reveal" efekti**: mouse'u gezdirdiğin yerde üstteki portrenin alt | [[blueprints/threejs-fluid-portfolio/CLAUDE\|spec]] · [[blueprints/threejs-fluid-portfolio/kur\|/kur]] |
 | **thumbnail-olusturucu** | Kullanıcı 1280x720 canvas üzerinde YouTube thumbnail tasarlayabilir: - 5 hazır şablon - Arka plan seçenekleri (renk, gradient, **Fal AI ile oluşturulmuş görsel* | [[blueprints/thumbnail-olusturucu/CLAUDE\|spec]] · [[blueprints/thumbnail-olusturucu/kur\|/kur]] |
 | **urun-aciklama-yazici** | E-ticaret urunleri icin profesyonel aciklama metinleri ve AI-destekli urun gorseli ureten tek sayfalik uygulama. Kullanici urun bilgilerini girer, uygulama basl | [[blueprints/urun-aciklama-yazici/CLAUDE\|spec]] · [[blueprints/urun-aciklama-yazici/kur\|/kur]] |
 | **urun-yazici** | E-ticaret urunleri icin profesyonel aciklama metinleri ve AI-destekli urun gorseli ureten tek sayfalik uygulama. Kullanici urun bilgilerini girer, uygulama basl | [[blueprints/urun-yazici/CLAUDE\|spec]] |

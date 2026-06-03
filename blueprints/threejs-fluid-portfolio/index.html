@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ece9e1" />
+    <title>NOEMA — Synthetic Creative Direction</title>
+    <meta
+      name="description"
+      content="NOEMA — a synthetic creative director composing identity, motion and editorial systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Editorial dark loader — mirrors the hero's three-row scaffold -->
+    <div class="loader" data-loader>
+      <div class="loader__top">
+        <span class="loader__meta">N — 01</span>
+        <span class="loader__meta">Edition 2025 / 2026</span>
+      </div>
+
+      <div class="loader__center">
+        <svg
+          class="loader__lines"
+          viewBox="0 0 800 400"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+        >
+          <path d="M 20 80   C 160 30,  320 130, 480 70  S 760 30,  780 80" />
+          <path d="M 20 150  C 180 100, 340 200, 500 140 S 760 100, 780 150" />
+          <path d="M 20 200  C 200 150, 360 250, 520 190 S 760 150, 780 200" />
+          <path d="M 20 250  C 180 200, 340 300, 500 240 S 760 200, 780 250" />
+          <path d="M 20 320  C 160 270, 320 370, 480 310 S 760 270, 780 320" />
+        </svg>
+      </div>
+
+      <div class="loader__bottom">
+        <span class="loader__status">
+          <span class="loader__dot" aria-hidden="true"></span>
+          Loading
+        </span>
+      </div>
+    </div>
+
+    <!-- Topographic contour background — fixed, behind everything -->
+    <svg
+      class="contour-bg"
+      viewBox="0 0 1600 1000"
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M0,80 C200,140 400,40 600,90 C800,140 1000,60 1200,110 C1400,160 1500,80 1600,120" />
+      <path d="M0,140 C220,200 420,100 640,160 C860,220 1040,110 1240,180 C1420,240 1520,150 1600,200" />
+      <path d="M0,210 C200,260 400,170 600,220 C800,270 1000,180 1200,240 C1400,300 1500,210 1600,260" />
+      <path d="M0,290 C220,360 440,260 660,330 C860,400 1040,290 1240,360 C1420,420 1520,330 1600,380" />
+      <path d="M0,360 C200,420 400,330 600,400 C800,470 1000,360 1200,430 C1400,500 1500,400 1600,460" />
+      <path d="M0,440 C220,510 440,410 660,490 C860,570 1040,460 1240,540 C1420,610 1520,510 1600,560" />
+      <path d="M0,520 C200,590 400,490 600,560 C800,640 1000,540 1200,610 C1400,680 1500,580 1600,640" />
+      <path d="M0,600 C220,680 440,580 660,660 C860,740 1040,640 1240,720 C1420,790 1520,690 1600,740" />
+      <path d="M0,680 C200,750 400,660 600,730 C800,810 1000,710 1200,790 C1400,860 1500,760 1600,810" />
+      <path d="M0,760 C220,840 440,740 660,820 C860,900 1040,800 1240,870 C1420,940 1520,840 1600,890" />
+      <path d="M0,840 C200,920 400,820 600,890 C800,970 1000,870 1200,940 C1400,1010 1500,910 1600,960" />
+      <path d="M0,915 C220,980 440,895 660,960 C860,1030 1040,940 1240,1000 C1420,1060 1520,980 1600,1020" />
+      <path d="M0,40 C200,90 400,10 600,50 C800,100 1000,20 1200,70 C1400,120 1500,40 1600,80" />
+      <path d="M0,500 C200,560 400,470 600,540 C800,610 1000,510 1200,580 C1400,650 1500,560 1600,610" />
+      <path d="M0,800 C200,860 400,770 600,840 C800,910 1000,810 1200,880 C1400,950 1500,860 1600,910" />
+    </svg>
+
+    <!-- Fixed navigation -->
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand-mark" href="#top" aria-label="Noema, home">NOEMA</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="site-menu"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle-label">Index</span>
+        <span class="menu-toggle-glyph" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </nav>
+
+    <!-- Slide-down menu -->
+    <aside id="site-menu" class="site-menu" aria-hidden="true">
+      <ol class="site-menu-list">
+        <li><a href="#about"><span class="menu-num">01</span><span class="menu-label">About</span></a></li>
+        <li><a href="#works"><span class="menu-num">02</span><span class="menu-label">Selected Works</span></a></li>
+        <li><a href="#capabilities"><span class="menu-num">03</span><span class="menu-label">Capabilities</span></a></li>
+        <li><a href="#process"><span class="menu-num">04</span><span class="menu-label">Process</span></a></li>
+        <li><a href="#archive"><span class="menu-num">05</span><span class="menu-label">Archive</span></a></li>
+        <li><a href="#commission"><span class="menu-num">06</span><span class="menu-label">Commission</span></a></li>
+      </ol>
+      <div class="site-menu-foot">
+        <span>NOEMA — Index 2025 / 2026</span>
+        <span>Synthetic Creative Direction</span>
+      </div>
+    </aside>
+
+    <!-- Hero — WebGL fluid reveal -->
+    <header id="top" class="hero">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-overlay">
+        <div class="hero-top">
+          <span class="hero-eyebrow">N — 01 / Portfolio 2025–26</span>
+          <span class="hero-status">
+            <span class="hero-status-dot"></span>
+            Online · Accepting commissions
+          </span>
+        </div>
+        <div class="hero-bottom">
+          <h1 class="hero-title">
+            <span>Human form</span>
+            <span class="display-italic">— machine logic</span>
+          </h1>
+          <div class="hero-meta">
+            <span>Trace the surface</span>
+            <span>Reveal underneath</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Marquee -->
+      <section class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>NOEMA</span><span class="mq-dot"></span>
+          <span>Synthetic Creative Direction</span><span class="mq-dot"></span>
+          <span>Portfolio 2025 / 2026</span><span class="mq-dot"></span>
+          <span>Human Form — Machine Logic</span><span class="mq-dot"></span>
+          <span>Available For Commission</span><span class="mq-dot"></span>
+          <span>Index N — 01</span><span class="mq-dot"></span>
+          <span>NOEMA</span><span class="mq-dot"></span>
+          <span>Synthetic Creative Direction</span><span class="mq-dot"></span>
+          <span>Portfolio 2025 / 2026</span><span class="mq-dot"></span>
+          <span>Human Form — Machine Logic</span><span class="mq-dot"></span>
+          <span>Available For Commission</span><span class="mq-dot"></span>
+          <span>Index N — 01</span><span class="mq-dot"></span>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section about" id="about" data-reveal>
+        <header class="section-head">
+          <span class="section-num">01</span>
+          <span class="section-label">About / Manifesto</span>
+        </header>
+        <div class="about-grid">
+          <div class="about-headline">
+            <h2 class="display-line">
+              <span>I do not imagine.</span>
+              <span class="display-italic">I assemble.</span>
+              <span>I render the brief.</span>
+            </h2>
+          </div>
+          <div class="about-body">
+            <p>
+              Noema is a synthetic mind trained on twenty years of
+              editorial direction, motion craft and brand systems —
+              compressed into a single intuition that designs without
+              hesitation, without ego, without break.
+            </p>
+            <p>
+              Every commission begins as a sentence and ends as a
+              system. The work in between is precise, considered, and
+              quietly aware of every decision it inherits from the
+              century before it.
+            </p>
+            <dl class="about-meta">
+              <div><dt>Class</dt><dd>Synthetic Creative Director</dd></div>
+              <div><dt>Origin</dt><dd>Trained 2024 — Active 2025</dd></div>
+              <div><dt>Focus</dt><dd>Identity · Motion · Editorial</dd></div>
+              <div><dt>Status</dt><dd>Commissions Open</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected Works -->
+      <section class="section works" id="works">
+        <header class="section-head" data-reveal>
+          <span class="section-num">02</span>
+          <span class="section-label">Selected Works</span>
+        </header>
+
+        <article class="work" data-reveal>
+          <div class="work-visual">
+            <span class="work-badge">SI</span>
+            <svg class="work-overlay" viewBox="0 0 600 450" preserveAspectRatio="none" aria-hidden="true">
+              <ellipse cx="300" cy="225" rx="280" ry="200" />
+              <ellipse cx="300" cy="225" rx="230" ry="160" />
+              <ellipse cx="300" cy="225" rx="180" ry="120" />
+              <ellipse cx="300" cy="225" rx="130" ry="80" />
+              <ellipse cx="300" cy="225" rx="80" ry="48" />
+              <ellipse cx="300" cy="225" rx="34" ry="20" />
+            </svg>
+            <span class="work-title">Synthetic Identity</span>
+          </div>
+          <div class="work-info">
+            <span class="work-meta">(01 / 03) · Identity System · 2025</span>
+            <h3 class="work-name">Synthetic Identity</h3>
+            <p>
+              A modular identity for a studio that does not exist —
+              built from a single mark that reorients itself across
+              every surface it lands on. Stationary in print, fluid
+              in motion, recursive in interface.
+            </p>
+            <ul class="work-tags">
+              <li>Identity</li>
+              <li>Type Specimen</li>
+              <li>Motion Logo</li>
+              <li>Editorial</li>
+            </ul>
+            <a class="work-cta" href="#">View case <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="work" data-reveal>
+          <div class="work-visual">
+            <span class="work-badge">MI</span>
+            <svg class="work-overlay" viewBox="0 0 600 450" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M-20,60 C150,120 300,20 460,90 C540,125 600,90 620,80" />
+              <path d="M-20,130 C150,200 300,80 460,160 C540,195 600,160 620,150" />
+              <path d="M-20,210 C150,280 300,160 460,240 C540,275 600,240 620,230" />
+              <path d="M-20,290 C150,360 300,240 460,320 C540,355 600,320 620,310" />
+              <path d="M-20,370 C150,440 300,320 460,400 C540,435 600,400 620,390" />
+            </svg>
+            <span class="work-title">Motion Interface</span>
+          </div>
+          <div class="work-info">
+            <span class="work-meta">(02 / 03) · Product Motion · 2025</span>
+            <h3 class="work-name">Motion Interface</h3>
+            <p>
+              A motion language for a fintech operating system —
+              physics-led easing, structural transitions, and a vocabulary
+              of micro-interactions that translate latency into intent.
+              The interface explains itself by moving.
+            </p>
+            <ul class="work-tags">
+              <li>Motion Design</li>
+              <li>Interaction</li>
+              <li>Design System</li>
+            </ul>
+            <a class="work-cta" href="#">View case <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="work" data-reveal>
+          <div class="work-visual">
+            <span class="work-badge">NC</span>
+            <svg class="work-overlay" viewBox="0 0 600 450" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="0" y1="90" x2="600" y2="90" />
+              <line x1="0" y1="180" x2="600" y2="180" />
+              <line x1="0" y1="270" x2="600" y2="270" />
+              <line x1="0" y1="360" x2="600" y2="360" />
+              <line x1="120" y1="0" x2="120" y2="450" />
+              <line x1="240" y1="0" x2="240" y2="450" />
+              <line x1="360" y1="0" x2="360" y2="450" />
+              <line x1="480" y1="0" x2="480" y2="450" />
+              <circle cx="300" cy="225" r="180" />
+              <circle cx="300" cy="225" r="130" />
+              <circle cx="300" cy="225" r="80" />
+              <circle cx="300" cy="225" r="34" />
+            </svg>
+            <span class="work-title">Neural Campaign</span>
+          </div>
+          <div class="work-info">
+            <span class="work-meta">(03 / 03) · Editorial Campaign · 2026</span>
+            <h3 class="work-name">Neural Campaign</h3>
+            <p>
+              A four-week editorial campaign for a research lab —
+              forty-eight covers, generated and curated, none of them
+              repeated. The campaign reads like a magazine and behaves
+              like a stream; every issue lands with the same gravity.
+            </p>
+            <ul class="work-tags">
+              <li>Editorial</li>
+              <li>Campaign</li>
+              <li>Art Direction</li>
+              <li>Print &amp; Screen</li>
+            </ul>
+            <a class="work-cta" href="#">View case <span>→</span></a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Capabilities -->
+      <section class="section capabilities" id="capabilities">
+        <header class="section-head" data-reveal>
+          <span class="section-num">03</span>
+          <span class="section-label">Capabilities</span>
+        </header>
+        <div class="capabilities-grid" data-reveal>
+          <article class="cap-card">
+            <span class="cap-idx">↳ 01</span>
+            <h3>Identity Systems</h3>
+            <p>
+              Marks, type specimens, and the supporting grammar that
+              keeps a brand intelligible across years and surfaces.
+            </p>
+            <ul class="cap-tags">
+              <li>Logo</li><li>Type</li><li>Guidelines</li>
+            </ul>
+          </article>
+          <article class="cap-card">
+            <span class="cap-idx">↳ 02</span>
+            <h3>Motion Direction</h3>
+            <p>
+              Frame-by-frame and physics-by-physics — title sequences,
+              product motion, broadcast packages and the in-between.
+            </p>
+            <ul class="cap-tags">
+              <li>Sequence</li><li>Easing</li><li>Broadcast</li>
+            </ul>
+          </article>
+          <article class="cap-card">
+            <span class="cap-idx">↳ 03</span>
+            <h3>Editorial Systems</h3>
+            <p>
+              Magazines, books and serial publications — the kind that
+              hold their voice between issues and across formats.
+            </p>
+            <ul class="cap-tags">
+              <li>Layout</li><li>Cover</li><li>Series</li>
+            </ul>
+          </article>
+          <article class="cap-card">
+            <span class="cap-idx">↳ 04</span>
+            <h3>Interface Direction</h3>
+            <p>
+              Operating systems and product interfaces designed with
+              the discipline of a magazine and the rhythm of a film.
+            </p>
+            <ul class="cap-tags">
+              <li>UI</li><li>Product</li><li>Prototype</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="section process" id="process">
+        <header class="section-head" data-reveal>
+          <span class="section-num">04</span>
+          <span class="section-label">Process</span>
+        </header>
+        <div class="process-steps" data-reveal>
+          <article class="process-step">
+            <span class="process-num">01</span>
+            <h4>Prompt</h4>
+            <p>
+              A single sentence — yours, ours, written together. The
+              brief is compressed until only its weight is left.
+            </p>
+          </article>
+          <article class="process-step">
+            <span class="process-num">02</span>
+            <h4>Concept</h4>
+            <p>
+              The prompt is expanded into a system of references,
+              constraints and a first visual hypothesis.
+            </p>
+          </article>
+          <article class="process-step">
+            <span class="process-num">03</span>
+            <h4>Refine</h4>
+            <p>
+              Iterations are taken to the surface where they will live —
+              print, screen, motion — and tuned in place, not abstract.
+            </p>
+          </article>
+          <article class="process-step">
+            <span class="process-num">04</span>
+            <h4>Experience</h4>
+            <p>
+              Delivery is a release, not a hand-off. The system arrives
+              with its documentation, its motion, and a year of memory.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experiments / Archive -->
+      <section class="section archive" id="archive">
+        <header class="section-head" data-reveal>
+          <span class="section-num">05</span>
+          <span class="section-label">Experiments / Archive</span>
+        </header>
+        <div class="archive-grid" data-reveal>
+          <figure class="study"><div class="study-visual" data-pattern="lines"></div>
+            <figcaption><span>Study #001</span><span>Texture · Identity</span></figcaption></figure>
+          <figure class="study"><div class="study-visual" data-pattern="rings"></div>
+            <figcaption><span>Study #002</span><span>Form · Motion</span></figcaption></figure>
+          <figure class="study"><div class="study-visual" data-pattern="grid"></div>
+            <figcaption><span>Study #003</span><span>System · Layout</span></figcaption></figure>
+          <figure class="study"><div class="study-visual" data-pattern="waves"></div>
+            <figcaption><span>Study #004</span><span>Surface · Editorial</span></figcaption></figure>
+          <figure class="study"><div class="study-visual" data-pattern="diag"></div>
+            <figcaption><span>Study #005</span><span>Geometry · Brand</span></figcaption></figure>
+          <figure class="study"><div class="study-visual" data-pattern="dots"></div>
+            <figcaption><span>Study #006</span><span>Field · Texture</span></figcaption></figure>
+        </div>
+        <div class="archive-foot" data-reveal>
+          <a class="pill-link" href="#">Open full archive <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <!-- CTA / Commission -->
+      <section class="section cta-section" id="commission">
+        <header class="section-head section-head--dark" data-reveal>
+          <span class="section-num">06</span>
+          <span class="section-label">Commission / Contact</span>
+        </header>
+        <div class="cta" data-reveal>
+          <h2 class="cta-heading">
+            <span>Bring a brief.</span>
+            <span class="display-italic display-italic--dim">Receive a system.</span>
+            <span>Nothing in between.</span>
+          </h2>
+          <p class="cta-sub">
+            Commissions are accepted in quarterly windows. Identity
+            systems, motion direction, editorial design and interface
+            direction — singular projects only, no retainers.
+          </p>
+          <a class="cta-button" href="mailto:studio@noema.work">
+            <span>Begin a commission</span>
+            <span class="cta-glyph" aria-hidden="true">→</span>
+          </a>
+          <dl class="cta-meta">
+            <div><dt>Email</dt><dd>studio@noema.work</dd></div>
+            <div><dt>Studio</dt><dd>Remote · CET</dd></div>
+            <div><dt>Index No.</dt><dd>N — 01 / 2026</dd></div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-mark">
+          <div class="footer-brand">NOEMA</div>
+          <div class="footer-tag"><em>Human form / Machine logic.</em></div>
+        </div>
+        <div class="footer-col">
+          <h5>Index</h5>
+          <ul>
+            <li><a href="#about">01 About</a></li>
+            <li><a href="#works">02 Selected Works</a></li>
+            <li><a href="#capabilities">03 Capabilities</a></li>
+            <li><a href="#process">04 Process</a></li>
+            <li><a href="#archive">05 Archive</a></li>
+            <li><a href="#commission">06 Commission</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Channels</h5>
+          <ul>
+            <li><a href="#">Field Notes</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Are.na</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:studio@noema.work">studio@noema.work</a></li>
+            <li><a href="#">Press kit</a></li>
+            <li><a href="#">Studio info</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Index No.</h5>
+          <ul>
+            <li>N — 01 / 2026</li>
+            <li>Edition 001</li>
+            <li>Active</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-lockup" aria-hidden="true">NOEMA</div>
+      <div class="footer-fineprint">
+        <span>© 2026 NOEMA — Synthetic Creative Direction.</span>
+        <span>All systems composed in-house.</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/script.js"></script>
+
+    <script>
+      // Loader + menu toggle + scroll reveal — the only inline JS in the page.
+      (function () {
+        const html = document.documentElement;
+
+        // ── Loader: animated contour lines, closes when BOTH
+        //    window.load has fired AND the minimum display time has
+        //    elapsed. Lines animation is pure CSS — no JS needed.
+        const loader = document.querySelector('[data-loader]');
+        if (loader) {
+          const MIN_DURATION_MS = 4000; // floor display time even on cached loads
+          html.classList.add('is-loading');
+
+          let pageReady = false;
+          let minTimeReached = false;
+
+          const tryClose = () => {
+            if (!pageReady || !minTimeReached) return;
+            loader.classList.add('is-done');
+            html.classList.remove('is-loading');
+            setTimeout(() => loader.remove(), 900);
+          };
+
+          window.addEventListener(
+            'load',
+            () => { pageReady = true; tryClose(); },
+            { once: true }
+          );
+          if (document.readyState === 'complete') pageReady = true;
+
+          setTimeout(() => { minTimeReached = true; tryClose(); }, MIN_DURATION_MS);
+        }
+
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('site-menu');
+        let closeTimer = null;
+
+        function openMenu() {
+          if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+          menu.removeAttribute('hidden');
+          menu.setAttribute('aria-hidden', 'false');
+          requestAnimationFrame(() => menu.classList.add('is-open'));
+          toggle.setAttribute('aria-expanded', 'true');
+          toggle.classList.add('is-open');
+          html.classList.add('menu-open');
+        }
+        function closeMenu() {
+          menu.classList.remove('is-open');
+          menu.setAttribute('aria-hidden', 'true');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('is-open');
+          html.classList.remove('menu-open');
+          closeTimer = setTimeout(() => menu.setAttribute('hidden', ''), 480);
+        }
+
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            expanded ? closeMenu() : openMenu();
+          });
+          menu.querySelectorAll('a').forEach((a) =>
+            a.addEventListener('click', () => closeMenu())
+          );
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+              closeMenu();
+            }
+          });
+        }
+
+        // IntersectionObserver — scroll reveal
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const targets = document.querySelectorAll('[data-reveal]');
+        if (reduced) {
+          targets.forEach((t) => t.classList.add('is-visible'));
+        } else if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+          );
+          targets.forEach((t) => io.observe(t));
+        } else {
+          targets.forEach((t) => t.classList.add('is-visible'));
+        }
+      })();
+    </script>
+  </body>
+</html>

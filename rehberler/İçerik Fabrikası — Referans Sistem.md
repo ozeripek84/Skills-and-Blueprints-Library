@@ -29,7 +29,7 @@ Tek markaya hizmet eden uçtan uca içerik hattı: **fikir → görsel/video →
 ⚠️ **Boş şablon — bir markaya bağlanmamış.** Tüm `brand/` ve `config/` dosyaları `[FILL:]` placeholder dolu. Kullanmak için: `markamı kuralım` → Higgsfield MCP bağla → (yayın için) Upload-Post + API key.
 
 ## Bağımlılıklar (dikkat)
-- **Higgsfield** (credit; video ~10× pahalı) — görsel/video üretimi.
+- **Higgsfield** (credit; video ~10× pahalı) — görsel/video üretimi. Bağlama & özellikler: [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] (ajanik kullanımda **CLI daha ucuz**).
 - **Upload-Post** (abonelik; Free'de **TikTok yok**, limit düşük) — otomatik yayın.
 - Upload-Post olmadan da %80 çalışır (üretim + takvim olur, yayını manuel yaparsın).
 - 🔐 API key düz metin `config/upload-post-config.md`'de — zip'leyip paylaşırken **sil**.

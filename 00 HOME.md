@@ -19,12 +19,19 @@ guncelleme: 2026-06-02
 ## 📚 Rehberler
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
 - [[AI Uygulaması — Teknoloji Seçimi Handbook]] — bir AI uygulamasının her katmanı (frontend, DB, auth, sunucu, VPS, LLM…), farkları, ne zaman hangisi, ve maliyetleri. Şemalı.
+- 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
+- 📐 [[Yıldız Dikme — Web Tasarım Prompt Yöntemi]] — ödül seviyesinde dinamik site prompt'lama: önce tech seç, İngilizce detay, ilham al, 3D'de manuel pozisyon, kısa promptlar. (blueprint'lerine bağlı)
 
 ## 🔌 Bağlı Sistemler (dış projeler — referans)
 - 🏭 [[İçerik Fabrikası — Referans Sistem]] — uçtan uca içerik üretim & otomatik yayın hattı (Claude Code + Higgsfield + Upload-Post). Marka bazlı sürekli içerik için. *Konum: `~/Desktop/SaaS Projects/İçerik Fabrikası`*
 
 ## 🧰 Araçlar & Entegrasyonlar (referans)
-- 🌐 [[BrowserAct — Gerçek Tarayıcı Aracı (referans)]] — Claude'a gerçek tarayıcı verir: tıkla, form doldur, bot/captcha'lı scrape, kendi uygulamanı test et. Akışı kalıcı skill'e çevir + `/schedule`. Lokal + ücretsiz başlar.
+- 🎭 [[Playwright Tarayıcı Otomasyonu (Claude Code) — referans]] — **ücretsiz/açık** tarayıcı kontrolü: kendi siteni test et, public siteden veri çek, hesabına login olup iş yaptır. `claude mcp add playwright …`.
+- 🌐 [[BrowserAct — Gerçek Tarayıcı Aracı (referans)]] — Claude'a gerçek tarayıcı verir (ürün): bot/captcha'lı scrape, stealth. (Playwright vs BrowserAct karşılaştırması iki notta da var.)
+- 🎬 [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] — herhangi bir ajana (Claude/Hermes) görsel & video üretimi: Marketing Studio (tek link→video), Soul karakter, viral klip, virality prediction. İçerik Fabrikası'nın bağımlılığı.
+- 🎨 [[Claude + Canva Connector — Tasarım (referans)]] — Claude'a Canva bağla, sohbetten tasarla (form/sunum/kapak); düzenlemeyi Canva'da yap (ekonomik). *Bende canlı kullanılabilir.*
+- 🏗️ [[Hostinger Horizons — No-Code İşlevsel MVP (referans)]] — kod yazmadan **işlem yapabilen** uygulama (login/rezervasyon/mail), **entegre backend**. Hızlı MVP için; kod sahipliği istersen Claude Code+Supabase.
+- 🖌️ [[Claude Design — Tasarım Çıkar, Claude Code'da Optimize Et (referans)]] — tasarım-odaklı Claude ürünü. Güçlü tasarım/UI kit, zayıf performans → Claude Design'da tasarla, **Claude Code'da optimize et**.
 
 ## 🧭 Hızlı karar
 - **"Sıfırdan çalışan bir mini-uygulama lazım"** (QR menü, fatura, dashboard…) → [[Blueprints MOC]]

@@ -93,7 +93,7 @@ guncelleme: {DATE}
 # 🧱 Blueprint'ler — Hazır Uygulama İskeletleri
 
 > [[00 HOME|🏠 Ana sayfaya dön]]
-> Her blueprint tek-dosya (`index.html`) çalışan bir uygulamaya derlenir. Klasörde **`CLAUDE.md`** (detaylı spec) + **`kur.md`** (`/kur` komutu) bulunur.
+> Çoğu blueprint tek-dosya (`index.html`) çalışan bir uygulamaya derlenir; bazıları küçük çok-dosyalı projeler (Vite/Three.js vb. — hazır kod, klonla & uyarla). Klasörde **`CLAUDE.md`** (spec) + **`kur.md`** (`/kur` komutu) bulunur.
 > Kullanım: blueprint klasörünü yeni projeye kopyala → `kur.md`'yi `.claude/commands/`'a koy → Claude'da `/kur` yaz. Detay: [[Claude için kullanım]].
 
 | Blueprint | Amaç | Dosyalar |

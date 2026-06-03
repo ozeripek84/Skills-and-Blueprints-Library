@@ -88,13 +88,18 @@ Consistent character across pages, no text in image, age [YAŞ] friendly, gentle
 - Resimli çocuk kitabı = **fixed-layout** (sabit düzen) e-book + **KDP paperback** (baskı daha çok satar).
 - Kapak: şablon kopyalama, **profesyonel tasarımcı** (Fiverr $5–30) — Rusça başlık net, değeri/dönüşümü anlatır.
 
-## 8. Yayınlama
-| Platform | Not |
+## 8. Yayınlama / Satış — global Rusça/Ukraynaca diaspora (DİJİTAL + BASKI)
+Hedef: AB/ABD'deki Rus & Ukraynalı aileler. Hem e-book (PDF/EPUB) hem **fiziksel baskı** (anneler kitaba dokunmak ister).
+| Kanal | Rolü |
 |---|---|
-| **Amazon KDP** | Rusça destekler; e-book + paperback. Global erişim. Ücretsiz, satışta komisyon. |
-| **ЛитРес (litres.ru)** | Rusça pazarın lideri — burada olmak şart. |
-| **Ozon / Wildberries** | Büyük Rusça pazaryerleri (baskı + dijital). |
-Sıra: e-book yayınla → **paperback** ekle → talep varsa **audio** + **seri** + **dil çevirisi**.
+| **Amazon KDP** | Baskı + Kindle'ın bel kemiği. Amazon.de/.com → anneler fiziksel kitabı buradan alır. |
+| **Etsy** | Dijital indirme + POD baskı; diaspora anneleri yoğun. |
+| **Kendi Shopify mağaza** | Marka + marj; baskı için **Gelato** (AB/ABD'de yerel basıp gönderir). Dijital teslim app'i (PDF/EPUB). |
+| **ЛитРес / Bookmate** | Rusça dijital okuma/audio — tamamlayıcı. |
+**Keşif/pazarlama:** Instagram + Facebook (Rusça/Ukraynaca anne grupları) · Telegram · Pinterest · (VK, Ruslarda).
+**Baskı (POD):** çocuk resimli kitapta kaliteli bağlı baskı için **Amazon KDP** standart; Shopify tarafında **Gelato** (yerel üretim). Lulu alternatif.
+> **Dil:** Rusça ana; Ukraynalı aileler için **Ukraynaca versiyon** da çıkar (metni çevir, görseller aynı) — 2022 sonrası birçok Ukraynalı Rusça içerikten uzak duruyor.
+Sıra: e-book → bundle (yaş seti) → KDP baskı → audio → Ukraynaca/dil versiyonları.
 
 ## 9. Pazarlama
 - **VK (ВКонтакте)** ve **Telegram** ebeveyn/çocuk gelişimi toplulukları — Rusça kitle burada.

@@ -52,6 +52,7 @@ npx skills add browser-act/skills --skill browser-act
 - Gerçek tıklama/form/çok-adım/bot-koruması varsa → BrowserAct.
 
 ## İlişkili
+- 🎭 [[Playwright Tarayıcı Otomasyonu (Claude Code) — referans]] — **ücretsiz/açık** alternatif (karşılaştırma orada). Önce onu dene; ağır bot/captcha varsa BrowserAct.
 - [[İçerik Fabrikası — Referans Sistem]] — üretim hattına web verisi beslemek için.
 - [[Yetenekler MOC]] → `test-kalite/e2e-playwright` (tarayıcı testi), `otomasyon/web-scraping`.
 

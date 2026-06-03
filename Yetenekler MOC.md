@@ -5,7 +5,7 @@ guncelleme: 2026-06-03
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **149 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **150 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -166,7 +166,7 @@ guncelleme: 2026-06-03
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
 | **youtube-kanal-kurucu** | Sıfırdan monetize YouTube kanalı kurar — niş & konumlandırma, kanal kimliği, 90-günlük içerik planı, script, SEO+thumbnail, gelir modeli ve içerik çoğaltma; 7 adımlık zincir. | [[skill-kutuphanesi/icerik-pazarlama/youtube-kanal-kurucu\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/youtube-kanal-kurucu\|▶️ command]] |
 
-## 💼 İş / Satış  ·  11 adet
+## 💼 İş / Satış  ·  12 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -177,6 +177,7 @@ guncelleme: 2026-06-03
 | **lead-gen-ajansi** | AI destekli, ETİK lead generation / büyüme ajansı kurar — niş seçimi, üretimleştirilmiş teklif, birim ekonomisi, ToS-uyumlu hedefli outreach, kanıtlanmış içerikle teslimat ve retention. | [[skill-kutuphanesi/is-satis/lead-gen-ajansi\|⚙️ skill]] · [[project mdleri/is-satis/lead-gen-ajansi\|▶️ command]] |
 | **lead-magnet** | Lead magnet — ücretsiz indirilebilir karşılığı email yakalama. | [[skill-kutuphanesi/is-satis/lead-magnet\|⚙️ skill]] · [[project mdleri/is-satis/lead-magnet\|▶️ command]] |
 | **musteri-portal** | Müşteri portal — fatura, dosya, support, billing. | [[skill-kutuphanesi/is-satis/musteri-portal\|⚙️ skill]] · [[project mdleri/is-satis/musteri-portal\|▶️ command]] |
+| **outbound-lead-agent** | Claude Code'da BLAST çerçevesiyle kurulan etik outbound ajan — her gün ideal müşteri bulur, bilgi zenginleştirir, kişisel mesaj taslağı yazar, takvime işler, HTML dashboard sunar. | [[skill-kutuphanesi/is-satis/outbound-lead-agent\|⚙️ skill]] · [[project mdleri/is-satis/outbound-lead-agent\|▶️ command]] |
 | **pricing-calculator** | Custom pricing calculator — usage-based, tiered. | [[skill-kutuphanesi/is-satis/pricing-calculator\|⚙️ skill]] · [[project mdleri/is-satis/pricing-calculator\|▶️ command]] |
 | **refer-friend** | Refer-a-friend — give-get reward, viral growth. | [[skill-kutuphanesi/is-satis/refer-friend\|⚙️ skill]] · [[project mdleri/is-satis/refer-friend\|▶️ command]] |
 | **sozlesme-yonetimi** | Contract management — template, e-imza, repository. | [[skill-kutuphanesi/is-satis/sozlesme-yonetimi\|⚙️ skill]] · [[project mdleri/is-satis/sozlesme-yonetimi\|▶️ command]] |
