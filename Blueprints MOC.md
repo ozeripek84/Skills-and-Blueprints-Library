@@ -30,6 +30,7 @@ guncelleme: 2026-06-04
 | **urun-aciklama-yazici** | E-ticaret urunleri icin profesyonel aciklama metinleri ve AI-destekli urun gorseli ureten tek sayfalik uygulama. Kullanici urun bilgilerini girer, uygulama basl | [[blueprints/urun-aciklama-yazici/CLAUDE\|spec]] · [[blueprints/urun-aciklama-yazici/kur\|/kur]] |
 | **urun-yazici** | E-ticaret urunleri icin profesyonel aciklama metinleri ve AI-destekli urun gorseli ureten tek sayfalik uygulama. Kullanici urun bilgilerini girer, uygulama basl | [[blueprints/urun-yazici/CLAUDE\|spec]] |
 | **video-icerik-uretici** | Kullanıcı video konusu, hedef kitle, video uzunluğu ve içerik tipi girer. Sistem şunları üretir: - 5 başlık önerisi - SEO uyumlu açıklama (zaman damgalı) - 30 e | [[blueprints/video-icerik-uretici/CLAUDE\|spec]] · [[blueprints/video-icerik-uretici/kur\|/kur]] |
+| **vize-sponsorlu-is-outreach** | Vize sponsorluğu gerektiren bir aday için, **sponsor olabilen şirketlere** kişiselleştirilmiş video + e-posta ile başvuru kampanyası. ATS'i atlayıp hiring manag | [[blueprints/vize-sponsorlu-is-outreach/CLAUDE\|spec]] · [[blueprints/vize-sponsorlu-is-outreach/kur\|/kur]] |
 | **workflow-builder** | n8n tarzi gorsel bir workflow olusturucu. Kullanici surukle-birak ile node'lar ekler, birbirine baglar ve ornek bir otomasyon akisini canli olarak calistirir. T | [[blueprints/workflow-builder/CLAUDE\|spec]] · [[blueprints/workflow-builder/kur\|/kur]] |
 
 ---

@@ -20,7 +20,11 @@ ATS kara deliğinden sıyrılıp **akılda kalmak** gerektiğinde: vize-sponsorl
 - → [[lead-gen-ajansi]], [[outbound-lead-agent]] çizgisi.
 
 ## İş/sponsor başvurusu için kritik kaldıraç
-- **Sadece sponsor olabilen şirketlere git.** Hollanda: **IND tanınmış sponsor sicili** (ind.nl, ~10-12K şirket, ücretsiz) → listeyi alanına göre filtrele. ABD (EB3 vb.): PERM/sponsor geçmişi olan şirketler.
+- **Sadece sponsor olabilen şirketlere git** (kamuya açık siciller):
+  - 🇳🇱 **IND tanınmış sponsor sicili** (ind.nl, ~10-12K) — Dutch gerektirmeyen *İngilizce-öncelikli* şirketleri seç.
+  - 🇬🇧 **UK Register of Licensed Sponsors** (gov.uk, **125K+**, CSV indirilebilir) — Skilled Worker lisanslı şirketler. Dil bariyeri yok.
+  - 🇬🇧 **Global Talent vizesi (Digital Technology)** — **sponsor/iş teklifi GEREKTİRMEZ**; "lider/potansiyel lider" endorsement (Tech Nation rotası, artık UKRI). Kaggle Master + global 1.lik + NATO tanınması bu dosyayı güçlendirebilir → en büyük bloğu (sponsor bağımlılığı) kaldırır.
+  - 🇺🇸 ABD (EB3 vb.): PERM/sponsor geçmişli şirketler.
 - Satış argümanı: **30% ruling** (NL'de yetenekli göçmene vergi avantajı → seni işe almak daha ucuz) + alana uygun **maaş eşiğini** karşılayan roller.
 - Base asset: güçlü 30-60 sn **intro video** (sen + değer + net çağrı).
 
