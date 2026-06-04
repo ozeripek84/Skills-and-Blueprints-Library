@@ -37,6 +37,7 @@ guncelleme: 2026-06-02
 - 🎬 [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] — herhangi bir ajana (Claude/Hermes) görsel & video üretimi: Marketing Studio (tek link→video), Soul karakter, viral klip, virality prediction. İçerik Fabrikası'nın bağımlılığı.
 - 🎨 [[Claude + Canva Connector — Tasarım (referans)]] — Claude'a Canva bağla, sohbetten tasarla (form/sunum/kapak); düzenlemeyi Canva'da yap (ekonomik). *Bende canlı kullanılabilir.*
 - 🏗️ [[Hostinger Horizons — No-Code İşlevsel MVP (referans)]] — kod yazmadan **işlem yapabilen** uygulama (login/rezervasyon/mail), **entegre backend**. Hızlı MVP için; kod sahipliği istersen Claude Code+Supabase.
+- 🏪 [[Brila — Google Maps'ten Yerel İşletme Sitesi (referans)]] — bir Google Maps linki → gerçek yorum/foto/saat ile tek-sayfa yerel işletme sitesi. Yerel işletmelere hizmet olarak satılabilir.
 - 🖌️ [[Claude Design — Tasarım Çıkar, Claude Code'da Optimize Et (referans)]] — tasarım-odaklı Claude ürünü. Güçlü tasarım/UI kit, zayıf performans → Claude Design'da tasarla, **Claude Code'da optimize et**.
 
 ## 🧭 Hızlı karar
