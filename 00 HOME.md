@@ -14,7 +14,7 @@ guncelleme: 2026-06-02
 |---|---|---|
 | [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **145** |
 | [[Blueprints MOC]] | Tek-dosya hazır uygulama iskeletleri (`/kur` ile derlenir) | **17** |
-| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — ⭐ **gstack** (Garry Tan/YC) + **ui-ux-pro-max** + 250+ skill | **4 repo** |
+| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** (resmî) + ⭐ **gstack** + **ui-ux-pro-max** + 250+ skill | **5 repo** |
 
 ## 📚 Rehberler
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)

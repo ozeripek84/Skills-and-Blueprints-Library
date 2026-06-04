@@ -10,6 +10,12 @@ guncelleme: 2026-06-02
 
 ---
 
+## 🏛️ `anthropics-skills` — RESMÎ Anthropic skill deposu
+Kaynağın kendisi (Anthropic). Kanonik **document skill'leri** + araçlar: `pptx` (PowerPoint), `xlsx` (Excel), `docx` (Word), `pdf`, `doc-coauthoring`, `web-artifacts-builder`, `mcp-builder` (API→MCP server), `skill-creator` (kendi skill'ini yarat), `webapp-testing`, `frontend-design`, `brand-guidelines`, `canvas-design`, `claude-api`, `algorithmic-art`, `theme-factory`, `slack-gif-creator`, `internal-comms`.
+→ [[anthropics-skills/README|repo README]]
+- "Bu startup için sunum hazırla / bu veriden Excel modeli / API için MCP server kur" → bu skill'ler.
+- Not: `frontend-design` bende **built-in** zaten. Aşağıdaki küratörlü listeler (claude-skills-main, awesome) bunların bir kısmını + topluluk skill'lerini içerir; bu **resmî/kanonik** olanı.
+
 ## ⭐ `gstack` — Garry Tan'ın (YC CEO) Claude Code ekibi (MIT, ~64K★)
 **Diğerlerinden farkı: bu sadece referans değil, KURULUP ÇALIŞAN bir araç takımı.** Y Combinator Başkanı & CEO Garry Tan'ın birebir kurulumu — Claude'u sanal bir mühendislik ekibine çevirir: ürünü yeniden düşünen **CEO**, mimariyi kilitleyen **eng manager**, AI-slop yakalayan **designer**, prod bug'ı bulan **reviewer**, gerçek tarayıcı açan **QA lead**, OWASP+STRIDE denetimi yapan **güvenlik (CSO)**, PR'ı ship eden **release engineer**. 23 uzman + 8 güç aracı, hepsi slash command, hepsi Markdown.
 
