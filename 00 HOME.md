@@ -20,6 +20,7 @@ guncelleme: 2026-06-02
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
 - [[AI Uygulaması — Teknoloji Seçimi Handbook]] — bir AI uygulamasının her katmanı (frontend, DB, auth, sunucu, VPS, LLM…), farkları, ne zaman hangisi, ve maliyetleri. Şemalı.
 - 🧭 [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] — LLM kodlama tuzaklarına karşı 4 ilke (düşün-önce, sadelik, cerrahi, hedef-odaklı). Claude'un çalışma davranışı. (İlk mesajdaki "Karpathy prompt'u")
+- 🧬 [[Kendini Geliştiren Skill — 4 Katman (Jarvis-Karpathy yöntemi)]] — statik değil, kendini iyileştiren skill kurma: oluştur → Karpathy disiplini → göz (web) → hafıza+auto-research. (Jarvis nedir + yöntemi)
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
 - 📐 [[Yıldız Dikme — Web Tasarım Prompt Yöntemi]] — ödül seviyesinde dinamik site prompt'lama: önce tech seç, İngilizce detay, ilham al, 3D'de manuel pozisyon, kısa promptlar. (blueprint'lerine bağlı)
 - 💎 [[$10K Web Sitesi — Claude Code Tasarım İş Akışı]] — frontend-design + ui-ux-pro-max skill'leri, 8 maddelik "$10K çıta" checklist'i, 21st.dev, görsel hattı, "pahalı hissettir" cilası, deploy.
