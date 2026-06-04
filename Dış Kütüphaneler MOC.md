@@ -43,6 +43,11 @@ Büyük tasarım müdahalesinde `/ui-ux-pro-max` ile çağrılan skill: **67 UI 
 - → [[ui-ux-pro-max-skill/README|repo]] · [[ui-ux-pro-max-skill/CLAUDE|CLAUDE.md]]
 - İkizi: **frontend-design** (Anthropic) — bende built-in skill olarak zaten var; arka planda çalışır.
 
+## 🧭 `andrej-karpathy-skills` — davranış rehberi (MIT)
+Karpathy'nin LLM kodlama tuzaklarından türetilmiş **4-ilkeli `CLAUDE.md`**: Think Before Coding · Simplicity First · Surgical Changes · Goal-Driven Execution. Claude'un varsayım/aşırı-karmaşıklık/alakasız-değişiklik hatalarını azaltır. Plugin olarak kurulur ya da global CLAUDE.md'ye birleştirilir.
+→ Detay + kurulum: [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] · [[andrej-karpathy-skills/CLAUDE|ham CLAUDE.md]]
+> **İlk konuşmadaki "Karpathy prompt'u" budur.** Ben artık bu ilkelerle çalışıyorum. [[Agent Kurma — BLAST Çerçevesi|BLAST]] + [[Superpowers — Plan-Önce Geliştirme Plugin'i (referans)|Superpowers]] ile aynı felsefe.
+
 ## 1. `claude-skills-main` — 250+ skill · agent · command (MIT)
 En kapsamlı kaynak. 11 farklı coding agent ile çalışır (Claude Code, Codex, Gemini CLI, Cursor…). Her skill `SKILL.md` + bazen Python araçları içerir.
 → Genel bakış: [[claude-skills-main/README|repo README]] · Standart: [[claude-skills-main/SKILL-AUTHORING-STANDARD|skill yazım standardı]]
