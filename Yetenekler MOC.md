@@ -5,7 +5,7 @@ guncelleme: 2026-06-04
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **153 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **154 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -206,13 +206,14 @@ guncelleme: 2026-06-04
 | **tatil-rotasi** | Tour/seyahat planlayıcı — rota, otel, aktivite. | [[skill-kutuphanesi/sektor-ozel/tatil-rotasi\|⚙️ skill]] · [[project mdleri/sektor-ozel/tatil-rotasi\|▶️ command]] |
 | **yemek-tarif** | Yemek tarifi platform — recipe, meal plan, shopping list. | [[skill-kutuphanesi/sektor-ozel/yemek-tarif\|⚙️ skill]] · [[project mdleri/sektor-ozel/yemek-tarif\|▶️ command]] |
 
-## 🛠️ Araçlar  ·  8 adet
+## 🛠️ Araçlar  ·  9 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
 | **api-test** | API testing tool — Postman alternatifi, collection. | [[skill-kutuphanesi/araclar/api-test\|⚙️ skill]] · [[project mdleri/araclar/api-test\|▶️ command]] |
 | **dosya-donusturucu** | File converter — PDF↔Word, image format, audio. | [[skill-kutuphanesi/araclar/dosya-donusturucu\|⚙️ skill]] · [[project mdleri/araclar/dosya-donusturucu\|▶️ command]] |
 | **form-builder** | Drag-drop form builder — Tally/Typeform alternatifi. | [[skill-kutuphanesi/araclar/form-builder\|⚙️ skill]] · [[project mdleri/araclar/form-builder\|▶️ command]] |
+| **llm-wiki** | LLM'in sürekli güncel tuttuğu kişisel bilgi tabanı (Obsidian + markdown). RAG değil — her kaynakla biriken, derlenmiş, çapraz-bağlı kalıcı bir wiki. (Karpathy patternı) | [[skill-kutuphanesi/araclar/llm-wiki\|⚙️ skill]] · [[project mdleri/araclar/llm-wiki\|▶️ command]] |
 | **markdown-editor** | Markdown editor with preview — yazılar için. | [[skill-kutuphanesi/araclar/markdown-editor\|⚙️ skill]] · [[project mdleri/araclar/markdown-editor\|▶️ command]] |
 | **qr-kod** | QR code üretici — link, vCard, WiFi, ödeme. | [[skill-kutuphanesi/araclar/qr-kod\|⚙️ skill]] · [[project mdleri/araclar/qr-kod\|▶️ command]] |
 | **screenshot-tool** | Web screenshot service — full-page, custom viewport, scheduled. | [[skill-kutuphanesi/araclar/screenshot-tool\|⚙️ skill]] · [[project mdleri/araclar/screenshot-tool\|▶️ command]] |
