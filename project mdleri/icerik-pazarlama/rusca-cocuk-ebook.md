@@ -109,5 +109,13 @@ Sıra: e-book → bundle (yaş seti) → KDP baskı → audio → Ukraynaca/dil 
 ## 10. Ölçekleme
 12 arketip × yaş grubu = geniş katalog. Her kitap aynı pipeline ile çoğaltılır; bundle (yaşa göre set), paperback ve audio en kârlı kalemler.
 
+## 11. Pazar penceresi + lansman (KDP fırsatı — "perfect storm")
+Üç kuvvet aynı anda → 12-18 aylık pencere: **talep artıyor** (KDP satışları aylık yükseliyor) + **giriş bariyeri çöktü** (AI ile kaliteli kitap) + **rekabet azalıyor** (KDP hype'ı bitti, yeni girenler az).
+1. **Zayıf-rakip nişi bul ("soft underbelly"):** talebi olan ama üst kitapları **zayıf** olan nişler — eski/modası geçmiş kapak, jenerik başlık, güncel-olmayan içerik, ya da **<100 yorum**. Rusça çocuk "duygu/değer gelişimi" nişi büyük ihtimalle tam böyle (zayıf, modası geçmiş kapaklar).
+2. **Kalitede yen:** müşteri **önce gözle** alır → kapak + başlık + içerik *senin* daha modern/on-trend olsun. 3000 yorumlu ama 2015 kapaklı kitap **savunmasız.** (AI kapak avantajın burada.)
+3. **Review velocity (ilk 90 gün):** **gerçek** 50-100 yorum hedefle → Amazon algoritması organik iter. ⚠️ **Sahte/satın-alınmış yorum YOK** (Amazon banlar) — ARC okuyucu, erken alıcı, diaspora anne toplulukları, ücretsiz indirme karşılığı dürüst yorum.
+4. **Flag-planting (çok niş):** senin **12 arketip × yaş** matrisin = doğal "çok nişe bayrak dik" stratejisi. Önce 1 kitabı tam lansmanla bitir (yorum+rank), sonra sıradakine. 6 ay–1 yılda mümkün olduğunca çok kaliteli kitap → bileşik büyüme + nişi sahiplen (kapı arkandan kapanır).
+> Tool notu: video co-author.ai/Book Bounty/Book Reverb (affiliate) öneriyor — bizde **kitabı Claude yazıyor**, ayrı araç gerekmez; yorumları **etik** topla.
+
 ---
 **Teslim:** Her çalıştırmada tek kitap üret → `[yaş]_[arketip]/` klasörüne: `hikaye_ru.md`, `psikolog_review.md`, `gorseller/` (prompt listesi + üretilenler), `yayin_notu.md` (başlık, kapak brief, platform planı).
