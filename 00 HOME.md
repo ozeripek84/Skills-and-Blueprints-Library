@@ -40,6 +40,7 @@ guncelleme: 2026-06-02
 - 🏗️ [[Hostinger Horizons — No-Code İşlevsel MVP (referans)]] — kod yazmadan **işlem yapabilen** uygulama (login/rezervasyon/mail), **entegre backend**. Hızlı MVP için; kod sahipliği istersen Claude Code+Supabase.
 - 🏪 [[Brila — Google Maps'ten Yerel İşletme Sitesi (referans)]] — bir Google Maps linki → gerçek yorum/foto/saat ile tek-sayfa yerel işletme sitesi. Yerel işletmelere hizmet olarak satılabilir.
 - 🎞️ [[AI UGC-Reklam Video Üretici (open-source, self-host) — referans]] — klonlanan açık-kaynak app ile AI reklam/UGC videosu (Fal AI / ücretsiz LTX-2, text/image-to-video, 30 sahne). Müşteriye satılabilir.
+- 🛠️ [[Lovable — AI Full-Stack Site-App Üretici (referans)]] — ne istediğini yaz → komple full-stack site/app/dashboard (no-code). Müşteriye satılabilir. (+ NotebookLM, Gamma haritası)
 - 🖌️ [[Claude Design — Tasarım Çıkar, Claude Code'da Optimize Et (referans)]] — tasarım-odaklı Claude ürünü. Güçlü tasarım/UI kit, zayıf performans → Claude Design'da tasarla, **Claude Code'da optimize et**.
 
 ## 🧭 Hızlı karar
