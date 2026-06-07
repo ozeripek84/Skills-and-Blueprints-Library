@@ -1,6 +1,6 @@
 ---
 tags: [moc, blueprints]
-guncelleme: 2026-06-05
+guncelleme: 2026-06-07
 ---
 
 # 🧱 Blueprint'ler — Hazır Uygulama İskeletleri

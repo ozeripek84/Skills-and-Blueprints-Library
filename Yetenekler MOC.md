@@ -1,11 +1,11 @@
 ---
 tags: [moc, yetenekler]
-guncelleme: 2026-06-05
+guncelleme: 2026-06-07
 ---
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **155 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **156 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -167,7 +167,7 @@ guncelleme: 2026-06-05
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
 | **youtube-kanal-kurucu** | Sıfırdan monetize YouTube kanalı kurar — niş & konumlandırma, kanal kimliği, 90-günlük içerik planı, script, SEO+thumbnail, gelir modeli ve içerik çoğaltma; 7 adımlık zincir. | [[skill-kutuphanesi/icerik-pazarlama/youtube-kanal-kurucu\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/youtube-kanal-kurucu\|▶️ command]] |
 
-## 💼 İş / Satış  ·  15 adet
+## 💼 İş / Satış  ·  16 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -183,6 +183,7 @@ guncelleme: 2026-06-05
 | **outbound-lead-agent** | Claude Code'da BLAST çerçevesiyle kurulan etik outbound ajan — her gün ideal müşteri bulur, bilgi zenginleştirir, kişisel mesaj taslağı yazar, takvime işler, HTML dashboard sunar. | [[skill-kutuphanesi/is-satis/outbound-lead-agent\|⚙️ skill]] · [[project mdleri/is-satis/outbound-lead-agent\|▶️ command]] |
 | **pricing-calculator** | Custom pricing calculator — usage-based, tiered. | [[skill-kutuphanesi/is-satis/pricing-calculator\|⚙️ skill]] · [[project mdleri/is-satis/pricing-calculator\|▶️ command]] |
 | **refer-friend** | Refer-a-friend — give-get reward, viral growth. | [[skill-kutuphanesi/is-satis/refer-friend\|⚙️ skill]] · [[project mdleri/is-satis/refer-friend\|▶️ command]] |
+| **sifirdan-is-kurma** | Bir fikri hızlıca işe çeviren 8 promptluk launch sekansı — fikir, rakip/farklılaşma, avatar, teklif, fiyat, landing, trafik, içerik. Her adım sıradakini besler. | [[skill-kutuphanesi/is-satis/sifirdan-is-kurma\|⚙️ skill]] · [[project mdleri/is-satis/sifirdan-is-kurma\|▶️ command]] |
 | **sozlesme-yonetimi** | Contract management — template, e-imza, repository. | [[skill-kutuphanesi/is-satis/sozlesme-yonetimi\|⚙️ skill]] · [[project mdleri/is-satis/sozlesme-yonetimi\|▶️ command]] |
 | **teklif-jenerator** | Profesyonel teklif jeneratörü — şablon, fiyat, e-imza. | [[skill-kutuphanesi/is-satis/teklif-jenerator\|⚙️ skill]] · [[project mdleri/is-satis/teklif-jenerator\|▶️ command]] |
 | **video-outreach-basvuru** | Kişiselleştirilmiş video ile hedefli erişim — iş/sponsor başvurusu ya da müşteri bulma. Hedef liste → e-posta bulma → dinamik kişisel video → e-posta dizisi. Etik, GDPR uyumlu. | [[skill-kutuphanesi/is-satis/video-outreach-basvuru\|⚙️ skill]] · [[project mdleri/is-satis/video-outreach-basvuru\|▶️ command]] |
