@@ -1,11 +1,11 @@
 ---
 tags: [moc, yetenekler]
-guncelleme: 2026-06-07
+guncelleme: 2026-06-19
 ---
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **157 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **158 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -150,13 +150,14 @@ guncelleme: 2026-06-07
 | **pdf-uretim** | HTML → PDF — fatura, rapor, sertifika. | [[skill-kutuphanesi/veri-analitik/pdf-uretim\|⚙️ skill]] · [[project mdleri/veri-analitik/pdf-uretim\|▶️ command]] |
 | **raporlamali-tablo** | Excel-vari interaktif tablo — pivot, formula, export. | [[skill-kutuphanesi/veri-analitik/raporlamali-tablo\|⚙️ skill]] · [[project mdleri/veri-analitik/raporlamali-tablo\|▶️ command]] |
 
-## ✍️ İçerik / Pazarlama  ·  12 adet
+## ✍️ İçerik / Pazarlama  ·  13 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
 | **blog-sistemi** | Blog platformu — MDX, kategoriler, SEO, RSS. | [[skill-kutuphanesi/icerik-pazarlama/blog-sistemi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/blog-sistemi\|▶️ command]] |
 | **donusum-landing** | Güzel" değil DÖNÜŞTÜREN landing page kurar — 5 conversion ilkesi, hero/VSL/çok-adımlı form anatomisi, form→DB→takip funnel'ı, Cloudflare Workers deploy. | [[skill-kutuphanesi/icerik-pazarlama/donusum-landing\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/donusum-landing\|▶️ command]] |
 | **icerik-takvimi** | Content calendar + planning — Notion ya da custom dashboard. | [[skill-kutuphanesi/icerik-pazarlama/icerik-takvimi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/icerik-takvimi\|▶️ command]] |
+| **instagram-carousel-uretici** | Marka renginden türeyen 4:5 swipe'lanabilir Instagram carousel — her slayt 1080×1350 PNG olarak export edilir (self-contained HTML + Playwright). | [[skill-kutuphanesi/icerik-pazarlama/instagram-carousel-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/instagram-carousel-uretici\|▶️ command]] |
 | **landing-ab-test** | Landing page A/B test — variant assignment, statistical analysis. | [[skill-kutuphanesi/icerik-pazarlama/landing-ab-test\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/landing-ab-test\|▶️ command]] |
 | **linkedin-profil-optimizasyon** | LinkedIn profilini işe alımcı mıknatısına çevirir — audit, başlık, About, deneyim, başarı cümleleri, keyword/SEO, kariyer değişimi, Featured ve tam makeover; 10 promptluk hat. | [[skill-kutuphanesi/icerik-pazarlama/linkedin-profil-optimizasyon\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/linkedin-profil-optimizasyon\|▶️ command]] |
 | **newsletter** | Newsletter platformu (Substack alternatifi) — yazar dashboard, abone. | [[skill-kutuphanesi/icerik-pazarlama/newsletter\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/newsletter\|▶️ command]] |

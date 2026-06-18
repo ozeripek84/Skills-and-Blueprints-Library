@@ -12,9 +12,10 @@ guncelleme: 2026-06-02
 
 | Harita | İçerik | Adet |
 |---|---|---|
-| [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **145** |
+| [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **158** |
 | [[Blueprints MOC]] | Tek-dosya hazır uygulama iskeletleri (`/kur` ile derlenir) | **17** |
-| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy ilkeleri** + ui-ux-pro-max + 250+ skill | **6 repo** |
+| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy** + tasarım skill'leri (ui-ux-pro-max · impeccable · taste · emilkowalski) + 250+ skill | **9 repo** |
+| [[Web Sitesi Yapımı — MOC]] | 🌐 Site/web yapımı — yöntem + no-code üreticiler + tasarım, tek çatı | **6 rehber** |
 
 ## 📚 Rehberler
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
@@ -22,8 +23,8 @@ guncelleme: 2026-06-02
 - 🧭 [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] — LLM kodlama tuzaklarına karşı 4 ilke (düşün-önce, sadelik, cerrahi, hedef-odaklı). Claude'un çalışma davranışı. (İlk mesajdaki "Karpathy prompt'u")
 - 🧬 [[Kendini Geliştiren Skill — 4 Katman (Jarvis-Karpathy yöntemi)]] — statik değil, kendini iyileştiren skill kurma: oluştur → Karpathy disiplini → göz (web) → hafıza+auto-research. (Jarvis nedir + yöntemi)
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
-- 📐 [[Yıldız Dikme — Web Tasarım Prompt Yöntemi]] — ödül seviyesinde dinamik site prompt'lama: önce tech seç, İngilizce detay, ilham al, 3D'de manuel pozisyon, kısa promptlar. (blueprint'lerine bağlı)
-- 💎 [[$10K Web Sitesi — Claude Code Tasarım İş Akışı]] — frontend-design + ui-ux-pro-max skill'leri, 8 maddelik "$10K çıta" checklist'i, 21st.dev, görsel hattı, "pahalı hissettir" cilası, deploy.
+
+> 🌐 **Web sitesi mi yapacaksın?** Tüm site/web rehberleri (Yıldız Dikme, $10K, Lovable, Hostinger, Brila, Claude Design) artık tek çatıda: **[[Web Sitesi Yapımı — MOC]]**.
 
 ## 📦 Örnekler
 - [[ornekler/rusca-cocuk-ebook — Vmeste-veseleye (2-4 yas)|Örnek e-book: «Вместе — веселее!»]] — 2-4 yaş, RU + UA + kafiyeli, sayfa sayfa + görsel promptları.
@@ -37,11 +38,9 @@ guncelleme: 2026-06-02
 - 🌐 [[BrowserAct — Gerçek Tarayıcı Aracı (referans)]] — Claude'a gerçek tarayıcı verir (ürün): bot/captcha'lı scrape, stealth. (Playwright vs BrowserAct karşılaştırması iki notta da var.)
 - 🎬 [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] — herhangi bir ajana (Claude/Hermes) görsel & video üretimi: Marketing Studio (tek link→video), Soul karakter, viral klip, virality prediction. İçerik Fabrikası'nın bağımlılığı.
 - 🎨 [[Claude + Canva Connector — Tasarım (referans)]] — Claude'a Canva bağla, sohbetten tasarla (form/sunum/kapak); düzenlemeyi Canva'da yap (ekonomik). *Bende canlı kullanılabilir.*
-- 🏗️ [[Hostinger Horizons — No-Code İşlevsel MVP (referans)]] — kod yazmadan **işlem yapabilen** uygulama (login/rezervasyon/mail), **entegre backend**. Hızlı MVP için; kod sahipliği istersen Claude Code+Supabase.
-- 🏪 [[Brila — Google Maps'ten Yerel İşletme Sitesi (referans)]] — bir Google Maps linki → gerçek yorum/foto/saat ile tek-sayfa yerel işletme sitesi. Yerel işletmelere hizmet olarak satılabilir.
 - 🎞️ [[AI UGC-Reklam Video Üretici (open-source, self-host) — referans]] — klonlanan açık-kaynak app ile AI reklam/UGC videosu (Fal AI / ücretsiz LTX-2, text/image-to-video, 30 sahne). Müşteriye satılabilir.
-- 🛠️ [[Lovable — AI Full-Stack Site-App Üretici (referans)]] — ne istediğini yaz → komple full-stack site/app/dashboard (no-code). Müşteriye satılabilir. (+ NotebookLM, Gamma haritası)
-- 🖌️ [[Claude Design — Tasarım Çıkar, Claude Code'da Optimize Et (referans)]] — tasarım-odaklı Claude ürünü. Güçlü tasarım/UI kit, zayıf performans → Claude Design'da tasarla, **Claude Code'da optimize et**.
+
+> 🏗️ No-code site/app üreticileri (**Hostinger Horizons**, **Lovable**, **Brila**) ve **Claude Design** → [[Web Sitesi Yapımı — MOC]] altına taşındı.
 
 ## 🧭 Hızlı karar
 - **"Sıfırdan çalışan bir mini-uygulama lazım"** (QR menü, fatura, dashboard…) → [[Blueprints MOC]]
@@ -50,9 +49,10 @@ guncelleme: 2026-06-02
 
 ## 📂 Klasör düzeni (olduğu gibi korundu)
 ```
-skill-kutuphanesi/   → 145 TR skill   (kısa öz · Claude otomatik seçer)
-project mdleri/      → 145 TR command (kodlu · /... ile sen çağırırsın)  [skill ile ikiz]
+skill-kutuphanesi/   → 158 TR skill   (kısa öz · Claude otomatik seçer)
+project mdleri/      → 158 TR command (kodlu · /... ile sen çağırırsın)  [skill ile ikiz]
 blueprints/          → 17 hazır uygulama (CLAUDE.md spec + kur.md)
+web-sitesi-yapimi/   → 🌐 site yapımı rehber+yöntem+araç (tek çatı) + MOC
 awesome-claude-skills-master/  → EN repo (Apache) — referans
 claude-skills-main/            → EN repo (MIT, 250+ skill/agent) — referans
 ```

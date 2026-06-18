@@ -43,6 +43,22 @@ Büyük tasarım müdahalesinde `/ui-ux-pro-max` ile çağrılan skill: **67 UI 
 - → [[ui-ux-pro-max-skill/README|repo]] · [[ui-ux-pro-max-skill/CLAUDE|CLAUDE.md]]
 - İkizi: **frontend-design** (Anthropic) — bende built-in skill olarak zaten var; arka planda çalışır.
 
+## 🪄 `impeccable` — AI ajanları için tasarım sistemi (Paul Bakaus, Apache-2.0)
+Tek `/impeccable` komutu + alt komutlar (`craft`, `shape`, `critique`, `audit`, **`polish`**, `extract`, `document`…) ve 41 **deterministik** detektör kuralı (LLM'siz çalışan anti-pattern tarayıcı). `/impeccable init` projeye `PRODUCT.md` + `DESIGN.md` yazar; sonraki komutlar bunu okur. frontend-design'dan türeyip onu genişletir.
+- Kur: `npx impeccable skills install` → AI aracında `/impeccable init`
+- → [[impeccable/README|repo README]] · [[impeccable/CLAUDE|CLAUDE.md]] · [[impeccable/DESIGN|DESIGN.md]]
+- Not: vault kopyasında tanıtım sitesi (`site/`, 45M) ve yalnızca-Claude harici agent kopyaları temizlendi; skill içeriği (`.claude/skills/impeccable`, `cli/`, `plugin/`) tam.
+
+## ✨ `emilkowalski-skill` — Emil Kowalski'nin design-eng skill'i (minimal)
+Emil Kowalski'nin (Sonner, Vaul, animations.dev) UI polish / komponent tasarımı / animasyon kararları felsefesi. Tek skill: `emil-design-eng`. "Tereyağı gibi" gerçekçi hareket ve görünmez detaylar.
+- Kur: `npx skills add https://github.com/emilkowalski/skill`
+- → [[emilkowalski-skill/skills/emil-design-eng/SKILL|SKILL.md]] · kaynak: emilkowal.ski/skill
+
+## 🎯 `taste-skill` — "taste" agent skill paketi (Leonxlnx, MIT)
+Jenerik "AI slop" UI yerine güçlü layout/tipografi/motion/spacing. Çok sayıda alt-skill: `design-taste-frontend` (varsayılan, v2), `minimalist`, `brutalist`, `soft`, `redesign`, `brandkit` + imagegen (web/mobil referans board'ları). Codex/Cursor/Claude ile çalışır.
+- Kur (hepsi): `npx skills add https://github.com/Leonxlnx/taste-skill` · tek skill: `--skill "design-taste-frontend"`
+- → [[taste-skill/README|repo README]]
+
 ## 🧭 `andrej-karpathy-skills` — davranış rehberi (MIT)
 Karpathy'nin LLM kodlama tuzaklarından türetilmiş **4-ilkeli `CLAUDE.md`**: Think Before Coding · Simplicity First · Surgical Changes · Goal-Driven Execution. Claude'un varsayım/aşırı-karmaşıklık/alakasız-değişiklik hatalarını azaltır. Plugin olarak kurulur ya da global CLAUDE.md'ye birleştirilir.
 → Detay + kurulum: [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] · [[andrej-karpathy-skills/CLAUDE|ham CLAUDE.md]]
