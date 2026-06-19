@@ -87,6 +87,25 @@ Pratik, tek-iş skill'leri + 1000+ skill'e işaret eden küratörlü liste.
 - 🧪 webapp-testing · mcp-builder · skill-creator (yeni skill yazmak için)
 - 🔌 connect / connect-apps — Composio ile 1000+ uygulamaya aksiyon
 
+## 3. `marketing-skills` — 45 pazarlama skill'i (Corey Haines, MIT)
+Teknik pazarlamacılar/kurucular için pazarlama odaklı skill koleksiyonu (Claude Code, Codex, Cursor, Windsurf… Agent Skills spec). Her skill bir `SKILL.md`. **Temel: `product-marketing`** — `.agents/product-marketing.md` bağlam dosyasını yazar; diğer tüm skill'ler önce onu okur (ürün/hedef kitle/konumlandırma).
+→ Genel bakış: [[marketing-skills/README|repo README]] · araç registry'si: [[marketing-skills/tools/REGISTRY|tools/REGISTRY]]
+
+**Gruplar (45 skill):**
+- 🔍 **SEO:** ai-seo, programmatic-seo, seo-audit, schema, site-architecture, aso
+- 🎯 **CRO/Dönüşüm:** cro, ab-testing, landing (offers, paywalls, popups, signup, onboarding, pricing)
+- ✍️ **İçerik/Copy:** copywriting, copy-editing, content-strategy, emails, cold-email, sms, social, video, image, ad-creative
+- 📣 **Büyüme/Satış:** ads, prospecting, sales-enablement, lead-magnets, referrals, launch, public-relations, co-marketing, community-marketing
+- 📊 **Strateji/Veri:** product-marketing (temel), marketing-plan, marketing-ideas, marketing-psychology, analytics, revops, competitor-profiling, customer-research, churn-prevention
+- 🔌 **tools/:** GA4 · Mixpanel · Amplitude · PostHog entegrasyonları (API/MCP/CLI/SDK)
+> Bizim TR [[Yetenekler MOC|icerik-pazarlama]] yeteneklerini İngilizce derin pazarlama framework'leriyle tamamlar.
+
+## 🎬 `topview-skill` — TopView AI resmî video/görsel/ses toolkit (Apache-2.0)
+TopView AI'nin resmî Python skill'i: tek API'den **video** (Seedance/Sora/Kling/Veo/Vidu), **görsel** (GPT Image, Nano Banana, Seedream…), **konuşan avatar** (avatar4), **TTS/ses klonlama**, **arka plan kaldırma**, **ürün-model görseli**. Yerel dosyaları otomatik yükler, task'ları poll'lar. `TOPVIEW_API_KEY` + `TOPVIEW_UID` ister (`scripts/auth.py login` ile alınır).
+→ [[topview-skill/SKILL|SKILL.md]] · referanslar: [[topview-skill/references/video_gen|video_gen]] · [[topview-skill/references/avatar4|avatar4]]
+- **Kur (gerçek kullanım için):** `cp -R topview-skill ~/.claude/skills/topview-skill` → `pip install -r ~/.claude/skills/topview-skill/scripts/requirements.txt` → `python3 ~/.claude/skills/topview-skill/scripts/auth.py login` (link ile giriş, kredi ister).
+- Akraba: [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] (alternatif görsel/video aracı) · [[İçerik Fabrikası — Referans Sistem]] (içerik hattında kullanılabilir).
+
 ---
 
 ## Ne zaman buraya bakılır?

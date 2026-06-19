@@ -14,7 +14,7 @@ guncelleme: 2026-06-02
 |---|---|---|
 | [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **158** |
 | [[Blueprints MOC]] | Tek-dosya hazır uygulama iskeletleri (`/kur` ile derlenir) | **17** |
-| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy** + tasarım skill'leri (ui-ux-pro-max · impeccable · taste · emilkowalski) + 250+ skill | **9 repo** |
+| [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy** + tasarım (ui-ux-pro-max · impeccable · taste · emilkowalski) + 📣 **marketing-skills** (45) + 🎬 **topview** + 250+ skill | **11 repo** |
 | [[Web Sitesi Yapımı — MOC]] | 🌐 Site/web yapımı — yöntem + no-code üreticiler + tasarım, tek çatı | **6 rehber** |
 
 ## 📚 Rehberler
