@@ -12,7 +12,7 @@ guncelleme: 2026-06-02
 
 | Harita | İçerik | Adet |
 |---|---|---|
-| [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **159** |
+| [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **154** |
 | [[Blueprints MOC]] | Tek-dosya hazır uygulama iskeletleri (`/kur` ile derlenir) | **17** |
 | [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy** + tasarım (ui-ux-pro-max · impeccable · taste · emilkowalski) + 📣 **marketing-skills** (45) + 🎬 **topview** + 250+ skill | **11 repo** |
 | [[Web Sitesi Yapımı — MOC]] | 🌐 Site/web yapımı — yöntem + no-code üreticiler + tasarım, tek çatı | **6 rehber** |
@@ -39,7 +39,6 @@ guncelleme: 2026-06-02
 - 🎬 [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] — herhangi bir ajana (Claude/Hermes) görsel & video üretimi: Marketing Studio (tek link→video), Soul karakter, viral klip, virality prediction. İçerik Fabrikası'nın bağımlılığı.
 - 🎨 [[Claude + Canva Connector — Tasarım (referans)]] — Claude'a Canva bağla, sohbetten tasarla (form/sunum/kapak); düzenlemeyi Canva'da yap (ekonomik). *Bende canlı kullanılabilir.*
 - 🎞️ [[AI UGC-Reklam Video Üretici (open-source, self-host) — referans]] — klonlanan açık-kaynak app ile AI reklam/UGC videosu (Fal AI / ücretsiz LTX-2, text/image-to-video, 30 sahne). Müşteriye satılabilir.
-- 🧪 [[skill-kutuphanesi/test-kalite/testsprite-qa|TestSprite — Otonom QA Doğrulama]] — AI'ın "bitti / çalışıyor" dediği özelliği **gerçek tarayıcıda gerçek kullanıcı gibi** test eder; her ~5 özellikten 1'i sessizce bozuk sorununu çözer. CLI açık kaynak + ücretsiz (`npm i -g @testsprite/testsprite-cli` → `testsprite setup`). Prompt sonuna "TestSprite ile doğrula" → yeşile kadar otonom fix döngüsü. Model seçimi için ücretsiz benchmark: **CoderCup** (codercup.ai). İkiz: `/test-kalite:testsprite-qa`.
 
 > 🏗️ No-code site/app üreticileri (**Hostinger Horizons**, **Lovable**, **Brila**) ve **Claude Design** → [[Web Sitesi Yapımı — MOC]] altına taşındı.
 
@@ -50,8 +49,8 @@ guncelleme: 2026-06-02
 
 ## 📂 Klasör düzeni (olduğu gibi korundu)
 ```
-skill-kutuphanesi/   → 159 TR skill   (kısa öz · Claude otomatik seçer)
-project mdleri/      → 159 TR command (kodlu · /... ile sen çağırırsın)  [skill ile ikiz]
+skill-kutuphanesi/   → 154 TR skill   (kısa öz · Claude otomatik seçer)
+project mdleri/      → 154 TR command (kodlu · /... ile sen çağırırsın)  [skill ile ikiz]
 blueprints/          → 17 hazır uygulama (CLAUDE.md spec + kur.md)
 web-sitesi-yapimi/   → 🌐 site yapımı rehber+yöntem+araç (tek çatı) + MOC
 awesome-claude-skills-master/  → EN repo (Apache) — referans

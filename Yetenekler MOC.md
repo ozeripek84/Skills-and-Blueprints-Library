@@ -5,7 +5,7 @@ guncelleme: 2026-07-09
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **159 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **154 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -244,13 +244,8 @@ guncelleme: 2026-07-09
 | **monitoring-alerts** | Production monitoring — uptime, errors, performance, alerts. | [[skill-kutuphanesi/devops/monitoring-alerts\|⚙️ skill]] · [[project mdleri/devops/monitoring-alerts\|▶️ command]] |
 | **vercel-deploy** | Vercel production deploy — domain, env, optimization. | [[skill-kutuphanesi/devops/vercel-deploy\|⚙️ skill]] · [[project mdleri/devops/vercel-deploy\|▶️ command]] |
 
-## 🧪 Test / Kalite  ·  6 adet
+## 🧪 Test / Kalite  ·  1 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
-| **accessibility** | Web accessibility (a11y) — WCAG, screen reader, keyboard nav. | [[skill-kutuphanesi/test-kalite/accessibility\|⚙️ skill]] · [[project mdleri/test-kalite/accessibility\|▶️ command]] |
-| **e2e-playwright** | End-to-end test — Playwright ile critical flow testing. | [[skill-kutuphanesi/test-kalite/e2e-playwright\|⚙️ skill]] · [[project mdleri/test-kalite/e2e-playwright\|▶️ command]] |
-| **load-test** | Performance/load testing — k6, autocannon. | [[skill-kutuphanesi/test-kalite/load-test\|⚙️ skill]] · [[project mdleri/test-kalite/load-test\|▶️ command]] |
-| **security-audit** | Security audit — OWASP top 10, dependency scan, secrets. | [[skill-kutuphanesi/test-kalite/security-audit\|⚙️ skill]] · [[project mdleri/test-kalite/security-audit\|▶️ command]] |
-| **testsprite-qa** | Otonom QA doğrulama — TestSprite CLI ile AI'ın "bitti" dediği özelliği gerçek tarayıcıda gerçek kullanıcı gibi test et. | [[skill-kutuphanesi/test-kalite/testsprite-qa\|⚙️ skill]] · [[project mdleri/test-kalite/testsprite-qa\|▶️ command]] |
-| **unit-test** | Unit testing — Vitest/Jest, coverage, TDD. | [[skill-kutuphanesi/test-kalite/unit-test\|⚙️ skill]] · [[project mdleri/test-kalite/unit-test\|▶️ command]] |
+| **test-kalite** | Uygulama test & kalite doğrulama (yalnız ücretsiz/açık araçlar) — unit · e2e · otonom QA · load · accessibility · security. Önce hangi test ne zaman, sonra uygula. | [[skill-kutuphanesi/test-kalite/test-kalite\|⚙️ skill]] · [[project mdleri/test-kalite/test-kalite\|▶️ command]] |
