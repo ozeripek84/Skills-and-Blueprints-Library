@@ -23,7 +23,7 @@ guncelleme: 2026-06-02
 - 🧭 [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] — LLM kodlama tuzaklarına karşı 4 ilke (düşün-önce, sadelik, cerrahi, hedef-odaklı). Claude'un çalışma davranışı. (İlk mesajdaki "Karpathy prompt'u")
 - 🧬 [[Kendini Geliştiren Skill — 4 Katman (Jarvis-Karpathy yöntemi)]] — statik değil, kendini iyileştiren skill kurma: oluştur → Karpathy disiplini → göz (web) → hafıza+auto-research. (Jarvis nedir + yöntemi)
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
-- 📈 [[Borsa & Trading Prompt Paketi — dürüst kullanım (referans)]] — Claude ile piyasa analizi için 7 prompt + **dürüst uyarı**: canlı veri olmadan fiyat/backtest isteyen promptlar sayı uydurur. Güvenli olanlar senin verinle çalışanlar (portföy, işlem günlüğü). Yatırım tavsiyesi değil.
+- 📈 [[Borsa & Trading Prompt Paketi — dürüst kullanım (referans)]] — Claude ile trading için 2 seviye prompt (retail 7 + kurumsal/kant 10) + **dürüst uyarı**: canlı veri olmadan fiyat/backtest uydurur; kant setinde kod/iskele LLM'in güçlü yanı ama satır satır denetle + gerçek veriyle doğrula. "Goldman'ı bedava kopyaladın" değil. Yatırım tavsiyesi değil.
 
 > 🌐 **Web sitesi mi yapacaksın?** Tüm site/web rehberleri (Yıldız Dikme, $10K, Lovable, Hostinger, Brila, Claude Design) artık tek çatıda: **[[Web Sitesi Yapımı — MOC]]**.
 
