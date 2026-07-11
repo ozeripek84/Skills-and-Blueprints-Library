@@ -25,6 +25,7 @@ guncelleme: 2026-06-02
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
 - 📈 [[Borsa & Trading Prompt Paketi — dürüst kullanım (referans)]] — Claude ile piyasa analizi için 7 retail prompt + **dürüst uyarı**: canlı veri olmadan fiyat/backtest uydurur. Güvenli olanlar senin verinle çalışanlar (portföy, işlem günlüğü). Yatırım tavsiyesi değil.
 - 🏛️ [[Goldman Sachs AI Trading — Kant Prompt Paketi (referans)]] — elit fon personalı 10 kurumsal/kant prompt (backtest motoru, faktör modeli, stat-arb, execution). **Dürüst uyarı:** kod/iskele LLM'in güçlü yanı ama başlık yalan (alfa=veri+altyapı, kod değil), üretilen kodu satır satır denetle + gerçek veriyle doğrula. Yatırım tavsiyesi değil.
+- 🎬 [[AI YouTube Kanalı Prompt Paketi — dürüst kullanım (referans)]] — sıfırdan monetize kanal için 7 prompt (niş, kimlik, 90-gün takvim, script, SEO/thumbnail, monetizasyon, repurposing). Trading'den güvenli — Claude'un güçlü yanı. **Uyarı:** "$2670/ay bedava, 90 günde monetize" abartı; plan verir, sonuç değil. Üretim için → [[İçerik Fabrikası — Referans Sistem]] · topview · thumbnail blueprint.
 
 > 🌐 **Web sitesi mi yapacaksın?** Tüm site/web rehberleri (Yıldız Dikme, $10K, Lovable, Hostinger, Brila, Claude Design) artık tek çatıda: **[[Web Sitesi Yapımı — MOC]]**.
 
