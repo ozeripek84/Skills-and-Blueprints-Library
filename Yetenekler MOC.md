@@ -1,11 +1,11 @@
 ---
 tags: [moc, yetenekler]
-guncelleme: 2026-07-09
+guncelleme: 2026-07-12
 ---
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **154 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **155 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -168,7 +168,7 @@ guncelleme: 2026-07-09
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
 | **youtube-kanal-kurucu** | Sıfırdan monetize YouTube kanalı kurar — niş & konumlandırma, kanal kimliği, 90-günlük içerik planı, script, SEO+thumbnail, gelir modeli ve içerik çoğaltma; 7 adımlık zincir. | [[skill-kutuphanesi/icerik-pazarlama/youtube-kanal-kurucu\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/youtube-kanal-kurucu\|▶️ command]] |
 
-## 💼 İş / Satış  ·  17 adet
+## 💼 İş / Satış  ·  18 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -179,6 +179,7 @@ guncelleme: 2026-07-09
 | **crm-mini** | Mini CRM — kontaklar, deal'ler, pipeline. | [[skill-kutuphanesi/is-satis/crm-mini\|⚙️ skill]] · [[project mdleri/is-satis/crm-mini\|▶️ command]] |
 | **dijital-urun-lansmani** | Bir konuda dijital ürün (kurs, şablon, ebook, preset, prompt-pack) yaratıp satar — fikir, fiyat, sales page, bonus/upsell, teslim, 30-gün lansman. Pasif gelir kurgusu. | [[skill-kutuphanesi/is-satis/dijital-urun-lansmani\|⚙️ skill]] · [[project mdleri/is-satis/dijital-urun-lansmani\|▶️ command]] |
 | **fatura-jenerator** | Fatura jeneratörü — TR e-Arşiv uyumlu, KDV. | [[skill-kutuphanesi/is-satis/fatura-jenerator\|⚙️ skill]] · [[project mdleri/is-satis/fatura-jenerator\|▶️ command]] |
+| **is-basvuru-analizi** | Akıllı iş başvurusu — ilanları profile göre 100'lük puanla, en uygunları seç, kişiselleştirilmiş başvuru taslağı hazırla. Otomatik gönderim YOK, son karar insanda. | [[skill-kutuphanesi/is-satis/is-basvuru-analizi\|⚙️ skill]] · [[project mdleri/is-satis/is-basvuru-analizi\|▶️ command]] |
 | **lead-gen-ajansi** | AI destekli, ETİK lead generation / büyüme ajansı kurar — niş seçimi, üretimleştirilmiş teklif, birim ekonomisi, ToS-uyumlu hedefli outreach, kanıtlanmış içerikle teslimat ve retention. | [[skill-kutuphanesi/is-satis/lead-gen-ajansi\|⚙️ skill]] · [[project mdleri/is-satis/lead-gen-ajansi\|▶️ command]] |
 | **lead-magnet** | Lead magnet — ücretsiz indirilebilir karşılığı email yakalama. | [[skill-kutuphanesi/is-satis/lead-magnet\|⚙️ skill]] · [[project mdleri/is-satis/lead-magnet\|▶️ command]] |
 | **musteri-portal** | Müşteri portal — fatura, dosya, support, billing. | [[skill-kutuphanesi/is-satis/musteri-portal\|⚙️ skill]] · [[project mdleri/is-satis/musteri-portal\|▶️ command]] |
