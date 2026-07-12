@@ -42,6 +42,7 @@ guncelleme: 2026-06-02
 - 🎬 [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] — herhangi bir ajana (Claude/Hermes) görsel & video üretimi: Marketing Studio (tek link→video), Soul karakter, viral klip, virality prediction. İçerik Fabrikası'nın bağımlılığı.
 - 🎨 [[Claude + Canva Connector — Tasarım (referans)]] — Claude'a Canva bağla, sohbetten tasarla (form/sunum/kapak); düzenlemeyi Canva'da yap (ekonomik). *Bende canlı kullanılabilir.*
 - 🎞️ [[AI UGC-Reklam Video Üretici (open-source, self-host) — referans]] — klonlanan açık-kaynak app ile AI reklam/UGC videosu (Fal AI / ücretsiz LTX-2, text/image-to-video, 30 sahne). Müşteriye satılabilir.
+- 🔍 [[Claude SEO — 25 Skill + 18 Ajanlı SEO Denetimi (referans)]] — açık kaynak (MIT, ~11K★) SEO denetim plugin'i: `/seo audit <url>` → 15'e kadar paralel ajan, teknik+E-E-A-T+schema+**GEO/AEO (AI arama)**, test-edilebilir aksiyon planı. Çekirdek ücretsiz + sıfır-ağ; paralı uzantılar opsiyonel. Site işlerinin denetim adımı.
 
 > 🏗️ No-code site/app üreticileri (**Hostinger Horizons**, **Lovable**, **Brila**) ve **Claude Design** → [[Web Sitesi Yapımı — MOC]] altına taşındı.
 
