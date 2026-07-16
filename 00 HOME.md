@@ -1,6 +1,6 @@
 ---
 tags: [moc, home]
-guncelleme: 2026-06-02
+guncelleme: 2026-07-16
 ---
 
 # 🏠 Skills & Blueprints Kütüphanesi — Ana Sayfa
