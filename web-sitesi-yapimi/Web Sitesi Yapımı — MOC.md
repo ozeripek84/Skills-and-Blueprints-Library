@@ -25,6 +25,11 @@ guncelleme: 2026-06-13
 - [[Yıldız Dikme — Web Tasarım Prompt Yöntemi]] — ödül seviyesinde dinamik site prompt'lama: önce tech seç, İngilizce detay, ilham al-kopyalama, 3D'de manuel kamera pozisyonu, kısa promptlar, Sketchfab GLB ≤2MB, performans %90+.
 - [[$10K Web Sitesi — Claude Code Tasarım İş Akışı]] — frontend-design + ui-ux-pro-max skill'leri, 8 maddelik "$10K çıta" checklist'i, 21st.dev bileşen, görsel hattı, "pahalı hissettir" cilası, mobil, deploy.
 
+## ✍️ Metin / içerik katmanı (copy-önce — tasarımdan ÖNCE gelir)
+> Site "ne diyecek" belli olmadan "nasıl görünecek"e geçme. Metin katmanı burada eksikti; şimdi var:
+- [[skill-kutuphanesi/icerik-pazarlama/premium-site-metni|premium-site-metni]] — premium/marka sitesi metnini bölüm bölüm yaz (strateji, hero, güven, hizmet, itiraz, CTA) → **build prompt**a çevir → şüpheci gözle revize et. Adım 7 çıktısı doğrudan yukarıdaki build/tasarım araçlarını besler. `/icerik-pazarlama:premium-site-metni`
+- [[skill-kutuphanesi/icerik-pazarlama/donusum-landing|donusum-landing]] — tek-hedef **lead-capture** landing (form→DB→takip, Cloudflare deploy). Tam marka sitesi değil, tek dönüşüm istiyorsan.
+
 ## 🛠️ No-code / AI üreticiler (referans)
 - [[Hostinger Horizons — No-Code İşlevsel MVP (referans)]] — kod yazmadan **işlem yapabilen** uygulama (login/rezervasyon/mail), entegre backend. Hızlı MVP; kod sahipliği istersen Claude Code+Supabase.
 - [[Lovable — AI Full-Stack Site-App Üretici (referans)]] — ne istediğini yaz → komple full-stack site/app/dashboard (no-code). Müşteriye satılabilir.

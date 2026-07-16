@@ -43,3 +43,4 @@ Form gönderimi → **veritabanı** (Cloudflare D1) → "kimler doldurdu" sorgus
 
 > Çalıştırılabilir hâli (5 ilke uygulanmış + form spec + Cloudflare/Wrangler/D1 + Fal AI hero görsel): `/icerik-pazarlama:donusum-landing`
 > İlişkili: `web-saas/landing-page` (yapı), `landing-ab-test` (test), [[$10K Web Sitesi — Claude Code Tasarım İş Akışı]], `frontend-design` (built-in).
+> **Fark:** Bu = tek-hedef lead-capture funnel. Çok bölümlü **premium marka sitesi metni** istiyorsan → [[skill-kutuphanesi/icerik-pazarlama/premium-site-metni|premium-site-metni]] (copy-önce sekans + build prompt).

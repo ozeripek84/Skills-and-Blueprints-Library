@@ -12,7 +12,7 @@ guncelleme: 2026-06-02
 
 | Harita | İçerik | Adet |
 |---|---|---|
-| [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **155** |
+| [[Yetenekler MOC]] | TR skill + slash command çiftleri (kategori kategori) | **156** |
 | [[Blueprints MOC]] | Hazır uygulama iskeletleri — tek-dosya + çok-dosyalı/klonlanabilir (`/kur` ile kurulur) | **24** |
 | [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy** + tasarım (ui-ux-pro-max · impeccable · taste · emilkowalski) + 📣 **marketing-skills** (45) + 🎬 **topview** + 250+ skill | **11 repo** |
 | [[Web Sitesi Yapımı — MOC]] | 🌐 Site/web yapımı — yöntem + no-code üreticiler + tasarım, tek çatı | **6 rehber** |
@@ -56,8 +56,8 @@ guncelleme: 2026-06-02
 
 ## 📂 Klasör düzeni (olduğu gibi korundu)
 ```
-skill-kutuphanesi/   → 155 TR skill   (kısa öz · Claude otomatik seçer)
-project mdleri/      → 155 TR command (kodlu · /... ile sen çağırırsın)  [skill ile ikiz]
+skill-kutuphanesi/   → 156 TR skill   (kısa öz · Claude otomatik seçer)
+project mdleri/      → 156 TR command (kodlu · /... ile sen çağırırsın)  [skill ile ikiz]
 blueprints/          → 24 hazır uygulama (CLAUDE.md spec + kur.md)
 web-sitesi-yapimi/   → 🌐 site yapımı rehber+yöntem+araç (tek çatı) + MOC
 awesome-claude-skills-master/  → EN repo (Apache) — referans
