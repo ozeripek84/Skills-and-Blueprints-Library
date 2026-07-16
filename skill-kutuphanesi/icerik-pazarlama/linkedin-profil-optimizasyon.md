@@ -11,9 +11,9 @@ Bir kişinin LinkedIn profilini hedef rol için işe alımcılara çekici, arana
 ## Pipeline (10 adım, tek tek ya da zincir)
 1. **Audit** — 10 üzerinden puan, işe alımcı ne anlıyor, neden atlar, somut iyileştirme.
 2. **Başlık (headline)** — 10 farklı stilde, aranabilir, buzzword'süz.
-3. **About** — güçlü açılış → ne yapıyorsun → kanıt → yetkinlik → açık olduğun roller → CTA (<2000 karakter).
+3. **About** — güçlü açılış → ne yapıyorsun → kanıt → yetkinlik → açık olduğun roller → CTA (<2000 karakter). *(Alternatif kanca: **PAS** — Problem→Agitate→Solution ile ilk 2 satırda yakala.)*
 4. **Deneyim** — 1-2 satır özet + 5-7 başarı maddesi, aksiyon fiili, metrik, keyword.
-5. **Başarı cümleleri** — görevleri "aksiyon + ne + araç + ölçülebilir sonuç" formülüne çevir.
+5. **Başarı cümleleri** — görevleri **XYZ formülü**ne çevir ("Y yaparak Z sonucunu doğuran X'i başardım" = aksiyon + ne + araç + ölçülebilir sonuç).
 6. **Keyword / SEO** — 30 aranabilir keyword, nereye konacağı, doğal dağıtım.
 7. **Kariyer değiştiren** — transfer edilebilir değeri konumlandır, eski rolü hedefe bağla.
 8. **Featured** — stratejik 5 öğe (portföy, vaka, link), neden önemli.
@@ -36,5 +36,8 @@ Bir kişinin LinkedIn profilini hedef rol için işe alımcılara çekici, arana
 - Sahte metrik (işe alımcı görüşmede yakalar).
 - Featured'ı boş/rastgele bırakmak.
 
+## Kapsam notu (anti-duplikasyon)
+X'te dolaşan viral "7 prompt = recruiter magnet" LinkedIn paketleri **bu yetenekte zaten mevcut** (bu 10 adım onların üst-kümesi: headline, About/PAS, deneyim/XYZ, keyword, recruiter testi, Featured). Yeni not açma → buraya bak. Paketlerdeki **recruiter'a soğuk DM** kısmı burada değil, iş-arama tarafında: [[skill-kutuphanesi/is-satis/is-basvuru-analizi|is-basvuru-analizi]] (bağlantı notu, hiring manager mesajı) · [[skill-kutuphanesi/is-satis/video-outreach-basvuru|video-outreach-basvuru]].
+
 > Çalıştırılabilir hâli — 10 promptun tamamı doldurulacak alanlarla: `/icerik-pazarlama:linkedin-profil-optimizasyon`
-> İlgili: `sosyal-icerik-uretici`, `lead-gen-ajansi`; dış kaynak: `tailored-resume-generator` (awesome repo).
+> İlgili: `sosyal-icerik-uretici`, `lead-gen-ajansi`, `is-basvuru-analizi`; dış kaynak: `tailored-resume-generator` (awesome repo).

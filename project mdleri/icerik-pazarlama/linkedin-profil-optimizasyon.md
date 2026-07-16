@@ -41,6 +41,8 @@ Hedef rol: [...] | Sektör: [...] | Deneyim seviyesi: [...] | En iyi yetkinlikle
 En büyük başarılar: [...] | Profesyonel stil: [analitik/yaratıcı/stratejik/insan-odaklı]
 Yapı: 1) güçlü açılış 2) ne yaptığının net açıklaması 3) sonuç kanıtı 4) yetkinlikler
 5) açık olduğun roller 6) samimi CTA. Profesyonel, insani, recruiter-dostu, <2000 karakter.
+Alternatif kanca (istersen): PAS çerçevesi — ilk 2 satırda Problem (işe alımcının/kitlenin acısı) →
+Agitate (neden önemli/maliyeti) → Solution (sen). İlk 2 satır "devamını oku"yu tetiklemeli.
 ```
 
 ## 4 — Deneyim Yükseltme
@@ -58,6 +60,8 @@ Temel iş görevlerimi güçlü LinkedIn başarı cümlelerine çevir.
 Görevler: [5-10 görev] | Hedef rol: [...] | Sektör: [...]
 Her görev için: 1) zayıf versiyon 2) güçlü LinkedIn versiyonu 3) metrikli versiyon 4) recruiter versiyonu.
 Formül: aksiyon fiili + ne yaptın + araç/süreç + ölçülebilir/iş sonucu.
+= **XYZ formülü** ("Y yaparak Z sonucunu doğuran X'i başardım" / Accomplished X by doing Y, resulting in Z).
+Metrik yoksa sahte sayı UYDURMA — etkiyi gerçekçi ifade et.
 ```
 
 ## 6 — Keyword / SEO
