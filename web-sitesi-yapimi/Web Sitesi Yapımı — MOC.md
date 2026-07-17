@@ -1,6 +1,6 @@
 ---
 tags: [moc, web-sitesi, tasarim]
-guncelleme: 2026-06-13
+guncelleme: 2026-07-17
 ---
 
 # 🌐 Web Sitesi Yapımı — Harita
@@ -18,12 +18,14 @@ guncelleme: 2026-06-13
 - **Yaz-gitsin full-stack site/app/dashboard** → [[Lovable — AI Full-Stack Site-App Üretici (referans)]]
 - **Yerel işletmeye tek-sayfa site** (Google Maps linkinden) → [[Brila — Google Maps'ten Yerel İşletme Sitesi (referans)]]
 - **Güçlü tasarım + zayıf performans sorununu çöz** → [[Claude Design — Tasarım Çıkar, Claude Code'da Optimize Et (referans)]]
+- **Claude Code'un tasarım zayıflığını ücretsiz araçla kapat** (görsel tasarla → MCP ile kodlat) → [[Stitch Metodu — Google Stitch + Claude Code (MCP) (referans)]]
 
 ---
 
 ## 📐 Yöntem & prompt rehberleri
 - [[Yıldız Dikme — Web Tasarım Prompt Yöntemi]] — ödül seviyesinde dinamik site prompt'lama: önce tech seç, İngilizce detay, ilham al-kopyalama, 3D'de manuel kamera pozisyonu, kısa promptlar, Sketchfab GLB ≤2MB, performans %90+.
 - [[$10K Web Sitesi — Claude Code Tasarım İş Akışı]] — frontend-design + ui-ux-pro-max skill'leri, 8 maddelik "$10K çıta" checklist'i, 21st.dev bileşen, görsel hattı, "pahalı hissettir" cilası, mobil, deploy.
+- [[Stitch Metodu — Google Stitch + Claude Code (MCP) (referans)]] — Claude Code'un tasarım zayıflığını kapatır: **ücretsiz** Google Stitch'te görsel tasarla → **MCP** (DESIGN.md) ile Claude Code'a taşı → birebir kodlat. 4 adım + hazır Stitch promptu. MCP adımı doğrulandı; yedek: DESIGN.md'yi dosya olarak ver. Zincir: premium-site-metni (copy) → Stitch → Claude Code.
 
 ## ✍️ Metin / içerik katmanı (copy-önce — tasarımdan ÖNCE gelir)
 > Site "ne diyecek" belli olmadan "nasıl görünecek"e geçme. Metin katmanı burada eksikti; şimdi var:
