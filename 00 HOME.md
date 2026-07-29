@@ -40,6 +40,7 @@ guncelleme: 2026-07-16
 - 🏭 [[İçerik Fabrikası — Referans Sistem]] — uçtan uca içerik üretim & otomatik yayın hattı (Claude Code + Higgsfield + Upload-Post). Marka bazlı sürekli içerik için. *Konum: `~/Desktop/SaaS Projects/İçerik Fabrikası`*
 
 ## 🧰 Araçlar & Entegrasyonlar (referans)
+- 🔎 [[find-skills — Skill Bulan Skill (Vercel Labs) (referans)]] — "skill bulan skill" (Vercel Labs, MIT): ne yapmak istediğini söyle, ekosistemden en uygun skill'i bulup (onayınla) kursun. **Bende global kurulu**, Claude otomatik çağırır. ⚠️ tedarik zinciri — bulduğunu körlemesine kurma; ⚠️ kütüphanendeki yeteneği ararken önce vault'a bak, find-skills'i *dışarıdaki* skill'ler için kullan.
 - 🦾 [[Superpowers — Plan-Önce Geliştirme Plugin'i (referans)]] — Claude'u disiplinli çalıştırır: önce planla, test yaz, kendini gözden geçir (`/brainstorm → /write-plan → /execute-plan`). 127K★. gstack'i tamamlar.
 - 🎭 [[Playwright Tarayıcı Otomasyonu (Claude Code) — referans]] — **ücretsiz/açık** tarayıcı kontrolü: kendi siteni test et, public siteden veri çek, hesabına login olup iş yaptır. `claude mcp add playwright …`.
 - 🌐 [[BrowserAct — Gerçek Tarayıcı Aracı (referans)]] — Claude'a gerçek tarayıcı verir (ürün): bot/captcha'lı scrape, stealth. (Playwright vs BrowserAct karşılaştırması iki notta da var.)
