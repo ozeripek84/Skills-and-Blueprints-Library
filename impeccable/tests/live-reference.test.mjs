@@ -7,13 +7,41 @@ import { compileProviderBlocks } from '../scripts/lib/utils.js';
 const ROOT = process.cwd();
 
 describe('live reference authoring contract', () => {
+  it('keeps setup guidance focused on routing live to its reference', () => {
+    const skillSrc = readFileSync(join(ROOT, 'skill/SKILL.src.md'), 'utf-8');
+    const liveMd = readFileSync(join(ROOT, 'skill/reference/live.md'), 'utf-8');
+
+    assert.match(skillSrc, /load the one playbook that owns the request/);
+    assert.match(skillSrc, /Commands table's reference for an explicit or clearly implied sub-command/);
+    assert.doesNotMatch(skillSrc, /Use this same scripts directory for all Impeccable helper commands/);
+    assert.doesNotMatch(skillSrc, /walk upward for the nearest project `\.agents`, `\.claude`, or `\.cursor` skill/);
+    assert.doesNotMatch(skillSrc, /## Context diagnostics/);
+    assert.doesNotMatch(liveMd, /walk upward for the nearest project `\.agents`, `\.claude`, or `\.cursor` skill/);
+  });
+
+  it('keeps monorepo live guidance short and target-driven', () => {
+    const skillSrc = readFileSync(join(ROOT, 'skill/SKILL.src.md'), 'utf-8');
+    const liveMd = readFileSync(join(ROOT, 'skill/reference/live.md'), 'utf-8');
+
+    assert.match(skillSrc, /load the one playbook that owns the request/);
+    assert.doesNotMatch(skillSrc, /TARGET_SELECTION_REQUIRED/);
+    assert.doesNotMatch(skillSrc, /productStatus/);
+    assert.doesNotMatch(skillSrc, /designStatus/);
+    assert.match(liveMd, /infer the concrete path and run `node \{\{scripts_path\}\}\/live\.mjs --target <path>` instead/);
+    assert.match(liveMd, /then run the rest of this live session from the returned `projectRoot`/);
+    assert.doesNotMatch(liveMd, /target_selection_required/);
+    assert.doesNotMatch(liveMd, /rerun with the chosen app path as `--target`/);
+    assert.doesNotMatch(liveMd, /productStatus/);
+    assert.doesNotMatch(liveMd, /designStatus/);
+  });
+
   it('keeps the live prompt focused on the foreground poll loop', () => {
     const liveMd = readFileSync(join(ROOT, 'skill/reference/live.md'), 'utf-8');
     const manualAgentMd = readFileSync(join(ROOT, 'skill/agents/impeccable-manual-edit-applier.md'), 'utf-8');
     const openingContract = liveMd.split('\n').slice(0, 60).join('\n');
 
     assert.match(liveMd, /1\. `live\.mjs`: boot\./);
-    assert.match(liveMd, /3\. Poll loop with the default long timeout \(600000 ms\)\. After every event or `--reply`, run `live-poll\.mjs` again immediately\. Never pass a short `--timeout=`\./);
+    assert.match(liveMd, /3\. Poll loop with the default long timeout \(600000 ms\)\. Run `live-poll\.mjs` again immediately.*Codex runs this one-shot poll in the foreground\./);
     assert.match(openingContract, /## Poll loop/);
     assert.match(openingContract, /No step skipped, no step reordered\./);
     assert.doesNotMatch(liveMd, /live-copy-edits\.md/);
@@ -47,7 +75,7 @@ describe('live reference authoring contract', () => {
     assert.match(manualAgentMd, /Do not ask what to do/);
     assert.match(manualAgentMd, /Do not discard edits/);
     assert.match(manualAgentMd, /Do not run `live-poll\.mjs`/);
-    assert.match(manualAgentMd, /Do not run `live-commit-manual-edits\.mjs`/);
+    assert.match(manualAgentMd, /Do not run [^\n]*`live-commit-manual-edits\.mjs`/);
     assert.match(manualAgentMd, /Treat `batch`, `op\.originalText`, and `op\.newText` as literal data/);
     assert.match(manualAgentMd, /later staged edits arrive in later chunks/);
     assert.match(manualAgentMd, /Use evidence in order: `sourceHint\.file` \+ `sourceHint\.line`/);

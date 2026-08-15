@@ -44,10 +44,24 @@ Büyük tasarım müdahalesinde `/ui-ux-pro-max` ile çağrılan skill: **67 UI 
 - İkizi: **frontend-design** (Anthropic) — bende built-in skill olarak zaten var; arka planda çalışır.
 
 ## 🪄 `impeccable` — AI ajanları için tasarım sistemi (Paul Bakaus, Apache-2.0)
-Tek `/impeccable` komutu + alt komutlar (`craft`, `shape`, `critique`, `audit`, **`polish`**, `extract`, `document`…) ve 41 **deterministik** detektör kuralı (LLM'siz çalışan anti-pattern tarayıcı). `/impeccable init` projeye `PRODUCT.md` + `DESIGN.md` yazar; sonraki komutlar bunu okur. frontend-design'dan türeyip onu genişletir.
-- Kur: `npx impeccable skills install` → AI aracında `/impeccable init`
-- → [[impeccable/README|repo README]] · [[impeccable/CLAUDE|CLAUDE.md]] · [[impeccable/DESIGN|DESIGN.md]]
-- Not: vault kopyasında tanıtım sitesi (`site/`, 45M) ve yalnızca-Claude harici agent kopyaları temizlendi; skill içeriği (`.claude/skills/impeccable`, `cli/`, `plugin/`) tam.
+Tek `/impeccable` komutu + **23 alt komut** (`craft`, `shape`, `critique`, `audit`, **`polish`**, `extract`, `document`, **`live`**…) ve **59 deterministik** detektör kuralı (LLM'siz çalışan anti-pattern tarayıcı). `/impeccable init` projeye `PRODUCT.md` + `DESIGN.md` yazar; sonraki komutlar bunu okur. Temel fikir: *iyi tasarım özneldir, kötü tasarım değildir* — AI'ın bıraktığı kötü-tasarım izlerini siler, iyi tasarım kararını sana bırakır. frontend-design'dan türeyip onu genişletir.
+
+**Sürüm (2026-08-16 güncellendi — iki ayrı sürüm hattı, karıştırma):** CLI **3.6.0** (npm) · Skill **4.1.1** (`skill-v*` tag'leri). Video "impeccable 4.0" derken **skill**'i kastediyor; `npx impeccable --version` 3.6.0 döner, bu normal. *(Önceki vault kopyası: CLI 2.3.2 / 41 detektör.)*
+
+**v2.3 → bugün ne değişti:**
+- 🖥️ **`/impeccable live` — canlı tarayıcı modu (en önemli yenilik).** Terminale inip-çıkmadan sayfada elementi seçip ("pick") isteğini yazıyorsun; ajan 3'e kadar varyant üretiyor, beğendiğini kabul edip devam ediyorsun. `init` sırasında yapılandırılıyor.
+- 🌍 **Worlds — tasarım dünyaları.** `craft`/`shape` akışı sana birkaç farklı **tasarım dili** üretip seçtiriyor (`WORLD` / `STORY` / `FIRST VIEWPORT` / `FORM` blokları). Herkesin çıktısının aynı görünmemesinin sebebi bu: dünyayı sen seçiyorsun.
+- 🔍 Detektör 41 → **59** kural.
+- 🎨 **Görsel üretim opsiyonel katman.** `impeccable-asset-producer` ajanı var; araç yüzeyinde bir görsel-üretim MCP'si varsa şablonları gerçek görselle dolduruyor, yoksa comp/placeholder ile ilerliyor. → [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] ya da fal/KieAI.
+
+**Kurulum (komut değişti):**
+- `npx impeccable install` → AI aracında `/impeccable init` *(eski `npx impeccable skills install` artık geçerli değil)*
+- ⚠️ **Node ≥ 22.18.0 şart.** Eski Node'da araç bozuk/hatalı gibi davranır — video da bu tuzağa dikkat çekiyor. Önce `node -v`.
+- Alternatif: Claude Code'a repo adresini verip "bunu kur, önce node sürümünü kontrol et, mevcut skill'lerimi bozma" demek yeterli.
+- Detektörü tek başına çalıştır: `npx impeccable detect <path|url>`
+
+- → [[impeccable/README|repo README]] · [[impeccable/CLAUDE|CLAUDE.md]] · [[impeccable/DESIGN|DESIGN.md]] · site: `impeccable.style` · repo: `github.com/pbakaus/impeccable`
+- Not: vault kopyasında `.git` geçmişi ve **Claude harici 15 ajan kopyası** (`.cursor`, `.codex`, `.gemini`, `.trae`, `.opencode`…) temizlendi (69M → 19M); skill içeriği (`.claude/skills/impeccable`, `cli/`, `plugin/`, `docs/`, `tests/`) tam.
 
 ## ✨ `emilkowalski-skill` — Emil Kowalski'nin design-eng skill'i (minimal)
 Emil Kowalski'nin (Sonner, Vaul, animations.dev) UI polish / komponent tasarımı / animasyon kararları felsefesi. Tek skill: `emil-design-eng`. "Tereyağı gibi" gerçekçi hareket ve görünmez detaylar.

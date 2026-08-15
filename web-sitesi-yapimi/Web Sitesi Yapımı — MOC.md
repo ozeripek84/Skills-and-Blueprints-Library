@@ -58,7 +58,7 @@ guncelleme: 2026-07-17
 
 ## ✨ 3 yeni tasarım skill'i — vendor olarak eklendi (2026-06-13)
 > Kaynakları teyit edildi ve kütüphaneye klonlandı (`--depth 1`, nested `.git` + yalnızca-Claude harici agent kopyaları temizlendi). Detaylı tablo: [[Dış Kütüphaneler MOC]].
-- [[impeccable/README|impeccable]] — Paul Bakaus. Tek `/impeccable` komutu + alt komutlar (`craft`, `shape`, `critique`, `audit`, **`polish`**…), 41 deterministik detektör. Kur: `npx impeccable skills install` → `/impeccable init`.
+- [[impeccable/README|impeccable]] — Paul Bakaus. Tek `/impeccable` komutu + 23 alt komut (`craft`, `shape`, `critique`, `audit`, **`polish`**, **`live`**…), **59** deterministik detektör. **Yeni:** `/impeccable live` (tarayıcıda canlı düzenleme, terminale inmeden) + **Worlds** (birkaç tasarım dili üretip seçtirir — çıktılar birbirine benzemiyor). Kur: `npx impeccable install` → `/impeccable init`. ⚠️ **Node ≥ 22.18.0**. Sürüm: CLI 3.6.0 / skill 4.1.1. → detay [[Dış Kütüphaneler MOC]]
 - [[emilkowalski-skill/skills/emil-design-eng/SKILL|emilkowalski-skill]] — Emil Kowalski (Sonner/Vaul). `emil-design-eng` skill'i: UI polish, komponent, animasyon kararları. Kur: `npx skills add https://github.com/emilkowalski/skill`.
 - [[taste-skill/README|taste-skill]] — Leonxlnx. Jenerik "slop" yerine güçlü layout/tipografi/motion; çok sayıda alt-skill (minimalist, brutalist, soft, redesign, brandkit, imagegen…). Kur: `npx skills add https://github.com/Leonxlnx/taste-skill`.
 

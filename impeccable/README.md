@@ -1,8 +1,8 @@
 # Impeccable
 
-Design guidance for AI coding agents. 1 skill, 23 commands, live browser iteration, and 41 deterministic detector rules for AI-generated frontend design.
+Design guidance for AI coding agents. 1 skill, 23 commands, live browser iteration, and 59 deterministic detector rules for AI-generated frontend design.
 
-> **Quick start:** From your project root, run `npx impeccable skills install`, then run `/impeccable init` inside your AI coding tool. Full docs: [impeccable.style](https://impeccable.style).
+> **Quick start:** From your project root, run `npx impeccable install`, then run `/impeccable init` inside your AI coding tool. Full docs: [impeccable.style](https://impeccable.style).
 
 ## Why Impeccable?
 
@@ -13,7 +13,7 @@ Every model trained on the same SaaS templates. Skip the guidance and you get th
 Impeccable adds:
 - **One setup flow.** `/impeccable init` writes `PRODUCT.md` and offers `DESIGN.md`, so later commands know the audience, brand/product lane, voice, anti-references, colors, type, and components.
 - **23 commands.** A shared design vocabulary with your AI: `polish`, `audit`, `critique`, `distill`, `animate`, `bolder`, `quieter`, and more.
-- **41 deterministic detector rules** plus LLM-only critique checks. The CLI and browser extension run the deterministic rules with no LLM and no API key.
+- **59 deterministic detector rules** plus LLM-only critique checks. The CLI and browser extension run the deterministic rules with no LLM and no API key.
 
 ## What's Included
 
@@ -31,7 +31,7 @@ Start every new project with:
 /impeccable init
 ```
 
-`init` asks whether the surface is brand (marketing, landing, portfolio) or product (app UI, dashboard, tool), then writes project context that every later command reads.
+`init` asks whether the surface is brand (marketing, landing, portfolio) or product (app UI, dashboard, tool), then writes design context that every later command reads.
 
 ### 23 Commands
 
@@ -91,7 +91,7 @@ The skill includes explicit guidance on what to avoid:
 
 ## See It In Action
 
-Visit [impeccable.style](https://impeccable.style#casestudies) to see before/after case studies of real projects transformed with Impeccable commands.
+Visit [the Neo Mirai case study](https://impeccable.style/cases/neo-mirai) to see a before/after case study of a real project transformed with Impeccable commands.
 
 ## Installation
 
@@ -100,12 +100,18 @@ Visit [impeccable.style](https://impeccable.style#casestudies) to see before/aft
 From the root of your project, run:
 
 ```bash
-npx impeccable skills install
+npx impeccable install
 ```
 
-This auto-detects your harness and writes the build compiled for it to the right location (`.claude/skills/`, `.cursor/skills/`, etc.). Works with Cursor, Claude Code, Gemini CLI, Codex CLI, and every other supported tool. Reload your harness afterward.
+This shows the harness folders it detected (for example `~/.claude`, `~/.codex`, `~/.grok`, or project-local `.cursor`), lets you keep the detected set or customize providers, then asks whether to install into the current project or globally. Use `--providers=claude,codex,cursor,grok` and `--scope=project|global` to skip those choices in scripts. On Claude Code, Cursor, Codex, GitHub Copilot, and Grok Build, it also installs the provider-native hook manifest for the current project. Works with Cursor, Claude Code, Gemini CLI, Codex CLI, Grok Build, and every other supported tool. Reload your harness afterward.
 
-Claude Code users can alternatively install the plugin with `/plugin marketplace add pbakaus/impeccable`. The general-purpose `npx skills add pbakaus/impeccable` also works, though it installs one shared build for all harnesses rather than the one compiled for yours.
+To refresh an existing install, run:
+
+```bash
+npx impeccable update
+```
+
+Codex users should open `/hooks` after install or update and approve the project hook when prompted. Codex tracks trust by hook definition, so updates that change `.codex/hooks.json` can require approval again. Grok Build users need project folder trust (`/hooks-trust` or launch with `--trust`) before `.grok/hooks/` scripts run.
 
 ### Option 2: Git Submodule
 
@@ -113,25 +119,41 @@ For teams that want to keep Impeccable vendored and updated through Git, add thi
 
 ```bash
 git submodule add https://github.com/pbakaus/impeccable .impeccable
-npx impeccable skills link --source=.impeccable --providers=claude,cursor
+npx impeccable link --source=.impeccable --providers=claude,cursor
 git add .gitmodules .impeccable .claude .cursor
 git commit -m "Add Impeccable skills"
 ```
 
-Use the providers your project needs, for example `claude`, `cursor`, `gemini`, `codex`, `github`, `opencode`, `pi`, `qoder`, `trae`, `trae-cn`, or `rovo-dev`. The command links individual skill folders from `.impeccable/dist/universal/` and leaves existing real skill directories untouched unless you pass `--force`.
+Use the providers your project needs, for example `claude`, `cursor`, `gemini`, `codex`, `github`, `grok`, `opencode`, `pi`, `qoder`, `trae`, `trae-cn`, `rovo-dev`, or `vibe`. The command links individual skill folders from `.impeccable/dist/universal/` and leaves existing real skill directories untouched unless you pass `--force`.
 
 To update later:
 
 ```bash
 git submodule update --remote .impeccable
-npx impeccable skills link --source=.impeccable --providers=claude,cursor
+npx impeccable link --source=.impeccable --providers=claude,cursor
 ```
 
-### Option 3: Download from Website
+### Option 3: Plugin install
+
+**Claude Code:**
+```bash
+/plugin marketplace add pbakaus/impeccable
+```
+
+> Claude Code only. After adding the marketplace, open `/plugin` and install Impeccable from the list.
+
+**Grok Build:**
+```bash
+grok plugin install pbakaus/impeccable#plugin --trust
+```
+
+> Grok Build only. The `#plugin` suffix installs the slim plugin package (skills, agents, and hooks) instead of the full monorepo. Then run `/impeccable init` in a Grok session. Project-scoped installs via `npx impeccable install --providers=grok` also work and write `.grok/skills/` plus `.grok/hooks/impeccable.json`.
+
+### Option 4: Download from Website
 
 Visit [impeccable.style](https://impeccable.style), download the ZIP for your tool, and extract to your project.
 
-### Option 4: Copy from Repository
+### Option 5: Copy from Repository
 
 **Cursor:**
 ```bash
@@ -179,13 +201,16 @@ cp -r dist/gemini/.gemini your-project/
 ```bash
 # Project-local
 cp -r dist/agents/.agents your-project/
+mkdir -p your-project/.codex
+cp dist/codex/.codex/hooks.json your-project/.codex/hooks.json
 
-# Or user-wide
+# Or install the skill user-wide. Copy .codex/hooks.json into each project
+# where you want the design hook to run.
 mkdir -p ~/.agents/skills
 cp -r dist/agents/.agents/skills/* ~/.agents/skills/
 ```
 
-> The asset-producer subagent ships nested inside the skill's own `agents/` folder, which Codex auto-discovers. No separate `.codex/agents/` copy is needed.
+> The asset-producer subagent ships nested inside the skill's own `agents/` folder, which Codex auto-discovers. No separate `.codex/agents/` copy is needed. The hook is project-local because Codex discovers hooks from `.codex/hooks.json` next to trusted project config.
 
 **GitHub Copilot:**
 ```bash
@@ -225,6 +250,36 @@ cp -r dist/qoder/.qoder your-project/
 cp -r dist/qoder/.qoder/skills/* ~/.qoder/skills/
 ```
 
+**Mistral Vibe:**
+```bash
+# Project-specific
+cp -r dist/vibe/.vibe your-project/
+
+# Or global (applies to all projects)
+cp -r dist/vibe/.vibe/skills/* ~/.vibe/skills/
+```
+
+**Grok Build:**
+```bash
+# Project-specific
+cp -r dist/grok/.grok your-project/
+
+# Or global (applies to all projects)
+cp -r dist/grok/.grok/skills/* ~/.grok/skills/
+```
+
+> Prefer `npx impeccable install --providers=grok` or `grok plugin install pbakaus/impeccable#plugin --trust` so the design hook installs too. Project hooks need `/hooks-trust` (or `--trust`) once per folder.
+
+**Google Antigravity:**
+```bash
+# Project-specific
+cp -r dist/antigravity/.agent your-project/
+
+# Or global (applies to all projects)
+mkdir -p ~/.gemini/config/skills
+cp -r dist/antigravity/.agent/skills/* ~/.gemini/config/skills/
+```
+
 ## Usage
 
 Once installed, every command runs through the single `/impeccable` skill:
@@ -249,6 +304,86 @@ If you reach for one command often, pin it with `/impeccable pin audit` to get `
 
 **Note:** Codex uses skills here, not `/prompts:` commands. Open `/skills` or type `$impeccable`. Repo-local installs live in `.agents/skills/`; user-wide installs live in `~/.agents/skills/`. GitHub Copilot uses `.github/skills/`. Restart the tool if a newly installed skill does not appear.
 
+## Keeping `.impeccable` out of git
+
+As you run commands, Impeccable writes working files under `.impeccable/`: critique and polish screenshots, live-mode session and preview state, runtime caches, and per-developer config. Most of it is ephemeral and should not be committed, while a few files are shared project artifacts that belong in the repo. Add this block to your project's `.gitignore`:
+
+```gitignore
+# impeccable-ignore-start
+# Ephemeral output, runtime state, and per-dev overrides.
+# Unanchored: .impeccable may sit at the repo root or under a nested
+# workspace (apps/web/.impeccable/...); anchored patterns would miss it.
+# Shared artifacts stay tracked: config.json, live/config.json,
+# design.json, critique/*.md.
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/hook.pending.json
+.impeccable/*.png
+.impeccable/live/server.json
+.impeccable/live/sessions/
+.impeccable/live/previews/
+.impeccable/live/annotations/
+.impeccable/live/cache/
+.impeccable/live/manual-edit-apply-transaction.json
+.impeccable/live/manual-edit-events.jsonl
+.impeccable/live/manual-edit-evidence/
+.impeccable/live/pending-manual-edits.json
+.impeccable/live/deferred-svelte-component-accepts.json
+.impeccable/live/*.png
+# impeccable-ignore-end
+```
+
+The block is wrapped in `# impeccable-ignore-start` / `# impeccable-ignore-end` markers so you can recognize and refresh it later. Patterns are unanchored on purpose: in a monorepo the active project (and its `.impeccable/` directory) often lives under a nested workspace path like `apps/web/`, and a root-anchored pattern would miss it.
+
+**Keep these tracked** (they are shared project artifacts, do not add them to `.gitignore`):
+
+- `.impeccable/config.json` (unified shared config)
+- `.impeccable/live/config.json` (live-mode framework wiring)
+- `.impeccable/design.json` (shared design spec)
+- `.impeccable/critique/*.md` (review reports)
+
+If an ephemeral file (a screenshot, `config.local.json`) was committed before you added the block, `.gitignore` will not untrack it automatically. Run `git rm --cached <path>` to stop tracking it without deleting your local copy.
+
+## Design hook
+
+On Claude Code, GitHub Copilot, Codex, Cursor, and Grok Build, `npx impeccable install` and `npx impeccable update` install a provider-native hook manifest along with the skill payload. The hook runs the Impeccable design detector on direct UI file edits and surfaces findings back into the agent flow. Claude Code, GitHub Copilot, Codex, and Grok Build surface findings after the edit (and run a deeper pass on Stop where supported). Cursor blocks bad proposed writes before they land.
+
+Installed hook surfaces:
+
+- Claude Code: `.claude/settings.local.json` (gitignored, machine-local) runs `${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/hook.mjs`. A hook moved into the shared `settings.json` is honored in place.
+- GitHub Copilot: `.github/hooks/impeccable.json` (committed, shared by the Copilot CLI and the cloud agent) runs `.github/skills/impeccable/scripts/hook.mjs`. The Copilot CLI activates it once the file is on the repository's default branch and the folder is trusted.
+- Cursor: `.cursor/hooks.json` runs `.cursor/skills/impeccable/scripts/hook-before-edit.mjs`.
+- Codex: `.codex/hooks.json` runs `.agents/skills/impeccable/scripts/hook.mjs`.
+
+The installer preserves unrelated hook entries and settings. If a hook manifest is malformed, install/update aborts by default; rerun with `--force` to back up the malformed file as `.bak` and replace it.
+
+On an interactive `install`/`update`, Impeccable explains the hook and offers to install it (default yes). Your choice is remembered per-developer in the gitignored `.impeccable/config.local.json`, so you are not asked again; `--no-hooks` skips it for that run without recording anything. Hook lifecycle settings live under the `hook` key of `.impeccable/config.json`; detector ignores live under `detector`, shared by `/impeccable hooks` and `npx impeccable detect`.
+
+For debugging, set `hook.auditLog` in `.impeccable/config.json` to a path (or the legacy `IMPECCABLE_HOOK_LOG` env var) to write one NDJSON line per hook invocation. Leave it unset for normal use.
+
+## Build path: comp-first or code-first
+
+When a new surface gets designed, Impeccable either generates a full-fidelity comp first and builds to match it, or builds straight in code with the ambition written into the direction contract and checked at the finish. Comp-first composes bolder and takes longer; code-first is leaner and faster. `/impeccable init` asks once and records the answer as `buildPath` in `.impeccable/config.json`:
+
+```json
+{ "buildPath": "comp" }
+```
+
+The values are `comp` and `code`, and nothing else is read. Set it in the gitignored `.impeccable/config.local.json` to override the team's committed value on one machine, which is what you want when your harness has no image generation. In a monorepo, commit it once at the repo root and any workspace that wants something else sets its own. The choice appears at all only where image generation is available, since without it there is nothing to comp.
+
+You do not have to re-run `init` to set it on a project that predates the setting, and you do not have to edit the file by hand either. Whatever is recorded is a default rather than a lock: every decision page carries a footer toggle, and flipping it binds that session only. Flip it on a project that has recorded nothing and Impeccable asks once, after the round, whether to keep it, then writes your answer. That is the whole migration path for an existing project: use the toggle when the default is wrong, and answer the question that follows.
+
+Codex requires one platform step that Impeccable cannot safely skip: open `/hooks` after install or update and approve the project hook. There is no Codex marketplace/plugin install flow for this hook.
+
+Full hook docs: [impeccable.style/docs/hooks](https://impeccable.style/docs/hooks).
+
+Manual copy commands are fallback/debug instructions. The normal path is:
+
+```bash
+npx impeccable install
+npx impeccable update
+```
+
 ## CLI
 
 Impeccable includes a standalone CLI for detecting anti-patterns without an AI harness:
@@ -257,24 +392,37 @@ Impeccable includes a standalone CLI for detecting anti-patterns without an AI h
 npx impeccable detect src/                   # scan a directory
 npx impeccable detect index.html             # scan an HTML file
 npx impeccable detect https://example.com    # scan a URL (Puppeteer)
-npx impeccable detect --fast --json .        # regex-only, JSON output
+npx impeccable detect --json .               # CI-friendly JSON output
+npx impeccable detect --no-config src/       # raw scan, ignoring project config/context
+npx impeccable ignores list                  # show detector ignores
+npx impeccable ignores add-file "src/legacy/**"
+npx impeccable ignores add-value overused-font Inter --reason "Brand font"
 ```
 
-The detector catches 41 deterministic issues across AI slop (side-tab borders, purple gradients, bounce easing, dark glows) and general design quality (line length, cramped padding, small touch targets, skipped headings, and more).
+The detector catches 59 deterministic issues across AI slop (side-tab borders, purple gradients, bounce easing, dark glows) and general design quality (line length, cramped padding, small touch targets, skipped headings, and more).
+
+By default, `detect` respects the same `.impeccable/config.json` and `.impeccable/config.local.json` detector config as the design hook: `detector.ignoreRules`, `detector.ignoreFiles`, `detector.ignoreValues`, and `detector.designSystem.enabled`. Hook lifecycle settings such as `hook.enabled` only affect automatic hook execution.
+
+For a waiver that should travel with one file instead of the repo config, add an inline comment in the file: `<!-- impeccable-disable overused-font: exported brand doc -->`. The marker works in any comment syntax, scopes to the whole file (or one line with `impeccable-disable-line` / `impeccable-disable-next-line`), and is bypassed by `--no-inline-ignores` or `--no-config`.
+
+Full detector docs: [impeccable.style/docs/detector](https://impeccable.style/docs/detector).
 
 ## Supported Tools
 
 - [Cursor](https://cursor.com)
 - [Claude Code](https://claude.ai/code)
-- [OpenCode](https://opencode.ai)
-- [Pi](https://pi.dev)
+- [GitHub Copilot](https://github.com/features/copilot)
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli)
 - [Codex CLI](https://github.com/openai/codex)
-- [VS Code Copilot](https://code.visualstudio.com)
+- [Grok Build](https://x.ai/cli)
+- [OpenCode](https://opencode.ai)
+- [Pi](https://pi.dev)
 - [Kiro](https://kiro.dev)
 - [Trae](https://trae.ai)
 - [Rovo Dev](https://www.atlassian.com/software/rovo)
 - [Qoder](https://qoder.com)
+- [Mistral Vibe](https://docs.mistral.ai/vibe/code/overview)
+- [Google Antigravity](https://antigravity.google)
 
 ## Community & Ecosystem
 
