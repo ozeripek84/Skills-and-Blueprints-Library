@@ -76,4 +76,5 @@ Fark şu: `competitor-profiling` rakibin **sitesine** bakar, bu skill rakibin **
 
 > Çalıştırılabilir hâli — çekim + fark + brief promptları: `/icerik-pazarlama:rakip-reklam-istihbarati`
 > Kaynak: YouTube `2fPKsjMoi8Y` (operasyonel döngü sağlam; istatistiksel anlamlılık ve ücretsiz-araç uyarıları eklendi. Transkriptteki bütçe rakamları tutarsız — alıntılanmadı).
+> 📣 Reklamla ilgili tüm katmanlar tek çatıda: [[Reklam — MOC]]
 > İlişkili: `marketing-skills/skills/{ads,ad-creative,competitor-profiling}` · [[Playwright Tarayıcı Otomasyonu (Claude Code) — referans]]

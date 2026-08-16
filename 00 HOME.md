@@ -16,6 +16,7 @@ guncelleme: 2026-08-16
 | [[Blueprints MOC]] | Hazır uygulama iskeletleri — tek-dosya + çok-dosyalı/klonlanabilir (`/kur` ile kurulur) | **24** |
 | [[Dış Kütüphaneler MOC]] | İngilizce GitHub repo'ları — 🏛️ **anthropics/skills** + ⭐ **gstack** + 🧭 **Karpathy** + tasarım (ui-ux-pro-max · impeccable · taste · emilkowalski) + 📣 **marketing-skills** (45) + 🎬 **topview** + 250+ skill | **11 repo** |
 | [[Web Sitesi Yapımı — MOC]] | 🌐 Site/web yapımı — yöntem + no-code üreticiler + tasarım, tek çatı | **7 rehber** |
+| [[Reklam — MOC]] | 📣 Ödemeli reklam tek çatı — strateji · rakip istihbaratı · kreatif (metin/görsel/video) · varış sayfası · ölçüm · outreach + ortak dürüstlük çizgisi | **7 katman** |
 
 ## 📚 Rehberler
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
