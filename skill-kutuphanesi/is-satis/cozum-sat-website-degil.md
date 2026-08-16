@@ -36,3 +36,4 @@ Küçük/yerel işletmelere değer satarken — ama "daha güzel website" satı�
 
 > Çalıştırılabilir hâli (niş seçimi + acı-nokta araştırma + demo + pitch + abonelik): `/is-satis:cozum-sat-website-degil`
 > İlişkili: `ai-ajans-modeli` (ajans operasyonu), `lead-gen-ajansi`/`outbound-lead-agent` (erişim), `donusum-landing` (site kısmı), [[Hostinger Horizons — No-Code İşlevsel MVP (referans)]] (yazılımı kur).
+> ⚠️ **Adım 4'teki demoyu AI görselle yapacaksan önce oku:** [[Lokal İşletmeye AI Hizmet Satışı — dürüst değerlendirme + kütüphane haritası (referans)]] — işletmenin fotoğrafını değiştirmenin (nesne silme, mekânı olmadığı gibi gösterme) yanıltıcı reklam riski + Reviews fotoğraflarının telifi + Maps kazıma ToS.
