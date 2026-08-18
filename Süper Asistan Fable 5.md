@@ -1,55 +1,98 @@
 ---
-tags: [rehber, model, yontem, fable5, opus5, playbook]
-guncelleme: 2026-08-15
+tags: [rehber, model, yontem, fable5, opus5, system-prompt, playbook, dürüst]
+guncelleme: 2026-08-17
 ---
 
-# 🧠 Süper Asistan Fable 5 — çalışma yöntemini çıkar, ucuz modele kur
+# 🧠 Süper Asistan Fable 5 — "güçlü modelin beynini ucuz modele taşıma" iddiası
 
 > [[00 HOME|🏠 Ana sayfaya dön]]
-> **Kullanım kılavuzu.** Tam referans + kalibrasyon tabloları: [[skill-kutuphanesi/araclar/model-metodu-tasima|⚙️ model-metodu-tasima skill]] · çalıştırılabilir hâli: `/araclar:model-metodu-tasima`
+> Tam referans + kalibrasyon tabloları: [[skill-kutuphanesi/araclar/model-metodu-tasima|⚙️ model-metodu-tasima skill]] · çalıştırılabilir hâli: `/araclar:model-metodu-tasima`
 
 ---
 
-## ⚡ Kısa cevap: Fable 5 credit'ine **ihtiyacın yok**
+## ⚡ İki video, aynı iddia, aynı hata
 
-Sorduğun şey — *"Fable 5'in algoritmasını ondan almam lazım ki Opus 5'e vereyim"* — videonun yanlış çerçevesinden geliyor. Düzeltilmiş hâli, senin lehine:
-
-**Bir modelden "algoritma" alamazsın. Alabildiğin şey YÖNTEM — ve yöntemin Fable 5'ten gelmesi şart değil.**
-
-Üç somut gerekçe:
-
-1. **Taşınan şey zekâ değil.** Prompt ağırlıkları değiştirmez. Belgeye geçen şey adım sırası, kontrol listesi, çıktı formatı, karar kuralları. Kaynak modelin "üstünlüğü" belgeye **geçmiyor** — o yüzden belgeyi Opus 5'in kendisi için yazması da aynı işi görür.
-2. **Fable kaynaklı belge Opus 5'te ekstra iş + risk.** Bir model için yazılmış talimat başka modelde fazla-buyurgan olup kaliteyi *düşürebilir*. En keskin tuzak: **Opus 5 işini zaten kendi doğruluyor** — Fable'ın yazdığı "her adımda kendini kontrol et" satırı Opus 5'te aşırı-doğrulamaya yol açar; doğru hamle o satırı **silmek**. Yani Fable'dan alınan belgeyi Opus 5'e vermeden önce sökmen gerekir.
-3. **Belgenin gerçek değeri modelden değil, senden geliyor.** Alan kuralların, kalite çıtan, hedef kitlen, kırmızı çizgilerin, gerçek örneklerin. Hiçbir model — Fable dahil — bunları veremez. Model sadece yapıyı kurar.
-
-**Sonuç:** kaynak = **Opus 5**. Kendi yöntemini kendisi çıkarsın.
-
----
-
-## 🎯 Sana uygun asıl rota (Fable→Opus 5 değil)
-
-Opus 5 zaten senin varsayılanın. Tasarruf Fable'dan inmekten değil, **Opus 5'ten inmekten** gelir:
-
-| Kaynak (yöntemi çıkaran) | Hedef (yöntemin kurulduğu) | Ne kazanırsın |
+| Kaynak | Önerdiği yöntem | Ortak iddia |
 |---|---|---|
-| Opus 5 | **Opus 5** (aynı model) | Tutarlılık + hız + daha az elle düzeltme. Maliyet aynı, kalite oturur. **Buradan başla.** |
-| Opus 5 | **Sonnet 5** | ~**1.7×** ucuz ($5/$25 → $3/$15). Prosedürel işin çoğu buraya sığar. |
-| Opus 5 | **Haiku 4.5** | **5×** ucuz ($1/$5). Yalnız şablonlu, yargı istemeyen yüksek hacimli iş. |
+| `VR2EdVZ4-s0` | Fable 5'e **kendi çalışma yöntemini yazdır** → Opus 5 projesine yapıştır | "Fable 5'in zekâsını ucuz modele taşırsın" |
+| `C5J5VAng7TI` | Fable 5'in **sızdırılmış system prompt'unu** al → GLM 5.2 / Kimi K3'e yapıştır | "Küçük modelden çok daha güçlü yanıt alırsın" |
 
-*(Fiyatlar API liste fiyatı, 1M token giriş/çıkış. claude.ai'da token faturası yok — kazanç kotanın daha yavaş bitmesi.)*
+**İkisi de aynı yanlış varsayıma dayanıyor: zekânın prompt'ta olduğu.** Zekâ ağırlıklardadır; prompt yalnızca **davranış** ayarlar. Bir prompt zayıf modeli daha *düzenli* yapar, daha *akıllı* yapmaz.
+
+İkinci video ayrıca **kendi kaynağıyla çelişiyor** — aşağıda dosyanın içine bakıp ölçtüm.
+
+---
+
+## 🔬 Sızdırılan dosyada gerçekte ne var (ölçüm)
+
+Kaynak: `github.com/elder-plinius/CL4R1T4S/ANTHROPIC/CLAUDE-FABLE-5.md` · 122 KB · 1.597 satır · ~17.500 kelime
+
+| Bulgu | Ölçüm | Anlamı |
+|---|---|---|
+| **%60'ı araç tanımı** | 1.597 satırın **969'u** (satır 629+) | 18 adet **claude.ai'ye özel** araç şeması: `weather_fetch`, `recipe_display_v0`, `places_map_display_v0`, `fetch_sports_data`, `recommend_claude_apps`, `search_mcp_registry`, `web_search`, `bash_tool`… Bu araçlar GLM'de de Kimi'de de **yok**. |
+| **"Nasıl düşünür/plan yapar" bölümü YOK** | Başlıkların hiçbiri reasoning/planning değil | Bölümler: ürün bilgisi · refusal politikası · çocuk güvenliği · hukuki-finansal · ton & biçim · kullanıcı esenliği · tarafsızlık · hafıza · artifact depolama · MCP önerileri · arama talimatları · telif uyumu · araç şemaları · "Claudeception" · atıf kuralları. **Videonun "düşünme, planlama, araç kullanma kurallarının hepsi" iddiası dosyada karşılanmıyor.** |
+| **Zaten eskimiş** | Dosya kendi içinde tarihini veriyor: *"the actual current date, Tuesday, June 09, 2026"* | ~10 haftalık snapshot. |
+| **Ürün bilgisi de eski** | **Opus 5 ve Sonnet 5 hiç geçmiyor** (0 eşleşme) | "En güncel modeller" olarak Fable 5, Opus 4.8, Sonnet 4.6, Haiku 4.5 sayılıyor. Bugün Opus 5 ve Sonnet 5 çıktı → dosya **kendi konusunda yanlış bilgi** taşıyor. |
+| **claude.ai prompt'u, Claude Code değil** | *"accessible via this web-based, mobile, or desktop chat interface"* | Kodlama/ajan işi için değil, **sohbet ürünü** konfigürasyonu. |
+
+**Özet:** dosya bir "düşünme sistemi" değil; **ürün konfigürasyonu + güvenlik politikası + araç kataloğu.**
+
+### Kaynağın güvenilirliği
+CL4R1T4S (elder-plinius) topluluk derlemesi; içerik **modele söyleterek** çıkarılıyor, Anthropic tarafından doğrulanmıyor. Model kendi system prompt'unu kısmen **uydurabilir**. Bu dosya iç tutarlılığı yüksek (model string'leri, ürün adları doğru) ama yine de **kanıtlanmış bir sızıntı değil, iddia.** Not: Anthropic claude.ai system prompt'larını zaten **resmen yayımlıyor** — doğrulamak istersen resmî sürümle karşılaştır.
+
+---
+
+## ❌ GLM 5.2 / Kimi K3'e yapıştırmak neden işe yaramaz
+
+1. **Zekâ taşınmaz.** Ağırlıklar değişmez; prompt davranış ayarlar.
+2. **%60'ı olmayan araçları tarif ediyor.** Hedef modele "sende bulunmayan 18 aleti şu kurallarla kullan" demiş olursun → uydurma araç çağrısı, kafa karışıklığı, bozuk çıktı.
+3. **İçerik "yöntem" değil, politika.** Anthropic'in refusal/çocuk güvenliği/telif politikası başka bir modelde ne uygular ne de anlamlıdır.
+4. **~17.500 kelime bağlam yakar.** Ucuz modelin en büyük avantajı (maliyet + bağlam) her istekte bu yükle eriyor.
+5. **Zaten eski.** 9 Haziran 2026 snapshot'ı; kendi model listesi bile güncel değil.
+6. **Hukuki soru.** Bir sağlayıcının system prompt'unu alıp rakip modele koymak ToS/IP tarafında temiz değil.
+
+> Videonun "yoruma **Claude** yaz, linki DM'den göndereyim" kapanışı da not: içerik zaten **halka açık bir GitHub reposunda** — DM'e yönlendirme etkileşim/takipçi hunisi.
+
+---
+
+## ✅ Peki bu dosya gerçekten ne işe yarar?
+
+**Kopyalanacak değil, incelenecek bir belge.** Dünya çapında bir ürünün system prompt'u nasıl yazılmış görüyorsun. Kendi `CLAUDE.md` / proje talimatını yazarken örnek alınacak yanları:
+
+- **Bölümlendirme** — konu başına ayrı, adlandırılmış blok (`tone_and_formatting`, `refusal_handling`…)
+- **Kural dili** — 3. şahıs, pozitif ifade: *"Claude uses a warm tone…"* (yasak listesi değil, davranış tarifi)
+- **Politikanın katmanlanması** — genel kural → istisna → istisnanın istisnası
+- **Araç tanımı yazımı** — aracın ne yaptığı değil, **ne zaman çağrılacağı / çağrılmayacağı**
+- **Somutluk** — "iyi ol" yok; her satır bir kararı değiştiriyor
+
+Bu, [[skill-kutuphanesi/araclar/model-metodu-tasima|model-metodu-tasima]] skill'indeki "her satır bir davranışı değiştirmeli" kuralının canlı örneği.
+
+---
+
+## 🎯 Sana uygun asıl rota (Fable 5 credit'i gerekmiyor)
+
+Zekâ taşınmadığına göre belgenin Fable 5'ten çıkması **şart değil**. Üstelik Fable kaynaklı belge Opus 5'te **söküm** ister: Fable'ın yazacağı "her adımda kendini doğrula" satırı Opus 5'te aşırı-doğrulama üretir — Opus 5 işini zaten kendi doğruluyor; doğru hamle o satırı **silmek**.
+
+**Kaynak = hedef yap.** Opus 5'e kendi yöntemini kendisi yazdırsın. Tasarruf da Fable'dan inmekten değil, **Opus 5'ten inmekten** gelir:
+
+| Kaynak | Hedef | Kazanç |
+|---|---|---|
+| Opus 5 | **Opus 5** (aynı) | Tutarlılık + daha az elle düzeltme. **Buradan başla.** |
+| Opus 5 | **Sonnet 5** | ~**1.7×** ucuz ($5/$25 → $3/$15) |
+| Opus 5 | **Haiku 4.5** | **5×** ucuz ($1/$5) — yalnız şablonlu, yargı istemeyen iş |
+
+*(API liste fiyatı, 1M token giriş/çıkış. claude.ai'da token faturası yok — kazanç kotanın yavaş bitmesi.)*
 
 ---
 
 ## 📋 3 adımda uygula (yalnız Opus 5 ile)
 
 ### Adım 1 — İşi gerçekten yaptır (introspection yok)
-Opus 5'te o işten **2–3 gerçek örnek** yaptır — kendi gerçek girdinle, uydurma örnekle değil. Çıktıları beğenene kadar düzelt. **Yöntem bu çıktılardan türetilecek.**
+Opus 5'te o işten **2–3 gerçek örnek** yaptır (kendi gerçek girdinle). Beğenene kadar düzelt. Yöntem **bu çıktılardan** türetilecek.
 
-> Neden: "Nasıl düşünüyorsun?" diye sorarsan makul bir **öz-anlatı** alırsın, iç izin dökümü değil — model kendi düşünce zincirini okuyamaz (Fable 5'te ham chain of thought zaten hiç döndürülmez, sadece özet). Gözlenebilir çıktıdan türetmek uydurma payını düşürür.
+> Neden: "Nasıl düşünüyorsun?" sorusu **öz-anlatı** üretir, iç iz dökümü değil — model kendi düşünce zincirini okuyamaz (Fable 5'te ham chain of thought zaten hiç döndürülmez). Sızdırılan dosya da bunu doğruluyor: içinde "nasıl düşünürüm" diye bir bölüm **yok**.
 
 ### Adım 2 — Standardı çıkart
-Aynı sohbette:
-
 ```
 Az önce [İŞ TÜRÜ] için 3 iş yaptın. Şimdi bu çıktıları üreten OPERASYONEL STANDARDI yaz.
 
@@ -69,13 +112,11 @@ erdem cümleleri yazma. Sadece kararı değiştiren kuralı yaz. Markdown ver.
 ```
 
 Sonra buda:
-
 ```
-Şimdi bu belgeyi acımasızca buda. Her satır için sor: "Bu satır olmasaydı çıktı farklı
-olur muydu?" — Hayır ise SİL.
+Bu belgeyi buda. Her satır için sor: "Bu satır olmasaydı çıktı farklı olur muydu?"
+Hayır ise SİL.
 
-SİL: modelin zaten varsayılan yaptığı davranışın tarifi · genel erdem cümleleri · tekrar ·
-CAPS/"MUTLAKA" yığını.
+SİL: modelin zaten varsayılan yaptığı davranışın tarifi · genel erdem cümleleri · tekrar.
 KORU: alan kuralları · kalite çıtası · hedef kitle · yasaklar · bir kuralın ARDINDAKİ NEDEN ·
 somut format zorunlulukları. Bunlar eksikse bana sor, uydurma.
 
@@ -83,16 +124,11 @@ Budanmış belgeyi tam hâliyle yeniden yaz, sonuna 1 gerçek örnek çıktı ek
 ```
 
 ### Adım 3 — Kalibre et + kur
-Hedef **Opus 5** ise Fable-sökümü gerekmez, ama şunları **ekle**: kısalık talimatı (varsayılanı uzun), kapsam disiplini ("istenen işi istenen kapsamda; kendiliğinden büyütme"), alt-ajan tavanı. Hedef Sonnet 5 / Haiku 4.5 ise tam tablo → [[skill-kutuphanesi/araclar/model-metodu-tasima|skill]].
+Hedef **Opus 5** ise şunları **ekle**: kısalık talimatı (varsayılanı uzun) · kapsam disiplini ("istenen işi istenen kapsamda; kendiliğinden büyütme") · alt-ajan tavanı. Hedef Sonnet 5 / Haiku 4.5 ise tam tablo → [[skill-kutuphanesi/araclar/model-metodu-tasima|skill]].
 
-Kurulum — **claude.ai** (kaynağın tarif ettiği yol, doğru):
-1. Sol menü → **Projects** → **Create Project** → isim ver (ör. *Süper Asistan*).
-2. Proje içi → **Project Instructions** (Proje Talimatları) → budanmış belgeyi **yapıştır**.
-3. Projenin varsayılan modeli = **hedef model** (Opus 5 / Sonnet 5).
-4. Artık o projede açtığın **her yeni sohbet** bu standardı izler.
-
+Kurulum — **claude.ai**: Projects → Create Project → **Project Instructions**'a yapıştır → varsayılan model = hedef model. Artık o projedeki her yeni sohbet standardı izler.
 **Claude Code** → repo köküne `CLAUDE.md`. **API** → system prompt (uzun ve sabitse prompt caching ile önekte tut).
-Belge başlığına **hedef model + tarih** yaz — kalibrasyon model-bağımlı ve eskiyor.
+Belge başlığına **hedef model + tarih** yaz — kalibrasyon eskiyor (sızdırılan dosya bunun canlı kanıtı: 10 haftada eskimiş).
 
 ### Adım 4 — A/B (atlanamaz)
 3–5 temsili işi üç kolda karşılaştır: **(a)** Opus 5 belgesiz-en-iyi hâli · **(b)** hedef + belge · **(c)** hedef belgesiz.
@@ -101,46 +137,25 @@ Belge başlığına **hedef model + tarih** yaz — kalibrasyon model-bağımlı
 
 ---
 
-## 💳 Yine de Fable 5 kaynaklı istiyorsan — 3 yol
+## 💳 Yine de Fable 5 kaynaklı istiyorsan
 
-| Yol | Gerçek maliyet / şart | Not |
-|---|---|---|
-| **Tek seferlik API tokeni** | Bu iş **tek oturum**: 2–3 örnek + 1 çıkarma promptu ≈ 50K giriş / 20K çıkış → $10/1M ve $50/1M üzerinden kabaca **$1–3**. | Abonelik değil, bir kerelik. En temiz yol. claude.ai kredi mekaniği API'den farklı — orada değil, API'de yap. |
-| **Ödünç tek oturum** | Erişimi olan bir tanıdıkta **bir** oturum yeter. | Belgeyi o üretsin, kalibrasyonu sen yap. Sürekli erişim gerekmiyor. |
-| **Bulut sağlayıcı kredisi** | Fable 5 Bedrock / Vertex / Foundry'de de sunuluyor; yeni hesap deneme kredisi olabilir. | ⚠️ **Doğrula:** Fable 5 **30 gün veri saklama** şartlı — zero-data-retention yapılandırmasında hiç çalışmaz, her istek 400 döner. Kurumsal/ZDR hesapta bu yol kapalı. |
+| Yol | Gerçek maliyet / şart |
+|---|---|
+| **Tek seferlik API tokeni** | Bu iş **tek oturum**: 2–3 örnek + 1 çıkarma promptu ≈ 50K giriş / 20K çıkış → kabaca **$1–3**. Abonelik değil. |
+| **Ödünç tek oturum** | Erişimi olan bir tanıdıkta **bir** oturum yeter; kalibrasyonu sen yap. |
+| **Bulut kredisi** | Fable 5 Bedrock/Vertex/Foundry'de de sunuluyor. ⚠️ **30 gün veri saklama şartlı** — zero-data-retention hesapta hiç çalışmaz, her istek 400 döner. |
 
-> **Önce şunu yap:** A/B'nin (a) kolunu Fable yerine **"Opus 5, belgesiz, en iyi hâli"** koy. Fark kapanıyorsa Fable'a hiç para harcaman gerekmez — prosedürel işlerde genelde kapanır. Harcama kararını ölçümden sonra ver.
+> Önce A/B'nin (a) kolunu **"Opus 5, belgesiz, en iyi hâli"** yap. Fark kapanıyorsa Fable'a hiç para harcamana gerek yok — prosedürel işlerde genelde kapanır.
 
 ---
 
-## 📄 Orijinal kaynak promptu — ve neden değiştirdim
-
-Notion rehberinin tek promptu, aynen:
-
-```
-Lütfen kendi düşünme sistemini, problem çözme mantığını, iş planlama stratejini ve
-yanıt hazırlama algoritmalarını detaylıca analiz et. Bu çalışma yöntemini, başka bir
-yapay zeka modeline "Sistem Talimatı" (System Prompt) olarak verebileceğim eksiksiz,
-yapılandırılmış bir markdown (.md) dosyası haline getir.
-```
-
-Bu prompt **etkileyici okunan ama zayıf** bir belge üretir. Dört sorunu var:
-
-| Sorun | Neden önemli | Bu notta düzeltmesi |
-|---|---|---|
-| **Saf introspection** — "kendi düşünme sistemini analiz et" | Model kendi düşünce izini okuyamaz; aldığın şey makul bir **öz-anlatı**. (Fable 5'te ham chain of thought zaten hiç döndürülmez.) Belge doğru *görünür*, davranışı doğrulanmamıştır. | Adım 1–2: yöntem **gerçek çıktıdan** türetilir |
-| **Alan kapsamı yok** — "düşünme sistemin" genel | Genel belge her işte biraz işe yarar, hiçbirinde çok. Asıl kazanç **dar kapsamdan** gelir (tek iş türü). | Adım 0: tek ve dar iş türü seçilir |
-| **Karar kuralı istemiyor** | "Analiz et" → erdem cümleleri ("bütünsel yaklaşırım", "bağlamı değerlendiririm"). Bunlar davranış değiştirmez, sadece bağlam yakar. | Adım 2: adım sırası + karar kuralı + şablon + yasak + durma noktası; budama testi |
-| **Kalibrasyon ve doğrulama yok** — çıktı doğrudan Opus 5'e yapıştırılıyor | Bir model için yazılmış talimat başkasında kaliteyi *düşürebilir*. Klasik tuzak: Fable'ın yazacağı "kendini doğrula" satırı Opus 5'te aşırı-doğrulama üretir. | Adım 3 kalibrasyon + Adım 4 A/B |
-
-**Doğru olan kısım:** Adım 3'ün kurulum mekaniği (Projects → Project Instructions → model seçimi) doğru ve yukarıda aynen korundu. Sorun promptta, kurulumda değil.
-
 ## ⚠️ Kaçınılacaklar
 - **"Zekâ taşıdım" sanmak** — taşınan yöntem; akıl yürütme tavanı yerinde kalır.
-- **Kopyala-yapıştır** — kalibre edilmemiş belge hedef modelde kaliteyi düşürebilir.
-- **Her işi ucuz modele yıkmak** — derin akıl yürütme (yeni bug avı, mimari trade-off, uzun-soluklu ajan) boşluğu kapanmaz; A/B ile ayır.
-- **Belgeyi şişirmek** — modelin zaten yaptığını tarif etmek bağlam yakar, bazen davranışı bozar.
-- **Sürümsüz bırakmak** — yeni model çıkınca kalibrasyon ölü ağırlığa döner.
+- **Sızdırılan system prompt'u başka modele yapıştırmak** — %60'ı olmayan araçların tarifi; içerik yöntem değil politika.
+- **Kopyala-yapıştır** — kalibre edilmemiş belge hedef modelde kaliteyi düşürebilir (Opus 5 + "kendini doğrula" tuzağı).
+- **Introspection'a güvenmek** — "nasıl düşünüyorsun" öz-anlatı üretir; yöntemi gerçek çıktıdan türet.
+- **A/B atlamak** — ölçülmeyen geçiş sessiz kalite kaybıdır.
+- **Sürümsüz bırakmak** — 10 haftada eskiyen bir belge gördün; seninki de eskiyecek.
 
 ## 🔗 İlişkili
 [[skill-kutuphanesi/araclar/model-metodu-tasima|⚙️ model-metodu-tasima]] (tam referans + kalibrasyon tabloları) · [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] (elle yazılmış muadili — belgeyi bununla birleştir) · gstack `model-overlays/` (aynı fikrin olgun hâli: taban + model-özel katman) → [[Dış Kütüphaneler MOC]]
