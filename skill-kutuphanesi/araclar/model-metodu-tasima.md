@@ -18,7 +18,7 @@ Kaynak iddia: *"Fable 5'in zekâsını uygun maliyetli bir modele taşı."* Bu *
 - **Model kendi düşüncesini okuyamaz.** "Nasıl düşünüyorsun?" diye sorduğunda aldığın şey **makul bir öz-anlatı**, iç izin dökümü değil. Fable 5'te ham düşünce zinciri (chain of thought) **hiçbir zaman döndürülmez** — sadece özet. Yani çıkan MD, modelin kendi yöntemine dair *yeniden inşası*. İyi yazılmış bir süreç belgesi olarak değerli; ayrıcalıklı erişim değil. **Çözüm:** yöntemi introspection'dan değil, **gerçek çıktıdan** türet (Adım 1).
 - **Prompt model-bağımlıdır — kopyala-yapıştır zarar verebilir.** Bir model için yazılmış talimat, başka modelde fazla-buyurgan olup **kaliteyi düşürebilir** (Anthropic'in kendi migration rehberi bunu açıkça söylüyor). En keskin örnek: **Opus 5 işini zaten kendi doğrular** — belgeye "her adımda kendini kontrol et" yazarsan aşırı-doğrulama alırsın; doğru hamle o satırı **silmek**. Bu, "modele self-check yaptır" genel tavsiyesini tersine çevirir. Kalibrasyon tablosu aşağıda.
 - **Kazanç işin türüne bağlı.** Yöntem transferi **prosedürel** işlerde (format, yapı, bilinen alan, tekrarlı üretim) çok işe yarar; **derin akıl yürütme** isteyen işlerde (yeni bug avı, mimari trade-off, uzun-soluklu ajan koşusu) boşluğu kapatmaz. Her işi topluca ucuza indirme — **iş türüne göre yönlendir.**
-- **Kaynak model elinde olmak zorunda değil.** Zekâ taşınmadığına göre belgenin Fable 5'ten çıkması şart değil — hedef model kendi yöntemini kendisi çıkarabilir, üstelik kalibrasyon sökümü de gerekmez. Erişimin yoksa kaynak = hedef yap. → [[Süper Asistan Fable 5]]
+- **Kaynak model elinde olmak zorunda değil.** Zekâ taşınmadığına göre belgenin Fable 5'ten çıkması şart değil — hedef model kendi yöntemini kendisi çıkarabilir, üstelik kalibrasyon sökümü de gerekmez. Erişimin yoksa kaynak = hedef yap. → [[Süper Opus 5]]
 - **claude.ai'da "maliyet" ≠ token faturası.** Sohbet arayüzünde token başına ödemiyorsun; **kullanım kotanı** harcıyorsun. Aşağıdaki fiyat tablosu **API** içindir; claude.ai'da kazanç = kotanın daha yavaş bitmesi.
 
 ## Süreç (6 adım)
@@ -74,6 +74,6 @@ Fable 5 → Opus 5 = **2×** ucuz · → Sonnet 5 = **~3.3×** · → Haiku 4.5 
 - **Sürümsüz bırakmak** — yeni model çıkınca eski kalibrasyon ölü ağırlığa döner.
 
 > Çalıştırılabilir hâli — 4 prompt + kalibrasyon + A/B protokolü: `/araclar:model-metodu-tasima`
-> 🧠 Kullanım kılavuzu + orijinal kaynak promptu + "kaynak modelim yok" rotası: [[Süper Asistan Fable 5]]
+> 🧠 Kullanım kılavuzu + orijinal kaynak promptu + "kaynak modelim yok" rotası: [[Süper Opus 5]]
 > Kaynak: YouTube `VR2EdVZ4-s0` + Notion rehberi (teknik doğru, çerçeve abartılı; orijinal tek-prompt saf introspection — düzeltmeler yukarıda ve kılavuzda).
 > İlişkili: [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] · `araclar/llm-wiki` · gstack `model-overlays/`

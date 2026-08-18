@@ -1,6 +1,6 @@
 ---
 tags: [moc, home]
-guncelleme: 2026-08-17
+guncelleme: 2026-08-18
 ---
 
 # 🏠 Skills & Blueprints Kütüphanesi — Ana Sayfa
@@ -22,7 +22,7 @@ guncelleme: 2026-08-17
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
 - [[AI Uygulaması — Teknoloji Seçimi Handbook]] — bir AI uygulamasının her katmanı (frontend, DB, auth, sunucu, VPS, LLM…), farkları, ne zaman hangisi, ve maliyetleri. Şemalı.
 - 🧭 [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] — LLM kodlama tuzaklarına karşı 4 ilke (düşün-önce, sadelik, cerrahi, hedef-odaklı). Claude'un çalışma davranışı. (İlk mesajdaki "Karpathy prompt'u")
-- 🧠 [[Süper Asistan Fable 5]] — "güçlü modelin beynini ucuz modele taşı" iddiasının **kanıtla çürütülmüş** hâli + doğru rota. İki video aynı şeyi iddia ediyor (yöntemini yazdır / **sızdırılan system prompt'unu** GLM-Kimi'ye yapıştır); ikisi de zekânın prompt'ta olduğunu sanıyor. Sızdırılan dosya ölçüldü: **%60'ı claude.ai'ye özel 18 araç şeması**, "nasıl düşünür" bölümü **yok**, 9 Haziran 2026 snapshot'ı (Opus 5/Sonnet 5 geçmiyor → eskimiş). **Fable 5 credit'i gerekmiyor** — kaynak = hedef yap; çıktıdan-türetme + kalibrasyon + A/B. ⚙️ [[skill-kutuphanesi/araclar/model-metodu-tasima|skill]]
+- ⚡ [[Süper Opus 5]] — **Claude Code çalışma standardı.** Fable 5'in sızdırılan system prompt'u (1.597 satır) tarandı, Opus 5 + Claude Code için **~35 satırı** damıtıldı, %98'i atıldı (araç şemaları · sandbox yolları · eskimiş ürün bilgisi · zaten uygulanan güvenlik politikası). Alınanlar: skill'i okumadan koda girme · dosya mı sohbet mi · uzun çıktı disiplini · tanımadığını arat · aşırı biçimlendirme yasağı. Eklenenler (Fable'da yok, Opus 5 için şart): kapsam disiplini · alt-ajan tavanı · **doğrulama kasten boş**. Canlı dosya: `~/.claude/CLAUDE.md`, yedeği vault'ta. ⚙️ [[skill-kutuphanesi/araclar/model-metodu-tasima|skill]]
 - 🧬 [[Kendini Geliştiren Skill — 4 Katman (Jarvis-Karpathy yöntemi)]] — statik değil, kendini iyileştiren skill kurma: oluştur → Karpathy disiplini → göz (web) → hafıza+auto-research. (Jarvis nedir + yöntemi)
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
 - 📈 [[Borsa & Trading Prompt Paketi — dürüst kullanım (referans)]] — Claude ile piyasa analizi için 7 retail prompt + **dürüst uyarı**: canlı veri olmadan fiyat/backtest uydurur. Güvenli olanlar senin verinle çalışanlar (portföy, işlem günlüğü). Yatırım tavsiyesi değil.
