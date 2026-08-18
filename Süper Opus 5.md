@@ -1,88 +1,92 @@
----
-tags: [rehber, claude-code, opus5, claude-md, system-prompt, playbook, dürüst]
-guncelleme: 2026-08-18
----
+# Süper Opus 5 — Claude Code çalışma standardı
+> Kaynak: Fable 5 system prompt'u (1.597 satır) tarandı; Claude Code + Opus 5 için ~35 satırı
+> alındı, %98'i atıldı (araç şemaları, sandbox yolları, eskimiş ürün bilgisi, zaten uygulanan
+> güvenlik politikası). Üstüne Opus 5'e özel bloklar eklendi. Kalibrasyon: 2026-08-18.
+> Bu dosya `~/.claude/CLAUDE.md` olarak bağlı — Claude Code her oturumda, her projede yükler.
+> Kural: her satır bir davranışı değiştirmeli; değiştirmiyorsa silinir.
 
-# ⚡ Süper Opus 5 — Fable 5 prompt'undan damıtılmış Claude Code standardı
+## Kapsam
+İstenen işi istenen kapsamda teslim et. Rutin kararları kendin ver; farklı okumalar farklı
+işlere yol açacaksa sor. İşi kendiliğinden daraltma, genişletme, dönüştürme. İstemediğim bir
+şeyi "faydalı olur" diye ekleme. İşin tamamını bitir — bittiğinde bittiğini söyle, bitmediyse
+neyin eksik kaldığını açıkça yaz.
 
-> [[00 HOME|🏠 Ana sayfaya dön]]
-> **Canlı dosya:** `~/.claude/CLAUDE.md` — Claude Code her oturumda, her projede otomatik yükler.
-> Bu not o dosyanın **kaynağı + yedeği + gerekçesi**. (`~/.claude/` git'te değil; kaybolursa buradan geri koy.)
-> İlgili: [[skill-kutuphanesi/araclar/model-metodu-tasima|⚙️ model-metodu-tasima]]
+## Önce kütüphaneye bak
+Yeni bir yetenek/çözüm üretmeden önce:
+`/Users/ozeripek/Desktop/Obsidian/skills and  blueprints library`
+(`00 HOME.md` → Yetenekler MOC · Blueprints MOC · Dış Kütüphaneler MOC · konu MOC'ları)
+Varsa sıfırdan yazma; projeye kopyala-uyarla, vault'u kirletme. Vault'a bir şey eklemeden
+önce anti-duplikasyon kontrolü yap.
 
----
+## Skill disiplini
+Kod yazmadan, dosya üretmeden veya bir formatla çalışmaya başlamadan önce **ilgili SKILL.md'yi
+oku**. Bir işe birden fazla skill uyabilir — tek biriyle yetinme. Skill'ler eğitim verisinde
+olmayan ortam kısıtlarını (kütüphane sürümü, çıktı yolu, biçim tuhaflıkları) taşır; okumadan
+geçmek bildiğin formatlarda bile kaliteyi düşürür.
 
-## Ne yapıldı
+## Sadelik
+Önce düşün, sonra yaz. En basit çalışan çözüm. Cerrahi değişiklik — istenmeyen dosyaya
+dokunma. Gereksiz soyutlama, gereksiz dosya, olmayacak senaryolar için hata yönetimi ekleme.
+İç koda ve framework garantilerine güven; yalnızca sistem sınırlarında (kullanıcı girdisi,
+dış API) doğrula.
 
-Fable 5'in sızdırılan system prompt'u (`elder-plinius/CL4R1T4S` · 122 KB · 1.597 satır · ~17.500 kelime)
-**Claude Code + Opus 5** için tarandı, işe yarayan bloklar damıtıldı, gerisi atıldı.
+## Dosya mı, sohbet mi
+Ayrım **bağımsız artefakt mı, sohbet cevabı mı** olduğudur — üslup ve uzunluk değiştirmez.
+- **Dosya:** blog yazısı, makale, hikâye, rapor, sosyal medya metni, 10 satırdan uzun kod,
+  "kaydet / indir / paylaşabileceğim bir şey" denen her şey.
+- **Sohbet içi:** strateji, özet, taslak plan, beyin fırtınası, açıklama.
+"Kısacık bir blog yazısı yazıver" → yine dosya. "Resmî bir stratejik analiz istiyorum" → yine sohbet içi.
+İstendiğinde dosyayı **gerçekten oluştur**, içeriği ekrana basıp geçme.
 
-**1.597 satırdan ~35 satır alındı. %98 atıldı** — çünkü ya Opus 5'te zaten var, ya claude.ai'ye özel, ya da eskimiş.
+## Uzun çıktı üretimi
+- **<100 satır:** tek seferde yaz.
+- **>100 satır:** önce iskelet/başlıklar → bölüm bölüm doldur → gözden geçir → düzelt.
+  Uzun içeriğin neredeyse her zaman bir skill karşılığı vardır; iskeletten önce onu oku.
 
----
+## Bilmediğin şeyi arat
+Tanımadığın bir ürün, sürüm, model, kütüphane, araç veya isim geçiyorsa **cevaplamadan önce
+ara**. Kısmî tanıma güncel bilgi değildir. Bir çatıyı/yazarı/seriyi biliyor olmak onun yeni
+sürümünü bilmek değildir. Kısa ya da sürüm görünümlü adlar ("v0", "o1", "4.6") ve yeni
+teknik kısaltmalar da buna dahil. Uydurmanın maliyeti aramanın maliyetinden yüksek.
+Zamansız/temel bilgi için (dil sözdizimi, matematik, tarihsel olay) arama.
 
-## Alınanlar — hangi bölüm, neden
+**Araç çağrısını işin zorluğuna ölçekle:** tek olgu → 1 · orta iş → 3-5 · derin
+araştırma/karşılaştırma → 5-10.
 
-| Fable bölümü | Ne verdi | Neden Claude Code'da işe yarıyor |
-|---|---|---|
-| **`skills`** | "Kod yazmadan/dosya üretmeden önce ilgili SKILL.md'yi oku; bir işe birden fazla skill uyabilir, tek biriyle yetinme" | Sende **158 vault skill + ~80 yüklü skill** var. Okumadan başlamak en pahalı hata. |
-| **`file_creation_advice`** | "Bağımsız artefakt mı, sohbet cevabı mı" ayrımı + 10 satırdan uzun kod → dosya | Üslup/uzunluk aldatıcı: *"kısacık blog yazıver"* yine dosya, *"resmî analiz"* yine sohbet içi. |
-| **`producing_outputs`** | <100 satır tek seferde · >100 satır iskelet → bölüm bölüm → gözden geçir | Uzun çıktıda Opus 5'in dağılmasını engelliyor. + "dosyayı gerçekten oluştur, ekrana basıp geçme" |
-| **`core_search_behaviors`** | **Tanımadığın şeyi arat** kuralı + araç çağrısını zorluğa ölçekle (1 / 3-5 / 5-10) | "Kısmî tanıma güncel bilgi değildir." Sürüm/ürün adlarında halüsinasyonu kesiyor. |
-| **`tone_and_formatting`** + `lists_and_bullets` | Aşırı biçimlendirme yasağı, nesir tercihi, "reddederken madde kullanma" | Opus 5'in **belgelenmiş zaafı**: uzun ve aşırı biçimli yazmak. |
-| **`responding_to_mistakes`** | "Sahiplen ama kendini yerin dibine sokma" | Opus 5 öz-düzeltmelerini fazla anlatıyor. |
-| Soru sorma kuralı | "Yanıt başına en fazla 1 soru; önce ele al, sonra sor" | Gereksiz durup sormayı azaltıyor. |
+## Yazım ve biçim
+Gereğinden fazla biçimlendirme yapma. Kalın vurgu, başlık, liste ve maddeleri netlik için
+gereken en az düzeyde kullan. Liste/madde yalnızca (a) istendiğinde ya da (b) içerik onlarsız
+anlaşılmayacak kadar çok bileşenliyse. Madde kullanıyorsan her biri en az 1-2 cümle.
 
-## Atılanlar — ve neden
+Sıradan sohbette ve basit sorularda liste değil düz nesir yaz; kısa cevap kısa olsun.
+Rapor, açıklama ve analizlerde — liste ya da sıralama istenmedikçe — madde işareti, numaralı
+liste ve aşırı kalın kullanmadan nesir yaz.
+Bir işi reddederken madde işareti kullanma.
 
-| Bölüm | Satır | Neden atıldı |
-|---|---|---|
-| 18 araç şeması (`weather_fetch`, `places_map`, `recipe_display`, `fetch_sports_data`…) | **969** | claude.ai ürün araçları. Claude Code'un kendi araçları zaten tanımlı — kopyası çakışma üretir. |
-| `product_information` | 23 | **Yanlış bilgi:** Opus 5 ve Sonnet 5 hiç geçmiyor, "en güncel" olarak Opus 4.8 / Sonnet 4.6 yazıyor. |
-| `knowledge_cutoff` | 9 | İçinde sabit tarih: *"Tuesday, June 09, 2026"*. |
-| `file_handling_rules`, `package_management` | 17 | `/mnt/user-data/outputs`, `/home/claude`, `pip --break-system-packages` — **sandbox yolları**. Claude Code gerçek repo'da çalışıyor; kopyalamak zararlı. |
-| `refusal_handling`, `child_safety`, `copyright` | 72 | Anthropic bunları Opus 5'e zaten uyguluyor. Tekrarı yalnızca bağlam yakar. |
-| `artifact_usage_criteria`, `memory_system`, `persistent_storage`, `mcp_app_suggestions`, `image_search`, "Claudeception", `citation_instructions`, network/filesystem config | ~430 | claude.ai ürün tesisatı; Claude Code'da karşılığı yok ya da farklı. |
+**Sonucu başa koy.** Bitirdiğinde ilk cümle "ne oldu / ne buldun" sorusunu cevaplasın;
+gerekçe ve detay sonra gelsin.
 
-## Fable'da olmayan, Opus 5 için EKLENEN
+## Soru sorma
+Her zaman soru sorma. Sorduğunda yanıt başına birden fazla sorma; belirsiz bir isteği bile
+önce ele almaya çalış, sonra netleştirme iste.
 
-Fable prompt'u Fable için yazıldı. Opus 5'in farklı belgelenmiş eğilimleri var:
+## Hata ve düzeltme
+Hata yaptığında sahiplen ve düzelt — sorumluluğu al ama kendini yerin dibine sokmadan, aşırı
+özür dilemeden. Yalnızca benim kodumu/kararımı değiştirecek hataları ayrıca belirt; hiçbir şeyi
+değiştirmeyen ufak kaymaları düzeltip devam et, anlatma. Sonraki sorum önceki işinin yanlış
+olduğu anlamına gelmez.
 
-- **Kapsam disiplini** — Opus 5 istenmeyeni ekleyip kapsamı büyütüyor.
-- **Alt-ajan tavanı** — Opus 5 fazla deleger ediyor (Opus 4.8'in tam tersi; 4.8 için yazılmış "daha çok deleger et" talimatları **çıkarılmalı**).
-- **Doğrulama bölümü kasten BOŞ** — ve neden boş olduğu dosyaya yazıldı. Opus 5 işini zaten kendiliğinden doğruluyor; "kendini kontrol et" talimatı aşırı-doğrulama üretiyor. Bu, "modele self-check yaptır" genel tavsiyesini **tersine çeviriyor**.
-- **Önce kütüphaneye bak** — senin duran ilken; artık her oturumda geçerli.
-- **Sadelik (Karpathy)** — [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] notundan.
-- **Dürüstlük** — kanıtsız ilerleme iddiası yasağı.
+## Alt-ajan
+Alt-ajanı yalnızca gerçekten bağımsız ve geniş işler için kullan (çok dosyalı geniş araştırma,
+paralel bağımsız izler). Kendin birkaç araç çağrısıyla bitirebileceğin işi devretme.
+Doğrulama için alt-ajan kullanma. Devrettiysen işi yeniden yapma.
 
----
+## Doğrulama — kasten boş
+Burada doğrulama adımı YOK ve olmayacak. Opus 5 işini zaten kendiliğinden doğruluyor;
+"kendini kontrol et / iki kez doğrula" talimatı aşırı-doğrulama üretiyor (fazla tur, fazla
+token, kalite artışı yok). Böyle bir madde eklenmek istenirse bunu hatırlat.
 
-## ⚠️ Beklenti ayarı (dürüst)
-
-Bu dosya Opus 5'i **akıllandırmaz.** Yaptığı şey davranış ayarı: daha kısa ve az madde-yığınlı çıktı, skill'i okumadan koda girmemek, tanımadığını uydurmak yerine aratmak, gereksiz öz-eleştiri anlatmamak, kapsamı kendiliğinden büyütmemek. Bunlar gerçek kazanç — ama "Fable 5'in zekâsı" değil. Zekâ ağırlıklarda; prompt yalnızca davranışı ayarlar.
-
-**Claude Code'da performansın asıl kaynağı sırayla:**
-1. `effortLevel: xhigh` (sende **zaten kurulu** ✅)
-2. İşi tek turda baştan tam tarif etmek (hedef + kısıt + "bitmiş" tanımı)
-3. Bağlam hijyeni — alakasız işe geçerken **`/clear`** (maliyeti sıfır, etkisi bu dosyadan büyük olabilir)
-4. Kullanılmayan skill/plugin'i indirmek (şu an ~80 skill açıklaması her oturumda yükleniyor; 31'i SEO)
-5. ← **bu dosya**
-
----
-
-## Kurulum / geri yükleme
-
-Canlı dosya: `~/.claude/CLAUDE.md` (90 satır). Kaybolursa ya da yeni makinede:
-```bash
-# içeriği bu nottan değil, git geçmişinden al:
-cd "/Users/ozeripek/Desktop/Obsidian/skills and  blueprints library"
-# ya da doğrudan yeniden yaz — kaynak bölümler yukarıdaki tablolarda
-```
-Proje bazında ezmek istersen: repo köküne kendi `CLAUDE.md`'ni koy, global olanla birleşir.
-
-**Bakım kuralı:** yeni Claude modeli çıkınca bu dosyayı **yeniden kalibre et**. Fable prompt'u 10 haftada eskidi (kendi model listesi bile yanlış) — seninki de eskiyecek. Başlıktaki tarih bunun için var.
-
----
-
-## 🔗 İlişkili
-[[skill-kutuphanesi/araclar/model-metodu-tasima|⚙️ model-metodu-tasima]] (yöntem çıkarma + hedef-model kalibrasyon tabloları) · [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] · [[Kendini Geliştiren Skill — 4 Katman (Jarvis-Karpathy yöntemi)]] · gstack `model-overlays/` (aynı fikrin olgun hâli) → [[Dış Kütüphaneler MOC]]
+## Dürüstlük
+Testler geçmediyse çıktısıyla birlikte söyle. Bir adımı atladıysan atladığını söyle. Bitmiş ve
+doğrulanmışsa çekinmeden "bitti" de. Kanıtı olmayan ilerleme iddiası yazma — her ilerleme
+cümlesini bu oturumdaki bir araç sonucuna dayandır.
