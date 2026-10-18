@@ -9,8 +9,12 @@
  * live-e2e; run it with `bun run test:new-work-e2e`.
  *
  * The concept-seed direction roll (challengers, ASSIGNED INDEX, the no
- * PRODUCT.md gate) is already covered by tests/concept-seed.test.mjs and is
- * not repeated here.
+ * PRODUCT.md gate) is pinned by the oracle corpus (tests/oracle, `seed-*`
+ * cases) and is not repeated here.
+ *
+ * Both verbs (`serve-question`, `generate-image`) run through the engine
+ * binary from tests/lib/engine-bin.mjs (IMPECCABLE_BIN or
+ * skill/scripts/bin/<os>-<arch>/); the suite fails loudly without one.
  *
  * One-time setup:  npx playwright install chromium
  */
@@ -24,16 +28,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { runUserBot } from './new-work-e2e/user-bot.mjs';
+import { ENGINE_MISSING_MESSAGE, engineEnv, findEngineBinary } from './lib/engine-bin.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SERVE = path.join(ROOT, 'skill', 'scripts', 'serve-question.mjs');
-const GENERATE = path.join(ROOT, 'skill', 'scripts', 'generate-image.mjs');
+const ENGINE_BIN = findEngineBinary();
 const CATALOG_DIR = path.join(ROOT, 'tests', 'fixtures', 'concept-catalog');
 
 let playwright;
 let browser;
 
 before(async () => {
+  if (!ENGINE_BIN) throw new Error(ENGINE_MISSING_MESSAGE);
   try {
     playwright = await import('playwright');
   } catch (err) {
@@ -67,9 +72,9 @@ function makeWorkspace() {
 // serve-question writes its state under cwd; run everything from the workspace.
 function run(args, cwd) {
   return new Promise((resolve) => {
-    const child = spawn(process.execPath, [SERVE, ...args], {
+    const child = spawn(ENGINE_BIN, ['serve-question', ...args], {
       cwd,
-      env: { ...process.env, IMPECCABLE_QUESTION_FORCE: '1', IMPECCABLE_CATALOG_DIR: CATALOG_DIR },
+      env: engineEnv(ENGINE_BIN, { IMPECCABLE_QUESTION_FORCE: '1', IMPECCABLE_CATALOG_DIR: CATALOG_DIR }),
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     let out = '';
@@ -80,9 +85,17 @@ function run(args, cwd) {
   });
 }
 
+// A direction or surface round (a payload carrying buildPath) declares each
+// card's kind, or --start refuses it. These fixtures exercise rendering, not
+// identity, so a card without one takes the lead's or a dealt structure's.
+function withCardKinds(payload) {
+  if (!payload.buildPath) return payload;
+  return { ...payload, options: payload.options.map((o, i) => (o.kind ? o : { ...o, kind: i === 0 ? 'assigned' : 'dealt' })) };
+}
+
 async function startDaemon(cwd, payload, key) {
   const payloadPath = path.join(cwd, `${key}.payload.json`);
-  writeFileSync(payloadPath, JSON.stringify(payload));
+  writeFileSync(payloadPath, JSON.stringify(withCardKinds(payload)));
   const started = await run(['--start', '--payload', payloadPath, '--no-open', '--key', key], cwd);
   assert.equal(started.code, 0, `--start failed: ${started.out} ${started.err}`);
   const url = started.out.match(/QUESTION URL: (\S+)/)?.[1];
@@ -112,10 +125,10 @@ function makeFakeImage(cwd, prompt, outName) {
 }
 
 function spawnSyncGen(prompt, out, size = null) {
-  const args = [GENERATE, '--prompt', prompt, '--out', out];
+  const args = ['generate-image', '--prompt', prompt, '--out', out];
   if (size) args.push('--size', size);
-  return spawnSync(process.execPath, args, {
-    env: { ...process.env, IMPECCABLE_IMAGE_GEN_FAKE: '1' },
+  return spawnSync(ENGINE_BIN, args, {
+    env: engineEnv(ENGINE_BIN, { IMPECCABLE_IMAGE_GEN_FAKE: '1' }),
     encoding: 'buffer',
   });
 }
@@ -124,6 +137,76 @@ function spawnSyncGen(prompt, out, size = null) {
 // serve-question interactive cycles
 // --------------------------------------------------------------------------
 describe('new-work-e2e: serve-question decision page', () => {
+  it('renders a system-font picker without font or external requests', async () => {
+    const cwd = makeWorkspace();
+    const key = 'system-fonts';
+    const context = await browser.newContext({ colorScheme: 'light' });
+    const externalRequests = [];
+    const fontResponses = [];
+    try {
+      const { url } = await startDaemon(cwd, {
+        title: 'Choose the visual world',
+        options: [{ id: 'assigned', label: 'Local typography' }],
+        buildPath: { value: 'code', toggle: true },
+      }, key);
+      const origin = new URL(url).origin;
+      await context.route('**/*', (route) => {
+        if (new URL(route.request().url()).origin !== origin) {
+          externalRequests.push(route.request().url());
+          return route.abort();
+        }
+        return route.continue();
+      });
+      const page = await context.newPage();
+      page.on('response', (response) => {
+        if (response.request().resourceType() === 'font') {
+          fontResponses.push({ url: response.url(), status: response.status(), type: response.headers()['content-type'] });
+        }
+      });
+      await page.goto(url);
+      const appearance = await page.evaluate(async () => {
+        await document.fonts.ready;
+        const tokenColor = (token) => {
+          const probe = document.createElement('span');
+          probe.style.color = `var(${token})`;
+          document.body.append(probe);
+          const color = getComputedStyle(probe).color;
+          probe.remove();
+          return color;
+        };
+        return {
+          fonts: document.fonts.size,
+          family: getComputedStyle(document.body).fontFamily,
+          scheme: getComputedStyle(document.documentElement).colorScheme,
+          logoPaths: document.querySelectorAll('.brand svg path').length,
+          logoText: document.querySelectorAll('.brand svg text').length,
+          kinpaku: tokenColor('--ks-kinpaku'),
+          rule: tokenColor('--ks-rule'),
+          leadBorder: getComputedStyle(document.querySelector('.face.lead')).borderTopColor,
+          switchBorder: getComputedStyle(document.querySelector('.bp-switch')).borderTopColor,
+          activeDot: getComputedStyle(document.querySelector('.bp-opt.active'), '::before').backgroundColor,
+        };
+      });
+      assert.equal(appearance.fonts, 0, 'no custom font faces');
+      assert.match(appearance.family, /^system-ui,/);
+      assert.equal(appearance.scheme, 'light', 'picker preserves its light appearance under a light OS preference');
+      assert.ok(appearance.logoPaths > 2, 'the brand mark and wordmark are vector outlines');
+      assert.equal(appearance.logoText, 0, 'the logo does not depend on a font');
+      assert.equal(appearance.leadBorder, appearance.kinpaku, 'lead outline uses default Kinpaku');
+      assert.equal(appearance.activeDot, appearance.kinpaku, 'active switch dot uses default Kinpaku');
+      assert.equal(appearance.switchBorder, appearance.rule, 'switch track has a quiet border');
+      await page.locator('.card').first().hover();
+      assert.equal(await page.locator('.face.lead').evaluate((el) => getComputedStyle(el).borderTopColor), appearance.kinpaku, 'hover preserves the default Kinpaku outline');
+      await page.getByRole('img', { name: 'Impeccable', exact: true }).waitFor();
+      assert.deepEqual(externalRequests, [], 'dialog must not request third-party resources');
+      assert.deepEqual(fontResponses, [], 'no bundled or remote font downloads');
+    } finally {
+      await context.close();
+      await stopDaemon(cwd, key);
+      rmSync(cwd, { recursive: true, force: true });
+    }
+  });
+
   it('(a) pick assigned returns the option, hero/board fields, and the CHOSEN CARD directive', async () => {
     const cwd = makeWorkspace();
     const key = 'pick';
@@ -368,7 +451,9 @@ describe('new-work-e2e: serve-question decision page', () => {
         window.__advanceDecisionClock = (ms) => { offset += ms; };
       });
       const page = await context.newPage();
-      await page.goto(url, { waitUntil: 'load' });
+      // Missing comps intentionally keep polling; load need not settle while
+      // these requests are in flight. Assert the rendered UI instead.
+      await page.goto(url, { waitUntil: 'domcontentloaded' });
       await page.waitForSelector('.card[data-id="assigned"] .media.comp-pending');
 
       await page.evaluate(() => window.__advanceDecisionClock(241000));
@@ -609,6 +694,116 @@ describe('new-work-e2e: serve-question decision page', () => {
     }
   });
 
+  // HTML sketches: the code-led card face. The agent writes one first-viewport
+  // file per card after serving; the page draws it as a skeleton, shows only
+  // files written for this hand, opens the file as written on expand, and the
+  // picked sketch rides the answer as the composition to build.
+  const sketchHtml = (headline, copy) => `<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0;height:900px;overflow:hidden;font-family:system-ui;background:#10161c;color:#edf1f4}h1{font-size:56px;margin:40px}p{font-size:15px;margin:0 40px}</style></head><body><h1>${headline}</h1><p>${copy}</p></body></html>`;
+  const decisionDir = (cwd) => { const d = path.join(cwd, '.impeccable', 'mocks', 'decision'); mkdirSync(d, { recursive: true }); return d; };
+
+  it('(s1) sketches land as skeletons, a stale one waits for its rewrite, expand opens the raw file, and the pick carries it', async () => {
+    const cwd = makeWorkspace();
+    const key = 'sketches';
+    const dir = decisionDir(cwd);
+    // Left by an earlier round at a reused slot: the page must not show it.
+    writeFileSync(path.join(dir, 'assigned.html'), sketchHtml('Last round', 'Old copy that must never show.'));
+    const payload = {
+      title: 'Choose the structure',
+      buildPath: { value: 'code', toggle: true },
+      options: [
+        { id: 'assigned', label: 'Night timetable', kicker: 'THE ROLL', html: '.impeccable/mocks/decision/assigned.html', comp: '.impeccable/mocks/decision/assigned.webp' },
+        { id: 'phone', label: 'Pocket ledger', html: '.impeccable/mocks/decision/phone.html', htmlFrame: '390x844' },
+      ],
+    };
+    const { url } = await startDaemon(cwd, payload, key);
+    try {
+      const context = await browser.newContext();
+      const page = await context.newPage();
+      await page.goto(url, { waitUntil: 'load' });
+      assert.equal(await page.$$eval('.media.html', (els) => els.length), 2, 'both cards carry a sketch slot');
+      assert.equal(await page.$('.media.wire'), null, 'a sketch replaces the wireframe');
+      assert.ok(await page.$('.card[data-id="phone"] .media.html.portrait'), 'a phone frame turns the slot portrait');
+      const waiting = await run(['--wait', '--key', key, '--poll', '1'], cwd);
+      assert.equal(waiting.code, 3, waiting.out);
+      assert.match(waiting.out, /SKETCH STALE: [^\n]*assigned\.html/, 'the stale sketch is named');
+      assert.ok(await page.$('.card[data-id="assigned"] .media.html-pending'), 'the stale sketch is not shown');
+      writeFileSync(path.join(dir, 'assigned.html'), sketchHtml('Fleet overview', 'Body copy that becomes a bar.'));
+      writeFileSync(path.join(dir, 'phone.html'), sketchHtml('Ledger', 'Phone copy.'));
+      await page.waitForFunction(() => document.querySelectorAll('.media.html-pending').length === 0, null, { timeout: 20000 });
+      const frame = page.frames().find((f) => f.url().endsWith('/sketch/0'));
+      assert.ok(frame, 'the sketch loads in its frame');
+      const drawn = await frame.evaluate(() => ({ text: document.body.innerText, bars: document.querySelectorAll('span[style*="border-radius"]').length }));
+      assert.match(drawn.text, /Fleet overview/, 'display type stays type');
+      assert.doesNotMatch(drawn.text, /Body copy/, 'small copy becomes bars');
+      assert.ok(drawn.bars > 0, 'the skeleton pass drew bars');
+      const raw = await context.request.get(new URL('/sketch/0?raw=1', url).href);
+      assert.match(await raw.text(), /Body copy that becomes a bar/, 'raw serves the file as written');
+      assert.match(raw.headers()['content-security-policy'], /script-src 'none'/, 'raw runs no script');
+      const popup = context.waitForEvent('page');
+      await page.click('.card[data-id="assigned"] .media.html');
+      assert.match((await popup).url(), /\/sketch\/0\?raw=1$/, 'a click on the sketch opens it as written');
+      await page.click('.card[data-id="assigned"] .face.front button.choose');
+      const collected = await waitLoop(cwd, key, { poll: 10 });
+      await context.close();
+      assert.equal(collected.code, 0, collected.out);
+      const answer = JSON.parse(collected.out.match(/ANSWER: (\{.*\})/)[1]);
+      assert.equal(answer.html, '.impeccable/mocks/decision/assigned.html', 'the answer carries the picked sketch');
+      assert.match(collected.out, /CHOSEN SKETCH:/, 'the sketch is named as the composition to build');
+    } finally {
+      await stopDaemon(cwd, key);
+      rmSync(cwd, { recursive: true, force: true });
+    }
+  });
+
+  it('(s2) a flip to comp hides the sketch and leaves it out of the answer', async () => {
+    const cwd = makeWorkspace();
+    const key = 'sketchflip';
+    const dir = decisionDir(cwd);
+    const payload = {
+      title: 'Choose the structure',
+      buildPath: { value: 'code', toggle: true },
+      options: [{ id: 'assigned', label: 'Night timetable', kicker: 'THE ROLL', html: '.impeccable/mocks/decision/assigned.html', comp: '.impeccable/mocks/decision/assigned.webp' }],
+    };
+    const { url } = await startDaemon(cwd, payload, key);
+    try {
+      writeFileSync(path.join(dir, 'assigned.html'), sketchHtml('Fleet overview', 'Body copy.'));
+      const context = await browser.newContext();
+      const page = await context.newPage();
+      await page.goto(url, { waitUntil: 'load' });
+      await page.waitForSelector('.media.html:not(.html-pending)', { timeout: 20000 });
+      await page.click('.bp-opt[data-bp="comp"]');
+      await page.waitForSelector('#bp-confirm:not([hidden])');
+      await page.click('#bp-confirm [data-confirm]');
+      await page.waitForSelector('.media.comp-pending');
+      assert.ok(await page.$('.media.html[hidden]'), 'the flip hides the sketch slot');
+      const flipped = await waitLoop(cwd, key, { poll: 10 });
+      assert.match(flipped.out, /BUILD PATH FLIPPED: comp/);
+      makeFakeImage(dir, 'timetable comp', 'assigned.webp');
+      await page.waitForSelector('.card[data-id="assigned"] .media img.comp:not([hidden])', { timeout: 15000 });
+      // Back to code with the comp landed: the sketch is the face again and
+      // the comp leaves the card, so screen and answer agree.
+      await page.click('.bp-opt[data-bp="code"]');
+      await page.waitForSelector('.card[data-id="assigned"] .media.html:not([hidden])');
+      assert.equal(await page.$('.card[data-id="assigned"] .media img.comp'), null, 'the landed comp leaves the face');
+      // And to comp again: the landed comp is back and the sketch hides.
+      await page.click('.bp-opt[data-bp="comp"]');
+      await page.waitForSelector('#bp-confirm:not([hidden])');
+      await page.click('#bp-confirm [data-confirm]');
+      await page.waitForSelector('.card[data-id="assigned"] .media img.comp:not([hidden])', { timeout: 15000 });
+      assert.ok(await page.$('.media.html[hidden]'), 'comp hides the sketch again');
+      await page.click('.card[data-id="assigned"] .face.front button.choose');
+      const collected = await waitLoop(cwd, key, { poll: 10 });
+      await context.close();
+      const answer = JSON.parse(collected.out.match(/ANSWER: (\{.*\})/)[1]);
+      assert.equal(answer.html, undefined, 'a sketch the comp replaced is not the pick');
+      assert.doesNotMatch(collected.out, /CHOSEN SKETCH:/);
+      assert.match(collected.out, /CHOSEN COMP:/);
+    } finally {
+      await stopDaemon(cwd, key);
+      rmSync(cwd, { recursive: true, force: true });
+    }
+  });
+
   // The flip used to be tested only on a wireframe card, where the schematic
   // is hidden and a fresh slot inserted. A card carrying catalog art instead
   // took the other branch: the inspiration stayed the face and the comp slot
@@ -787,6 +982,185 @@ describe('new-work-e2e: serve-question decision page', () => {
       assert.equal(bareLabel, 'artwork unavailable', 'a palette-less slot still says what happened');
       assert.equal(bareField, '', 'a palette-less slot takes the CSS fallback field, no inline gradient');
     } finally {
+      await stopDaemon(cwd, key);
+      rmSync(cwd, { recursive: true, force: true });
+    }
+  });
+
+  it('(g) a server that dies mid-shuffle stops the poll and names the failure', async () => {
+    const cwd = makeWorkspace();
+    const key = 'gonemid';
+    const payload = {
+      title: 'Choose the visual world',
+      options: [
+        { id: 'assigned', label: 'First Hand', kicker: 'THE ROLL' },
+        { id: 'challenger-a', label: 'Alt One' },
+      ],
+      reroll: true, steer: true,
+    };
+    const { url } = await startDaemon(cwd, payload, key);
+    const context = await browser.newContext();
+    try {
+      const page = await context.newPage();
+      await page.goto(url, { waitUntil: 'load' });
+      await page.click('#reroll');
+      await page.waitForSelector('.card.skeleton');
+      // Collect the re-roll answer, then kill the daemon out from under the
+      // still-open page: the poll must stop and say the server is gone
+      // instead of spinning skeletons forever.
+      const first = await waitLoop(cwd, key);
+      assert.match(first.out, /"optionId":"reroll"/);
+      await run(['--stop', '--key', key], cwd);
+      await page.waitForSelector('.stall', { timeout: 30000 });
+      const text = await page.$eval('.stall', (el) => el.textContent);
+      assert.match(text, /The question server went away/);
+      assert.ok(await page.$('.stall .choose'), 'a way out is offered');
+    } finally {
+      await context.close();
+      await stopDaemon(cwd, key);
+      rmSync(cwd, { recursive: true, force: true });
+    }
+  });
+
+  it('(h) a round nobody delivers stops the poll at the deadline and says so', async () => {
+    const cwd = makeWorkspace();
+    const key = 'nodeal';
+    const payload = {
+      title: 'Choose the visual world',
+      options: [{ id: 'assigned', label: 'First Hand', kicker: 'THE ROLL' }],
+      reroll: true, steer: true, canon: true,
+    };
+    const { url } = await startDaemon(cwd, payload, key);
+    const context = await browser.newContext();
+    try {
+      const page = await context.newPage();
+      // Fake the page clock so the 10-minute delivery deadline is reachable;
+      // the server keeps its real clock, so its own idle grace never fires.
+      await page.clock.install();
+      let beats = 0;
+      page.on('request', (r) => { if (new URL(r.url()).pathname === '/heartbeat') beats += 1; });
+      await page.goto(url, { waitUntil: 'load' });
+      // Playwright actionability waits on rAF, which the fake clock owns, so
+      // dispatch the click directly.
+      await page.$eval('#reroll', (el) => el.click());
+      // The controls must go quiet at the click itself: the POST round-trip
+      // plus the fly-out used to leave them live, and a second click posted
+      // another re-roll that renewed the delivery deadline.
+      assert.ok(await page.$eval('#reroll', (el) => el.disabled), 'the re-roll goes quiet at the click, not after the fly-out');
+      assert.ok(await page.$eval('#canon', (el) => el.disabled), 'the canon exit goes quiet at the click too');
+      // Walk the fake clock forward past the fly-out settle and the deadline.
+      // page.$ runs over CDP, not in-page timers, so it stays safe to poll.
+      let stalled = null;
+      for (let i = 0; i < 40 && !stalled; i++) {
+        await page.clock.fastForward(20000);
+        await new Promise((r) => setTimeout(r, 100));
+        stalled = await page.$('.stall');
+      }
+      assert.ok(stalled, 'the poll stops at the deadline instead of spinning forever');
+      const text = await page.$eval('.stall', (el) => el.textContent);
+      assert.match(text, /The next hand never arrived/);
+      assert.ok(await page.$('.stall .choose'), 'a way out is offered');
+      // The canon exit must go quiet with the re-roll buttons: --wait already
+      // consumed the re-roll, so a canon pick posted now could never be
+      // collected, only close the table under the agent.
+      assert.ok(await page.$eval('#canon', (el) => el.disabled), 'the canon exit is disabled on the stall screen');
+      // The stalled page must also stop heartbeating: the beats are what keep
+      // the daemon alive, so a stalled tab left open used to hold it past its
+      // idle grace forever while --wait spun on WAITING.
+      assert.ok(beats > 0, 'the heartbeat counter observes beats before the stall');
+      const beatsAtStall = beats;
+      await page.clock.fastForward(60000);
+      await new Promise((r) => setTimeout(r, 750));
+      assert.equal(beats, beatsAtStall, 'no heartbeat fires after the stall, so the idle grace can reclaim the daemon');
+      // Reload must not revive the abandoned flow: with no hand delivered it
+      // stays on the silent stall screen and says so, rather than re-serving
+      // the unresolved round with a fresh heartbeat.
+      await page.$eval('.stall .choose', (el) => el.click());
+      // Poll over CDP, not in-page waiters: the fake clock owns rAF.
+      let msg = '';
+      for (let i = 0; i < 50 && !/Still nothing to deal/.test(msg); i++) {
+        await new Promise((r) => setTimeout(r, 100));
+        msg = await page.$eval('.stall p', (el) => el.textContent);
+      }
+      assert.match(msg, /Still nothing to deal/, 'the stall says a reload found nothing');
+      await page.clock.fastForward(30000);
+      await new Promise((r) => setTimeout(r, 500));
+      assert.equal(beats, beatsAtStall, 'a reload attempt with nothing to deal leaves the page silent');
+      // A browser-native refresh bypasses the gated button entirely, so the
+      // server serves the page in waiting mode: the refresh re-enters the
+      // bounded shuffle wait (beating while it waits, like any live wait)
+      // rather than resurrecting the answered cards with an unbounded
+      // heartbeat -- and the deadline silences it all over again.
+      await page.reload({ waitUntil: 'load' });
+      let waitingAgain = null;
+      for (let i = 0; i < 50 && !waitingAgain; i++) {
+        await new Promise((r) => setTimeout(r, 100));
+        waitingAgain = await page.$('.card.skeleton');
+      }
+      assert.ok(waitingAgain, 'a native refresh mid re-roll re-enters the shuffle wait, not the answered round');
+      assert.ok(await page.$eval('#canon', (el) => el.disabled), 'the refreshed waiting page serves the canon exit disabled too');
+      let restalled = null;
+      for (let i = 0; i < 40 && !restalled; i++) {
+        await page.clock.fastForward(20000);
+        await new Promise((r) => setTimeout(r, 100));
+        restalled = await page.$('.stall');
+      }
+      assert.ok(restalled, 'the refreshed wait still ends at the deadline');
+      const beatsAtSecondStall = beats;
+      await page.clock.fastForward(30000);
+      await new Promise((r) => setTimeout(r, 500));
+      assert.equal(beats, beatsAtSecondStall, 'the refreshed page goes silent again at its own deadline');
+      // Once a hand actually lands, the stalled page's beat-free watch deals
+      // it on its own, no click owed, and the heartbeat legitimately resumes:
+      // a live round is not an abandoned flow.
+      const nextPayloadPath = path.join(cwd, 'next.json');
+      writeFileSync(nextPayloadPath, JSON.stringify({
+        title: 'Choose the visual world',
+        options: [{ id: 'assigned', label: 'Second Hand', kicker: 'RE-ROLLED' }],
+        reroll: true, steer: true, canon: true,
+      }));
+      const updated = await run(['--update', '--key', key, '--payload', nextPayloadPath], cwd);
+      assert.equal(updated.code, 0, updated.out);
+      let dealt = null;
+      for (let i = 0; i < 50 && !dealt; i++) {
+        await page.clock.fastForward(2000);
+        await new Promise((r) => setTimeout(r, 100));
+        dealt = await page.$('button.choose');
+      }
+      assert.ok(dealt, 'the stalled page notices the delivered hand on its own and deals it');
+      const label = await page.$eval('.card', (el) => el.textContent);
+      assert.match(label, /Second Hand/, 'reload with a delivered hand serves the new round');
+      assert.ok(beats > beatsAtSecondStall, 'the heartbeat resumes on the re-dealt round');
+      assert.ok(await page.$eval('#canon', (el) => !el.disabled), 'the dealt round serves the canon exit live again');
+    } finally {
+      await context.close();
+      await stopDaemon(cwd, key);
+      rmSync(cwd, { recursive: true, force: true });
+    }
+  });
+
+  it('(i) Build this against a dead server fails loudly instead of confirming', async () => {
+    const cwd = makeWorkspace();
+    const key = 'deadpick';
+    const payload = {
+      title: 'Choose the visual world',
+      options: [{ id: 'assigned', label: 'First Hand', kicker: 'THE ROLL' }],
+      reroll: true, steer: true,
+    };
+    const { url } = await startDaemon(cwd, payload, key);
+    const context = await browser.newContext();
+    try {
+      const page = await context.newPage();
+      await page.goto(url, { waitUntil: 'load' });
+      await page.waitForSelector('button.choose');
+      await run(['--stop', '--key', key], cwd);
+      await page.click('button.choose');
+      await page.waitForSelector('.done', { timeout: 15000 });
+      const text = await page.$eval('.done', (el) => el.textContent);
+      assert.match(text, /went away before this choice could land/);
+      assert.doesNotMatch(text, /Choice recorded/);
+    } finally {
+      await context.close();
       await stopDaemon(cwd, key);
       rmSync(cwd, { recursive: true, force: true });
     }

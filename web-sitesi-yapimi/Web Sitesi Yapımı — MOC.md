@@ -1,6 +1,6 @@
 ---
 tags: [moc, web-sitesi, tasarim]
-guncelleme: 2026-07-17
+guncelleme: 2026-10-18
 ---
 
 # 🌐 Web Sitesi Yapımı — Harita
@@ -57,11 +57,25 @@ guncelleme: 2026-07-17
 - [[Claude + Canva Connector — Tasarım (referans)]] — genel tasarım (form/sunum/kapak); sohbetten Canva'da tasarla. *(Araçlar kümesinde duruyor.)*
 - [[Tasarım Brief — Vault Ana Sayfa]] — bu vault'un kendi dashboard'unu Claude Design'a yaptırmak için örnek brief (somut bir "site tasarlat" örneği).
 
-## ✨ 3 yeni tasarım skill'i — vendor olarak eklendi (2026-06-13)
+## ✨ 3 tasarım skill'i — vendor (eklendi 2026-06-13 · güncellendi 2026-10-18)
 > Kaynakları teyit edildi ve kütüphaneye klonlandı (`--depth 1`, nested `.git` + yalnızca-Claude harici agent kopyaları temizlendi). Detaylı tablo: [[Dış Kütüphaneler MOC]].
-- [[impeccable/README|impeccable]] — Paul Bakaus. Tek `/impeccable` komutu + 23 alt komut (`craft`, `shape`, `critique`, `audit`, **`polish`**, **`live`**…), **59** deterministik detektör. **Yeni:** `/impeccable live` (tarayıcıda canlı düzenleme, terminale inmeden) + **Worlds** (birkaç tasarım dili üretip seçtirir — çıktılar birbirine benzemiyor). Kur: `npx impeccable install` → `/impeccable init`. ⚠️ **Node ≥ 22.18.0**. Sürüm: CLI 3.6.0 / skill 4.1.1. → detay [[Dış Kütüphaneler MOC]]
-- [[emilkowalski-skill/skills/emil-design-eng/SKILL|emilkowalski-skill]] — Emil Kowalski (Sonner/Vaul). `emil-design-eng` skill'i: UI polish, komponent, animasyon kararları. Kur: `npx skills add https://github.com/emilkowalski/skill`.
-- [[taste-skill/README|taste-skill]] — Leonxlnx. Jenerik "slop" yerine güçlü layout/tipografi/motion; çok sayıda alt-skill (minimalist, brutalist, soft, redesign, brandkit, imagegen…). Kur: `npx skills add https://github.com/Leonxlnx/taste-skill`.
+- [[impeccable/README|impeccable]] — Paul Bakaus. Tek `/impeccable` komutu + **24** alt komut (`craft`, `shape`, `critique`, `audit`, **`polish`**, **`live`**, `generate`…), **61** deterministik detektör. **4.6.0:** motor Rust'a taşındı (skill/hook Node'suz), UI düzenlemesinde detektörü koşan hook varsayılan kuruluyor (⚠️ onaydan bağımsız çalışır; istemiyorsan `--no-hooks`), iOS/Android ekranları. Kur: `npx impeccable install` → `/impeccable init`. Kurucu için Node ≥ 22.18.0.
+- [[emilkowalski-skill/README|emilkowalski-skill]] — Emil Kowalski (Sonner/Vaul). Tek skill'den **15 skill'lik pakete** büyüdü: `animate`, `review-animations`, `improve-animations`, `find-animation-opportunities`, `animation-performance`, `break-ui`, `mobile-native`, `prototype`… Kur: `npx skills@latest add emilkowalski/skills`.
+- [[taste-skill/README|taste-skill]] — Leonxlnx. **v2.0.0:** 247 siteden türetilmiş kütüphane + gerçek tarayıcıda ölçen kapı + açık koleksiyonlardan lisanslı görsel bulma. ⚠️ Kendi kör testinde skill'siz Claude'u geçemedi (7.7 vs 7.8); tam koşum 30–45 dk, birkaç yüz bin token. Kur: `npx skills add https://github.com/Leonxlnx/taste-skill`.
+
+### 🎬 Viral "bir gecede tasarımcı gibi görün" videosu — değerlendirme (2026-10-18)
+Videodaki üç skill (taste, Emil'in motion skill'i, impeccable) **2026-06-13'ten beri bu kütüphanede**. Yeni not açılmadı; vendor kopyaları güncel sürüme çekildi ve iddialar kaynaklarla karşılaştırıldı.
+
+| Videonun iddiası | Gerçek |
+|---|---|
+| "Taste, AI arayüzlerinin kök sorununu çözer, insan tasarımcı dokunmuş gibi" | Kendi kör testinde jüri puanı skill'siz Claude'la **aynı** (7.7 vs 7.8). Sağladığı şey ölçülebilir "slop" izlerini (gradient, eyebrow etiket, numaralı bölüm…) temizlemek ve lisanslı gerçek görsel bulmak. |
+| "Emil'in motion skill'i, tek komutla gerçek hareket" | Doğru yönde: 15 skill'in 8'i animasyon. Ama denetim/fırsat skill'leri **salt okur**; kodu `animate` yazar. Asıl değer, uzman kurallarının (doğru eğri, süre, özellik) yazılı olması. |
+| "Impeccable 20 komut" | **24** komut + 61 detektör. |
+| "Ship'ten önce `/polish` çalıştır, tüm UI'ı otomatik süpürür" | Komut `/impeccable polish <hedef>`; hedefli son geçiş. `/polish` kısayolu ancak `/impeccable pin polish` ile oluşur. |
+| "Bir gecede tasarımcı" | Bu skill'ler **kötü tasarım izlerini** azaltır. İyi tasarım kararı (marka, içerik, kitle, farklılaşma) yine senden gelir; impeccable'ın kendi sloganı da bu: "iyi tasarım özneldir, kötü tasarım değildir". |
+| "'human' yaz, e-kitabı göndereyim" | Takipçi toplama yemi. Konunun kendisi kütüphanede zaten var: [[AI Yazı — İnsan Sesi & Voice Match Prompt Paketi — dürüst kullanım (referans)]]. |
+
+**Nasıl kullan:** Üçünü birden "ana yön" yapma; aynı işi farklı kurallarla yapıyorlar (taste gradient'i ve gölgeyi kapıdan geçirmez, impeccable'ın kendi anti-pattern listesi var) ve çelişen talimat kaliteyi düşürür. Önerilen düzen: **tek ana yön** (sitede ve ürün arayüzünde impeccable; tek seferlik gösterişli landing'de taste v2) + **Emil'in animasyon skill'leri uzman olarak** + son kontrol için `break-ui` ve `/impeccable audit`.
 
 ---
 
