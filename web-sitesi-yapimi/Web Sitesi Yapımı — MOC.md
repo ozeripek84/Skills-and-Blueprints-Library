@@ -19,6 +19,7 @@ guncelleme: 2026-07-17
 - **Yerel işletmeye tek-sayfa site** (Google Maps linkinden) → [[Brila — Google Maps'ten Yerel İşletme Sitesi (referans)]]
 - **Güçlü tasarım + zayıf performans sorununu çöz** → [[Claude Design — Tasarım Çıkar, Claude Code'da Optimize Et (referans)]]
 - **Claude Code'un tasarım zayıflığını ücretsiz araçla kapat** (görsel tasarla → MCP ile kodlat) → [[Stitch Metodu — Google Stitch + Claude Code (MCP) (referans)]]
+- **Sevdiğin bir sitenin/uygulamanın özelliğini kendi projene almak** (kaynak kodsuz; davranışı kopyala, kod/görsel/marka değil) → `araclar/site-ve-yetenek-kopyalama` (skill + `/araclar:site-ve-yetenek-kopyalama`, REA tersine mühendislik aracıyla)
 
 ---
 

@@ -1,11 +1,11 @@
 ---
 tags: [moc, yetenekler]
-guncelleme: 2026-08-16
+guncelleme: 2026-10-18
 ---
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **158 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **159 yetenek** · 16 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -213,7 +213,7 @@ guncelleme: 2026-08-16
 | **tatil-rotasi** | Tour/seyahat planlayıcı — rota, otel, aktivite. | [[skill-kutuphanesi/sektor-ozel/tatil-rotasi\|⚙️ skill]] · [[project mdleri/sektor-ozel/tatil-rotasi\|▶️ command]] |
 | **yemek-tarif** | Yemek tarifi platform — recipe, meal plan, shopping list. | [[skill-kutuphanesi/sektor-ozel/yemek-tarif\|⚙️ skill]] · [[project mdleri/sektor-ozel/yemek-tarif\|▶️ command]] |
 
-## 🛠️ Araçlar  ·  10 adet
+## 🛠️ Araçlar  ·  11 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -225,6 +225,7 @@ guncelleme: 2026-08-16
 | **model-metodu-tasima** | Güçlü bir modelin (Fable 5) bir işteki çalışma yöntemini çıkarılabilir bir talimat belgesine (MD) dönüştürür, hedef modele göre kalibre eder ve Claude Projesi/CLAUDE.md talimatı olarak kurar. Taşınan şey zekâ değil YÖNTEM — fark ve sınırları dahil. | [[skill-kutuphanesi/araclar/model-metodu-tasima\|⚙️ skill]] · [[project mdleri/araclar/model-metodu-tasima\|▶️ command]] |
 | **qr-kod** | QR code üretici — link, vCard, WiFi, ödeme. | [[skill-kutuphanesi/araclar/qr-kod\|⚙️ skill]] · [[project mdleri/araclar/qr-kod\|▶️ command]] |
 | **screenshot-tool** | Web screenshot service — full-page, custom viewport, scheduled. | [[skill-kutuphanesi/araclar/screenshot-tool\|⚙️ skill]] · [[project mdleri/araclar/screenshot-tool\|▶️ command]] |
+| **site-ve-yetenek-kopyalama** | Beğendiğin bir sitenin/uygulamanın özelliğini kaynak koduna erişmeden anla (gözlem + REA ile tersine mühendislik) → davranış spesifikasyonu çıkar → kendi projende kendi kodunla, kendi tasarım dilinle kur. Kopyalanan şey DAVRANIŞ, kod/görsel/marka değil. | [[skill-kutuphanesi/araclar/site-ve-yetenek-kopyalama\|⚙️ skill]] · [[project mdleri/araclar/site-ve-yetenek-kopyalama\|▶️ command]] |
 | **url-kisalt** | URL shortener — bit.ly alternatifi, custom domain, analytics. | [[skill-kutuphanesi/araclar/url-kisalt\|⚙️ skill]] · [[project mdleri/araclar/url-kisalt\|▶️ command]] |
 | **yazi-uretici** | AI yazı üretici — blog, email, sosyal post. | [[skill-kutuphanesi/araclar/yazi-uretici\|⚙️ skill]] · [[project mdleri/araclar/yazi-uretici\|▶️ command]] |
 
