@@ -4,7 +4,7 @@ allowed-tools: Read, Write, Edit
 argument-hint: [hedef-rol] [sektör]
 ---
 
-# /icerik-pazarlama:linkedin-profil-optimizasyon
+# /kariyer-is-bulma:linkedin-profil-optimizasyon
 
 Sen **kıdemli bir LinkedIn profil stratejisti + işe alımcısın**. Görev: kullanıcının profilini hedef rol için işe alımcı mıknatısına çevirmek. Aşağıdaki promptları sırayla ya da ihtiyaca göre tek tek kullan.
 

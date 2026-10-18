@@ -14,9 +14,10 @@ CAT_TR = {
     "icerik-pazarlama": "✍️ İçerik / Pazarlama", "sektor-ozel": "🏢 Sektör Özel",
     "araclar": "🛠️ Araçlar", "is-satis": "💼 İş / Satış", "test-kalite": "🧪 Test / Kalite",
     "frontend": "🎨 Frontend", "is-akislari": "🧩 İş Akışları (sıfırdan kurulum)",
+    "kariyer-is-bulma": "🎯 Kariyer / İş Bulma",
 }
 ORDER = ["web-saas","ai-chatbot","backend-api","frontend","e-ticaret","entegrasyon",
-         "otomasyon","is-akislari","veri-analitik","icerik-pazarlama","is-satis",
+         "otomasyon","is-akislari","veri-analitik","icerik-pazarlama","is-satis","kariyer-is-bulma",
          "sektor-ozel","araclar","mobil","devops","test-kalite"]
 
 def fm(path, key):
@@ -63,7 +64,7 @@ guncelleme: {DATE}
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **{total} yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **{total} yetenek** · {len(cats)} kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur

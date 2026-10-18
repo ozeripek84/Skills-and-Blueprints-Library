@@ -23,6 +23,7 @@ Her skill, Claude Code'a yüklenebilen "uzmanlık" dosyası. Belirli bir görev 
 | **sektor-ozel** | 15 | Restoran POS, randevu, diş kliniği, emlak, kurs, etkinlik, fitness, yemek tarif, hukuk, kuaför, oto servis, job board, otel, pet care, seyahat |
 | **araclar** | 8 | QR, URL kısalt, form builder, dosya dönüştürücü, screenshot, yazı üretici, API test, markdown editor |
 | **is-satis** | 10 | CRM, teklif, fatura, müşteri portal, lead magnet, affiliate, abone yönetim, refer-friend, pricing calc, sözleşme |
+| **kariyer-is-bulma** | 5 | LinkedIn profil, ilan puanlama, CV/ATS optimizasyonu, video outreach, mülakat simülasyonu |
 | **test-kalite** | 5 | E2E (Playwright), unit test, load test, security audit, accessibility |
 | **frontend** | 8 | Animasyon, form validasyon, state, component lib, dark mode, i18n, skeleton, error handling |
 | **is-akislari** | 10 | Sıfırdan SaaS / e-ticaret / marketplace / mobile / blog / portfolio / agent / kurs / AI tool / newsletter |

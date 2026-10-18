@@ -63,6 +63,7 @@ cp -r /path/to/komutlar/* .claude/commands/
 | **Sektör Özel** | 15 | `sektor-ozel/` |
 | **Araçlar** | 8 | `araclar/` |
 | **İş/Satış** | 10 | `is-satis/` |
+| **Kariyer/İş Bulma** | 5 | `kariyer-is-bulma/` |
 | **Test/Kalite** | 5 | `test-kalite/` |
 | **Frontend** | 8 | `frontend/` |
 | **İş Akışları** | 10 | `is-akislari/` |

@@ -38,4 +38,4 @@ ATS kara deliğinden sıyrılıp **akılda kalmak** gerektiğinde: vize-sponsorl
 - Toplu jenerik spam (GDPR + itibar).
 - Zayıf/uzun intro video; net çağrı yokluğu.
 
-> Çalıştırılabilir hâli (hedef liste + Apollo + SendSpark + dizi + NL sponsor filtresi): `/is-satis:video-outreach-basvuru`
+> Çalıştırılabilir hâli (hedef liste + Apollo + SendSpark + dizi + NL sponsor filtresi): `/kariyer-is-bulma:video-outreach-basvuru`

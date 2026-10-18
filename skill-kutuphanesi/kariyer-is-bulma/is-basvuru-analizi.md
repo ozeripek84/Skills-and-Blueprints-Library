@@ -34,6 +34,6 @@ Analiz + puanlama + taslak = **saf Claude** (ek servis yok). İlan verisi kayna�
 - "En iyi işi bul" gibi bulanık kriter (rol+seviye+lokasyon net olmalı)
 
 ## Akraba
-- Proaktif taraf: [[skill-kutuphanesi/is-satis/video-outreach-basvuru|video-outreach-basvuru]] (ATS'i atlayıp doğrudan ulaşım) · blueprints/vize-sponsorlu-is-outreach (sponsor-filtreli kampanya). **Bu yetenek ilan-tarama tarafı; ikisi birlikte tam iş-arama sistemi olur.**
+- Proaktif taraf: [[skill-kutuphanesi/kariyer-is-bulma/video-outreach-basvuru|video-outreach-basvuru]] (ATS'i atlayıp doğrudan ulaşım) · blueprints/vize-sponsorlu-is-outreach (sponsor-filtreli kampanya). **Bu yetenek ilan-tarama tarafı; ikisi birlikte tam iş-arama sistemi olur.**
 - CV uyarlama: awesome-claude-skills → `tailored-resume-generator`
 - Kaynak: talhaunuvai'nin "Claude + Apify Akıllı İş Başvurusu" PDF rehberi (2026-07; ilkeleri korundu, ücretsiz-öncelik uyarlandı)

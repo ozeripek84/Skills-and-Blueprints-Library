@@ -37,7 +37,7 @@ Bir kişinin LinkedIn profilini hedef rol için işe alımcılara çekici, arana
 - Featured'ı boş/rastgele bırakmak.
 
 ## Kapsam notu (anti-duplikasyon)
-X'te dolaşan viral "7 prompt = recruiter magnet" LinkedIn paketleri **bu yetenekte zaten mevcut** (bu 10 adım onların üst-kümesi: headline, About/PAS, deneyim/XYZ, keyword, recruiter testi, Featured). Yeni not açma → buraya bak. Paketlerdeki **recruiter'a soğuk DM** kısmı burada değil, iş-arama tarafında: [[skill-kutuphanesi/is-satis/is-basvuru-analizi|is-basvuru-analizi]] (bağlantı notu, hiring manager mesajı) · [[skill-kutuphanesi/is-satis/video-outreach-basvuru|video-outreach-basvuru]].
+X'te dolaşan viral "7 prompt = recruiter magnet" LinkedIn paketleri **bu yetenekte zaten mevcut** (bu 10 adım onların üst-kümesi: headline, About/PAS, deneyim/XYZ, keyword, recruiter testi, Featured). Yeni not açma → buraya bak. Paketlerdeki **recruiter'a soğuk DM** kısmı burada değil, iş-arama tarafında: [[skill-kutuphanesi/kariyer-is-bulma/is-basvuru-analizi|is-basvuru-analizi]] (bağlantı notu, hiring manager mesajı) · [[skill-kutuphanesi/kariyer-is-bulma/video-outreach-basvuru|video-outreach-basvuru]].
 
-> Çalıştırılabilir hâli — 10 promptun tamamı doldurulacak alanlarla: `/icerik-pazarlama:linkedin-profil-optimizasyon`
+> Çalıştırılabilir hâli — 10 promptun tamamı doldurulacak alanlarla: `/kariyer-is-bulma:linkedin-profil-optimizasyon`
 > İlgili: `sosyal-icerik-uretici`, `lead-gen-ajansi`, `is-basvuru-analizi`; dış kaynak: `tailored-resume-generator` (awesome repo).

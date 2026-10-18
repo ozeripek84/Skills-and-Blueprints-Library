@@ -5,7 +5,7 @@ guncelleme: 2026-10-18
 
 # 🧠 Yetenekler Haritası — Skill + Command
 
-> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **159 yetenek** · 16 kategori
+> [[00 HOME|🏠 Ana sayfaya dön]] · Toplam **161 yetenek** · 17 kategori
 > Her yetenek iki biçimde var: **⚙️ Skill** (Claude arka planda otomatik seçer) ve **▶️ Command** (`/...` ile sen açıkça çağırırsın). Aynı işin kısa ve detaylı (kodlu) hâli.
 
 ## Nasıl okunur
@@ -150,7 +150,7 @@ guncelleme: 2026-10-18
 | **pdf-uretim** | HTML → PDF — fatura, rapor, sertifika. | [[skill-kutuphanesi/veri-analitik/pdf-uretim\|⚙️ skill]] · [[project mdleri/veri-analitik/pdf-uretim\|▶️ command]] |
 | **raporlamali-tablo** | Excel-vari interaktif tablo — pivot, formula, export. | [[skill-kutuphanesi/veri-analitik/raporlamali-tablo\|⚙️ skill]] · [[project mdleri/veri-analitik/raporlamali-tablo\|▶️ command]] |
 
-## ✍️ İçerik / Pazarlama  ·  15 adet
+## ✍️ İçerik / Pazarlama  ·  14 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -159,7 +159,6 @@ guncelleme: 2026-10-18
 | **icerik-takvimi** | Content calendar + planning — Notion ya da custom dashboard. | [[skill-kutuphanesi/icerik-pazarlama/icerik-takvimi\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/icerik-takvimi\|▶️ command]] |
 | **instagram-carousel-uretici** | Marka renginden türeyen 4:5 swipe'lanabilir Instagram carousel — her slayt 1080×1350 PNG olarak export edilir (self-contained HTML + Playwright). | [[skill-kutuphanesi/icerik-pazarlama/instagram-carousel-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/instagram-carousel-uretici\|▶️ command]] |
 | **landing-ab-test** | Landing page A/B test — variant assignment, statistical analysis. | [[skill-kutuphanesi/icerik-pazarlama/landing-ab-test\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/landing-ab-test\|▶️ command]] |
-| **linkedin-profil-optimizasyon** | LinkedIn profilini işe alımcı mıknatısına çevirir — audit, başlık, About, deneyim, başarı cümleleri, keyword/SEO, kariyer değişimi, Featured ve tam makeover; 10 promptluk hat. | [[skill-kutuphanesi/icerik-pazarlama/linkedin-profil-optimizasyon\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/linkedin-profil-optimizasyon\|▶️ command]] |
 | **newsletter** | Newsletter platformu (Substack alternatifi) — yazar dashboard, abone. | [[skill-kutuphanesi/icerik-pazarlama/newsletter\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/newsletter\|▶️ command]] |
 | **og-image-generator** | Dinamik Open Graph image generator — sosyal paylaşım için. | [[skill-kutuphanesi/icerik-pazarlama/og-image-generator\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/og-image-generator\|▶️ command]] |
 | **podcast-transcript** | Podcast → transcript → blog post → social clips otomasyonu. | [[skill-kutuphanesi/icerik-pazarlama/podcast-transcript\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/podcast-transcript\|▶️ command]] |
@@ -170,7 +169,7 @@ guncelleme: 2026-10-18
 | **sosyal-icerik-uretici** | AI ile sosyal medya içeriği üretici — Twitter thread, LinkedIn post, IG carousel. | [[skill-kutuphanesi/icerik-pazarlama/sosyal-icerik-uretici\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/sosyal-icerik-uretici\|▶️ command]] |
 | **youtube-kanal-kurucu** | Sıfırdan monetize YouTube kanalı kurar — niş & konumlandırma, kanal kimliği, 90-günlük içerik planı, script, SEO+thumbnail, gelir modeli ve içerik çoğaltma; 7 adımlık zincir. | [[skill-kutuphanesi/icerik-pazarlama/youtube-kanal-kurucu\|⚙️ skill]] · [[project mdleri/icerik-pazarlama/youtube-kanal-kurucu\|▶️ command]] |
 
-## 💼 İş / Satış  ·  18 adet
+## 💼 İş / Satış  ·  16 adet
 
 | Yetenek | Ne işe yarar | Biçimler |
 |---|---|---|
@@ -181,7 +180,6 @@ guncelleme: 2026-10-18
 | **crm-mini** | Mini CRM — kontaklar, deal'ler, pipeline. | [[skill-kutuphanesi/is-satis/crm-mini\|⚙️ skill]] · [[project mdleri/is-satis/crm-mini\|▶️ command]] |
 | **dijital-urun-lansmani** | Bir konuda dijital ürün (kurs, şablon, ebook, preset, prompt-pack) yaratıp satar — fikir, fiyat, sales page, bonus/upsell, teslim, 30-gün lansman. Pasif gelir kurgusu. | [[skill-kutuphanesi/is-satis/dijital-urun-lansmani\|⚙️ skill]] · [[project mdleri/is-satis/dijital-urun-lansmani\|▶️ command]] |
 | **fatura-jenerator** | Fatura jeneratörü — TR e-Arşiv uyumlu, KDV. | [[skill-kutuphanesi/is-satis/fatura-jenerator\|⚙️ skill]] · [[project mdleri/is-satis/fatura-jenerator\|▶️ command]] |
-| **is-basvuru-analizi** | Akıllı iş başvurusu — ilanları profile göre 100'lük puanla, en uygunları seç, kişiselleştirilmiş başvuru taslağı hazırla. Otomatik gönderim YOK, son karar insanda. | [[skill-kutuphanesi/is-satis/is-basvuru-analizi\|⚙️ skill]] · [[project mdleri/is-satis/is-basvuru-analizi\|▶️ command]] |
 | **lead-gen-ajansi** | AI destekli, ETİK lead generation / büyüme ajansı kurar — niş seçimi, üretimleştirilmiş teklif, birim ekonomisi, ToS-uyumlu hedefli outreach, kanıtlanmış içerikle teslimat ve retention. | [[skill-kutuphanesi/is-satis/lead-gen-ajansi\|⚙️ skill]] · [[project mdleri/is-satis/lead-gen-ajansi\|▶️ command]] |
 | **lead-magnet** | Lead magnet — ücretsiz indirilebilir karşılığı email yakalama. | [[skill-kutuphanesi/is-satis/lead-magnet\|⚙️ skill]] · [[project mdleri/is-satis/lead-magnet\|▶️ command]] |
 | **musteri-portal** | Müşteri portal — fatura, dosya, support, billing. | [[skill-kutuphanesi/is-satis/musteri-portal\|⚙️ skill]] · [[project mdleri/is-satis/musteri-portal\|▶️ command]] |
@@ -191,7 +189,16 @@ guncelleme: 2026-10-18
 | **sifirdan-is-kurma** | Bir fikri hızlıca işe çeviren 8 promptluk launch sekansı — fikir, rakip/farklılaşma, avatar, teklif, fiyat, landing, trafik, içerik. Her adım sıradakini besler. | [[skill-kutuphanesi/is-satis/sifirdan-is-kurma\|⚙️ skill]] · [[project mdleri/is-satis/sifirdan-is-kurma\|▶️ command]] |
 | **sozlesme-yonetimi** | Contract management — template, e-imza, repository. | [[skill-kutuphanesi/is-satis/sozlesme-yonetimi\|⚙️ skill]] · [[project mdleri/is-satis/sozlesme-yonetimi\|▶️ command]] |
 | **teklif-jenerator** | Profesyonel teklif jeneratörü — şablon, fiyat, e-imza. | [[skill-kutuphanesi/is-satis/teklif-jenerator\|⚙️ skill]] · [[project mdleri/is-satis/teklif-jenerator\|▶️ command]] |
-| **video-outreach-basvuru** | Kişiselleştirilmiş video ile hedefli erişim — iş/sponsor başvurusu ya da müşteri bulma. Hedef liste → e-posta bulma → dinamik kişisel video → e-posta dizisi. Etik, GDPR uyumlu. | [[skill-kutuphanesi/is-satis/video-outreach-basvuru\|⚙️ skill]] · [[project mdleri/is-satis/video-outreach-basvuru\|▶️ command]] |
+
+## 🎯 Kariyer / İş Bulma  ·  5 adet
+
+| Yetenek | Ne işe yarar | Biçimler |
+|---|---|---|
+| **is-basvuru-analizi** | Akıllı iş başvurusu — ilanları profile göre 100'lük puanla, en uygunları seç, kişiselleştirilmiş başvuru taslağı hazırla. Otomatik gönderim YOK, son karar insanda. | [[skill-kutuphanesi/kariyer-is-bulma/is-basvuru-analizi\|⚙️ skill]] · [[project mdleri/kariyer-is-bulma/is-basvuru-analizi\|▶️ command]] |
+| **linkedin-profil-optimizasyon** | LinkedIn profilini işe alımcı mıknatısına çevirir — audit, başlık, About, deneyim, başarı cümleleri, keyword/SEO, kariyer değişimi, Featured ve tam makeover; 10 promptluk hat. | [[skill-kutuphanesi/kariyer-is-bulma/linkedin-profil-optimizasyon\|⚙️ skill]] · [[project mdleri/kariyer-is-bulma/linkedin-profil-optimizasyon\|▶️ command]] |
+| **mulakat-simulasyonu** | Claude'u hedef rolün işe alım yöneticisine çevirip gerçekçi mülakat provası yapar — ilan ve CV'den türetilmiş sorular, takip soruları, açık rubrikle puan, kullanıcının kendi hikâyesinden güçlü cevap, STAR hikâye bankası. | [[skill-kutuphanesi/kariyer-is-bulma/mulakat-simulasyonu\|⚙️ skill]] · [[project mdleri/kariyer-is-bulma/mulakat-simulasyonu\|▶️ command]] |
+| **ozgecmis-ats-optimizasyonu** | Özgeçmişi (CV) hedef ilana göre 3 adımda güçlendirir — ATS okunabilirlik teşhisi, gerçek ilanlardan anahtar kelime boşluğu, maddeleri Google XYZ formülüyle yeniden yazma. Metrik ve beceri UYDURMAZ. | [[skill-kutuphanesi/kariyer-is-bulma/ozgecmis-ats-optimizasyonu\|⚙️ skill]] · [[project mdleri/kariyer-is-bulma/ozgecmis-ats-optimizasyonu\|▶️ command]] |
+| **video-outreach-basvuru** | Kişiselleştirilmiş video ile hedefli erişim — iş/sponsor başvurusu ya da müşteri bulma. Hedef liste → e-posta bulma → dinamik kişisel video → e-posta dizisi. Etik, GDPR uyumlu. | [[skill-kutuphanesi/kariyer-is-bulma/video-outreach-basvuru\|⚙️ skill]] · [[project mdleri/kariyer-is-bulma/video-outreach-basvuru\|▶️ command]] |
 
 ## 🏢 Sektör Özel  ·  15 adet
 

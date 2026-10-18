@@ -3,7 +3,7 @@
 ## Amaç
 Vize sponsorluğu gerektiren bir aday için, **sponsor olabilen şirketlere** kişiselleştirilmiş video + e-posta ile başvuru kampanyası. ATS'i atlayıp hiring manager'a doğrudan ulaşır. Rotalar: **UK Skilled Worker** ve **NL Highly Skilled Migrant (HSM / expat)**. (Global Talent kapsam dışı — sponsor rotası.)
 
-> ⚠️ **Gizlilik:** Bu blueprint genel/şablondur (placeholder'lı). Kişisel veri (CV, e-posta, hedef liste) buraya/public repo'ya **konmaz** — onları private bir klasörde tut. Bkz. [[is-satis/video-outreach-basvuru]] skill'i.
+> ⚠️ **Gizlilik:** Bu blueprint genel/şablondur (placeholder'lı). Kişisel veri (CV, e-posta, hedef liste) buraya/public repo'ya **konmaz** — onları private bir klasörde tut. Bkz. [[skill-kutuphanesi/kariyer-is-bulma/video-outreach-basvuru|video-outreach-basvuru]] skill'i.
 
 ## Doldurulacak değişkenler
 ```

@@ -22,7 +22,7 @@ Videonun iş modeli kütüphanede **zaten var, hem de daha derin**. Yeni bir ski
 | Önce demo yap, sonra yolla ("spec" açılış) | [[Yetenekler MOC\|is-satis/cozum-sat-website-degil]] **Adım 4** — "gerekirse demo/dummy versiyon önce yap, paylaş" | Zaten var |
 | Sitesi olmayana site yap | `web-sitesi-yapimi/` MOC · `icerik-pazarlama/donusum-landing` · `premium-site-metni` | ⚠️ ama aşağıdaki "asıl itiraz"a bak |
 | Görsel iyileştirme, reklam videosu, UGC | [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] · [[İçerik Fabrikası — Referans Sistem]] · [[AI UGC-Reklam Video Üretici (open-source, self-host) — referans]] · `topview` | Araç katmanı zaten bağlı |
-| Outreach mesajı, takip | `is-satis/video-outreach-basvuru` · `marketing-skills/skills/{prospecting,cold-email}` | Etik/limit kuralları kütüphane tarafında daha sıkı |
+| Outreach mesajı, takip | `kariyer-is-bulma/video-outreach-basvuru` · `marketing-skills/skills/{prospecting,cold-email}` | Etik/limit kuralları kütüphane tarafında daha sıkı |
 
 **Özet:** video = `ai-ajans-modeli` Adım 3 + `cozum-sat-website-degil` Adım 4 + Higgsfield. Üçü de yerinde duruyor.
 

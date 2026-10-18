@@ -3,7 +3,7 @@ description: Akıllı iş başvurusu — ilanları profile göre 100'lük puanla
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 ---
 
-# /is-satis:is-basvuru-analizi
+# /kariyer-is-bulma:is-basvuru-analizi
 
 
 # Akıllı İş Başvurusu — İlan Analizi + Taslak
@@ -46,6 +46,6 @@ Bu komut çağrıldığında, kullanıcının iş başvurusu sürecini uçtan uc
 - [ ] Kişisel veri (CV, mail listesi) public repo'ya konmadı
 
 ### Akraba:
-Proaktif outreach: `/is-satis:video-outreach-basvuru` · blueprints/vize-sponsorlu-is-outreach. CV: awesome-claude-skills → tailored-resume-generator.
+Proaktif outreach: `/kariyer-is-bulma:video-outreach-basvuru` · blueprints/vize-sponsorlu-is-outreach. CV: awesome-claude-skills → tailored-resume-generator.
 
 Şimdi başla — adım 1'den: kullanıcının profilini çıkar.

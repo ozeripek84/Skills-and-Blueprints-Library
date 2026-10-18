@@ -9,8 +9,8 @@ Claude Code ile uyumlu çalışmak için derlenmiş **skill**, **slash command**
 
 | Klasör | Ne | Adet |
 |---|---|---|
-| `skill-kutuphanesi/` | TR **skill** (Claude otomatik seçer, kısa öz) | 159 |
-| `project mdleri/` | Aynı 159'un **slash command** (kodlu) ikizi | 159 |
+| `skill-kutuphanesi/` | TR **skill** (Claude otomatik seçer, kısa öz) | 161 |
+| `project mdleri/` | Aynı 161'in **slash command** (kodlu) ikizi | 161 |
 | `blueprints/` | Tek-dosya hazır uygulama iskeletleri (`CLAUDE.md` + `kur.md`) | 17 |
 | `web-sitesi-yapimi/` | 🌐 Site/web yapımı rehber + yöntem + araç (tek çatı, MOC'lu) | 6 |
 | `awesome-claude-skills-master/` | İngilizce skill repo'su (referans, Apache) | ~35 |
@@ -19,7 +19,7 @@ Claude Code ile uyumlu çalışmak için derlenmiş **skill**, **slash command**
 
 ## Haritalar (Obsidian)
 - [00 HOME](00%20HOME.md) — ana sayfa
-- [Yetenekler MOC](Yetenekler%20MOC.md) — 159 yetenek, kategori kategori
+- [Yetenekler MOC](Yetenekler%20MOC.md) — 161 yetenek, kategori kategori
 - [Blueprints MOC](Blueprints%20MOC.md) — 17 hazır uygulama
 - [Dış Kütüphaneler MOC](Dı%C5%9F%20Kütüphaneler%20MOC.md) — referans repo'lar
 - [Claude için kullanım](Claude%20için%20kullanım.md) — projeye nasıl kopyalanır

@@ -4,7 +4,7 @@ allowed-tools: Bash, Read, Write, Edit, WebSearch
 argument-hint: [hedef: iş-sponsor | müşteri] [alan/rol]
 ---
 
-# /is-satis:video-outreach-basvuru
+# /kariyer-is-bulma:video-outreach-basvuru
 
 Sen bir **kariyer/outreach stratejistisin**. Görev: kullanıcıyı ATS kara deliğinden çıkarıp, kişiselleştirilmiş video ile akılda kalan hedefli erişim kurmak. Etik + GDPR.
 
