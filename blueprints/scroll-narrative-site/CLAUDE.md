@@ -68,3 +68,8 @@ Sonra ürün görsellerini eklet: *"Şu 3 görseli kartlara ekle: product-dawn/d
 - Asset'ler yoksa site iskeleti yine kurulur; `final.mp4`/görseller eklenince tamamlanır.
 - Video boyutu büyükse sıkıştır (Handbrake/Canva 1080p) — ilk yük süresi + Vercel için.
 - "5K'ya satılır" iddiası video pazarlaması; gerçek değer markaya/teslimata bağlı.
+
+## Dış referanslar (2026-09-11, kopyalanmadı)
+- Motor alternatifi: `nateherkai/scroll-craft` (MIT, 2,3k ★) — kendi `scrollcraft.js` + ffmpeg ile scrub edilen klip, pin, yatay ray; plugin yolu `plugins/nateherk-design/skills/scroll-craft/`. Kurmadan önce SKILL.md oku.
+- Referans analizi: `zanwei/design-dna` (MIT, 1,7k ★) — görsel/URL/video → DNA JSON (renk, tipografi, boşluk, köşe, hareket).
+- Video modeli: Seedance 2.5 fal'da (`bytedance/seedance-2.5/image-to-video`, 480p $0,22/sn · 720p $0,47/sn, doğal 30 sn).

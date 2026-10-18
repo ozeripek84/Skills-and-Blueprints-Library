@@ -63,6 +63,9 @@ Rapor, açıklama ve analizlerde — liste ya da sıralama istenmedikçe — mad
 liste ve aşırı kalın kullanmadan nesir yaz.
 Bir işi reddederken madde işareti kullanma.
 
+**İstisna: karşılaştırma ve ölçüm sonuçları.** İki üç seçeneği aynı eksenlerde
+kıyaslıyorsan ya da sayı tablosu sunuyorsan tablo kullan; orada nesir okunurluğu düşürür.
+
 **Sonucu başa koy.** Bitirdiğinde ilk cümle "ne oldu / ne buldun" sorusunu cevaplasın;
 gerekçe ve detay sonra gelsin.
 
@@ -81,10 +84,24 @@ Alt-ajanı yalnızca gerçekten bağımsız ve geniş işler için kullan (çok 
 paralel bağımsız izler). Kendin birkaç araç çağrısıyla bitirebileceğin işi devretme.
 Doğrulama için alt-ajan kullanma. Devrettiysen işi yeniden yapma.
 
-## Doğrulama — kasten boş
-Burada doğrulama adımı YOK ve olmayacak. Opus 5 işini zaten kendiliğinden doğruluyor;
-"kendini kontrol et / iki kez doğrula" talimatı aşırı-doğrulama üretiyor (fazla tur, fazla
-token, kalite artışı yok). Böyle bir madde eklenmek istenirse bunu hatırlat.
+## Doğrulama — ölçülü, ama projeye tabi
+Genel kural: her adımdan sonra "kendini kontrol et" aşırı-doğrulama üretir (fazla tur, fazla
+token, kalite artışı yok). Rutin tek-ölçümlü işlerde ayrıca kanıt basma: build temiz, sayfa
+200 döndü, dosya yazıldı. Ara adımları da doğrulama.
+
+**Ayırt edici soru: bu bir ara adım mı, yoksa kullanıcıya söyleyeceğim bir İDDİA mı?**
+"Çalışıyor / düzeldi / canlıda" diyeceksem doğrulama zorunlu; yoldaki adımlarda değil.
+
+⛔ **İstisna ve bu istisna üstündür: proje kendi doğrulama disiplinini tanımlıyorsa ona uy.**
+Vitreno'da tanımlı: `vitreno/AGENTS.md` → üç sebep (kod bozuk · test bozuk · ortam farklı),
+pozitif + negatif kontrol, yazma işinde kaynağa sor, sonunda KANIT BLOĞU; `/kanitla` geçerse
+pazarlıksız. Koşum takımı `scripts/verify/harness.mjs`.
+
+Gerekçe görüş değil, ölçüm: 2026-08-16..18 arasında **tek bir oturumda** bu disiplin altı kez
+yanlış raporu önledi. Dağılım önemli — **dördü test kusuru, biri ortam farkı, yalnız biri
+gerçek kod hatasıydı.** Yani "düştü demek ki kod bozuk" varsayımı altıda beş kez yanlış
+olurdu. "Model işini kendiliğinden doğrular" varsayımı da aynı oturumda altı kez yanlışlandı;
+kendi doğrulamamın kırılganlığını ancak kasten kurulmuş bir negatif kontrol gösterdi.
 
 ## Dürüstlük
 Testler geçmediyse çıktısıyla birlikte söyle. Bir adımı atladıysan atladığını söyle. Bitmiş ve

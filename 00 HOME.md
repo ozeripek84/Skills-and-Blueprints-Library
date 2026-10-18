@@ -1,6 +1,6 @@
 ---
 tags: [moc, home]
-guncelleme: 2026-08-18
+guncelleme: 2026-10-18
 ---
 
 # 🏠 Skills & Blueprints Kütüphanesi — Ana Sayfa
@@ -22,7 +22,8 @@ guncelleme: 2026-08-18
 - 🌱 [[Sıfırdan Başlangıç — Bu Sistem Nedir]] — **hiç bilgisi olmayan için**. Benzetmelerle, baştan sona, basit. (Buradan başla.)
 - [[AI Uygulaması — Teknoloji Seçimi Handbook]] — bir AI uygulamasının her katmanı (frontend, DB, auth, sunucu, VPS, LLM…), farkları, ne zaman hangisi, ve maliyetleri. Şemalı.
 - 🧭 [[Karpathy Çalışma İlkeleri (CLAUDE.md)]] — LLM kodlama tuzaklarına karşı 4 ilke (düşün-önce, sadelik, cerrahi, hedef-odaklı). Claude'un çalışma davranışı. (İlk mesajdaki "Karpathy prompt'u")
-- ⚡ [[Süper Opus 5]] — **Claude Code çalışma standardı.** Fable 5'in sızdırılan system prompt'undan (1.597 satır) damıtıldı: ~35 satır alındı, %98 atıldı; üstüne Opus 5'e özel bloklar eklendi (kapsam disiplini · alt-ajan tavanı · **doğrulama kasten boş**). `~/.claude/CLAUDE.md` bu dosyaya symlink — düzenlersen Claude Code anında görür.
+- [[Orkestra Şefi Çalışma Sistemi — Fable + Opus oturumları (Vitreno'da kanıtlandı)]] — çok oturumlu Claude Code çalışma düzeni: şef ölçer/ff alır, oturumlar kodlar; kanıt bloğu biçimi, ölçüm zinciri, kurallar; yeni projede 30 dk kurulum
+- ⚡ [[Süper Opus 5]] — **Claude Code çalışma standardı.** Fable 5'in sızdırılan system prompt'undan (1.597 satır) damıtıldı: ~35 satır alındı, %98 atıldı; üstüne Opus 5'e özel bloklar eklendi (kapsam disiplini · alt-ajan tavanı · **doğrulama ölçülü ama projeye tabi** — iddia öncesi zorunlu, ara adımda yok; proje kendi disiplinini tanımlıyorsa o üstün). `~/.claude/CLAUDE.md` bu dosyaya symlink — düzenlersen Claude Code anında görür.
 - 🧬 [[Kendini Geliştiren Skill — 4 Katman (Jarvis-Karpathy yöntemi)]] — statik değil, kendini iyileştiren skill kurma: oluştur → Karpathy disiplini → göz (web) → hafıza+auto-research. (Jarvis nedir + yöntemi)
 - 🤖 [[Agent Kurma — BLAST Çerçevesi]] — Claude Code'da kod yazmadan ajan kurma: 4 parça, BLAST, 5 kural, araç bağlama. (Mert videosu)
 - 📈 [[Borsa & Trading Prompt Paketi — dürüst kullanım (referans)]] — Claude ile piyasa analizi için 7 retail prompt + **dürüst uyarı**: canlı veri olmadan fiyat/backtest uydurur. Güvenli olanlar senin verinle çalışanlar (portföy, işlem günlüğü). Yatırım tavsiyesi değil.
