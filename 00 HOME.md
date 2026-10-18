@@ -50,6 +50,7 @@ guncelleme: 2026-10-18
 - 🌐 [[BrowserAct — Gerçek Tarayıcı Aracı (referans)]] — Claude'a gerçek tarayıcı verir (ürün): bot/captcha'lı scrape, stealth. (Playwright vs BrowserAct karşılaştırması iki notta da var.)
 - 🎬 [[Higgsfield MCP-CLI — Görsel-Video Üretimi (referans)]] — herhangi bir ajana (Claude/Hermes) görsel & video üretimi: Marketing Studio (tek link→video), Soul karakter, viral klip, virality prediction. İçerik Fabrikası'nın bağımlılığı.
 - 🎨 [[Claude + Canva Connector — Tasarım (referans)]] — Claude'a Canva bağla, sohbetten tasarla (form/sunum/kapak); düzenlemeyi Canva'da yap (ekonomik). *Bende canlı kullanılabilir.*
+- 🎙️ [[ElevenLabs MCP Connector — Ses, Müzik, Görsel, Video (referans)]] — Claude'dan seslendirme, ses efekti, müzik, dublaj, transkript, görsel/video (2026-09'dan beri). 💸 Kredi yer; **ücretsiz planda ticari lisans ve video yok**. Videodaki "kötü sesi temizle" bağlayıcıda doğrulanmadı. Ayrım: ses = ElevenLabs, görsel/video = Higgsfield. Ücretsiz alternatifler notta.
 - 🎞️ [[AI UGC-Reklam Video Üretici (open-source, self-host) — referans]] — klonlanan açık-kaynak app ile AI reklam/UGC videosu (Fal AI / ücretsiz LTX-2, text/image-to-video, 30 sahne). Müşteriye satılabilir.
 - 🔍 [[Claude SEO — 25 Skill + 18 Ajanlı SEO Denetimi (referans)]] — açık kaynak (MIT, ~11K★) SEO denetim plugin'i: `/seo audit <url>` → 15'e kadar paralel ajan, teknik+E-E-A-T+schema+**GEO/AEO (AI arama)**, test-edilebilir aksiyon planı. Çekirdek ücretsiz + sıfır-ağ; paralı uzantılar opsiyonel. Site işlerinin denetim adımı.
 
