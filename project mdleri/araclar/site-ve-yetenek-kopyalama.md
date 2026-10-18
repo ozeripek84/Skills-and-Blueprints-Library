@@ -23,8 +23,10 @@ Hedef: `$ARGUMENTS`
 
 1. **Hedef:** URL mi, kurulu uygulama mı (adı + yolu), APK mı? Kullanıcı yalnız "benim uygulamam" diyorsa adını sor; örnek uygulamayı kendin **seçme**, yakındaki dosyalardan tahmin etme.
 2. **Özellik:** tek ve dar olsun ("arama", "fiyat hesaplayıcı", "export"). "Bütün uygulama" → reddetme, ama en değerli 1 özellikle başlamayı öner.
-3. **İzin + niyet:** hedef kullanıcıya mı ait / izinli mi? Çıktı kişisel mi, ticari mi? Kırmızı çizgiye giriyorsa burada dur.
+3. **İzin + niyet + risk basamağı:** hedef kullanıcıya mı ait / izinli mi? Çıktı nerede duracak: (1) yalnız inceleme · (2) kişisel kullanım, private repo · (3) yayın (public repo, video, ücretsiz dağıtım) · (4) satış / müşteri teslimi. Basamak 3–4 ise temiz-oda ve farklılaştırma kontrolü **pazarlıksız**. Kırmızı çizgiye giriyorsa burada dur.
+   > Gerçek vaka: REA ile lisanslı bir ekran kaydı uygulamasını yeniden kurup videosunu ve reposunu yayınlayan bir üretici, ikisini de kaldırmak zorunda kaldı. "Bilgisayarımda kalacak" deniyorsa private repoda kalmasını ve sürecin yayınlanmamasını hatırlat; bunun hukuki güvence olmadığını da söyle (EULA kişisel kullanımı da yasaklayabilir).
 4. **Kullanıcının projesi:** nereye kurulacak (repo yolu, stack)?
+5. **REA mı, sıfırdan mı?** Kullanıcının ürün fikri kendi derdinden geliyorsa ve hedef yalnız ilham kaynağıysa REA'yı **açma**. Derdi spesifikasyona dök (Adım 4'e atla), Claude ile sıfırdan kur. REA yalnız şu iki durumda gerekir: (a) belirli bir "nasıl"ı gözlem çözemiyorsa (dosya formatı, algoritma, IPC), (b) kendi uygulamasının kaybolmuş kaynağı ya da birlikte çalışabilirlik söz konusuysa. Bunu kullanıcıya bir cümleyle söyle: REA var olanı gösterir; ürünü ayrıştıracak özelliği bulamaz.
 
 ## 1 — Soru listesi
 
@@ -107,6 +109,7 @@ Bu belgede **kod parçası, onların metinleri, görselleri yok.** Kullanıcıya
 - Mümkünse **yeni bir oturumda**, yalnız spesifikasyon belgesiyle çalış (analiz çıktılarını bağlama alma).
 - Kullanıcının stack'ine ve kod üslubuna uy; kendi isimlendirmen.
 - Arayüz: kendi tasarım dili. Gerekirse kütüphanedeki tasarım akışları (Web Sitesi Yapımı — MOC, Claude Design, Yıldız Dikme).
+- **Farklılaştırıcı özellik:** kullanıcıya sor: "Orijinali kullanırken seni en çok ne zorluyor?" Cevaptan, orijinalde **olmayan** en az bir özelliği spesifikasyona ve koda ekle. Kopya kullanıcıya geçiş için sebep vermez; bu özellik verir.
 
 ## 6 — Doğrula + farklılaştır
 
@@ -121,6 +124,8 @@ Bu belgede **kod parçası, onların metinleri, görselleri yok.** Kullanıcıya
 [ ] Ekran düzeni yan yana konunca karıştırılmıyor
 [ ] Kodda onların koduna ait parça yok (minify/decompile kopyası yok)
 [ ] Onların API'sini / anahtarını çağırmıyoruz
+[ ] Orijinalde olmayan en az bir farklılaştırıcı özellik var
+[ ] Risk basamağına uygun: basamak 2 ise repo private, süreç yayınlanmadı
 ```
 
 ## Teslim raporu
@@ -131,6 +136,7 @@ Soru listesi: X cevaplandı · Y kısmen · Z açık
 Spesifikasyon: docs/spec-….md
 Kod: [dosyalar]
 Kabul testleri: N/M geçti (geçmeyenler: …)
-Farklılaştırma: 7/7
+Risk basamağı: …
+Farklılaştırma: 9/9
 Açık kalanlar / riskler: …
 ```
